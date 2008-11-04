@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>B5B2D5530EC06DB600E38731</string>
+						<string>B5B2D5740EC0703F00E38731</string>
 						<key>history</key>
 						<array>
 							<string>B5B2D3B60EC04D3E00E38731</string>
@@ -337,14 +337,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>23</integer>
-									<integer>16</integer>
+									<integer>75</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 34}, {303, 740}}</string>
+							<string>{{0, 917}, {303, 740}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -381,7 +380,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>XBMCSettings.m</string>
+								<string>NowPlayingViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -389,11 +388,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>XBMCSettings.m</string>
+										<string>NowPlayingViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B5B2D5520EC06DB600E38731</string>
+										<string>B5B2D5730EC0703F00E38731</string>
 										<key>history</key>
 										<array>
 											<string>B50CE1A00E41EC0F00AE0AAA</string>
@@ -452,7 +451,6 @@
 											<string>B51D98E30EBBAFE80009131E</string>
 											<string>B51D99030EBBB1A70009131E</string>
 											<string>B51D99040EBBB1A70009131E</string>
-											<string>B58921840EBEF3410009D65B</string>
 											<string>B58921860EBEF3410009D65B</string>
 											<string>B58924CA0EBFF2A90009D65B</string>
 											<string>B58924D10EBFF2A90009D65B</string>
@@ -527,10 +525,11 @@
 											<string>B5B2D52A0EC0677000E38731</string>
 											<string>B5B2D52B0EC0677000E38731</string>
 											<string>B5B2D5370EC067AE00E38731</string>
-											<string>B5B2D54C0EC06DB600E38731</string>
 											<string>B5B2D54D0EC06DB600E38731</string>
 											<string>B5B2D54E0EC06DB600E38731</string>
-											<string>B5B2D52C0EC0677000E38731</string>
+											<string>B5B2D5650EC06FC500E38731</string>
+											<string>B5B2D5660EC06FC500E38731</string>
+											<string>B5B2D54C0EC06DB600E38731</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -773,6 +772,8 @@
 											<string>B5B2D54F0EC06DB600E38731</string>
 											<string>B5B2D5500EC06DB600E38731</string>
 											<string>B5B2D5510EC06DB600E38731</string>
+											<string>B5B2D5670EC06FC500E38731</string>
+											<string>B5B2D5680EC06FC500E38731</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -968,14 +969,15 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>B5B2D5720EC0701B00E38731</string>
 		<string>B5B2D3BB0EC04D3E00E38731</string>
 		<string>B5B2D3BC0EC04D3E00E38731</string>
 		<string>B503A65F0E407C4300CF5096</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>B58923980EBFE1220009D65B</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>1C0AD2AF069F1E9B00FABCE6</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>B58923980EBFE1220009D65B</string>
 		<string>/Users/djfumberger/Documents/xbmc-remote/xbmcremote.xcodeproj</string>
 	</array>
 	<key>WindowString</key>

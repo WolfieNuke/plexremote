@@ -130,7 +130,7 @@
 	remainingLabel.text = @"";
 }
 - (void)clearMainImage {
-	[coverImage setImage:[UIImage imageNamed:@"MusicNowPlayingXBMC.png"]];
+	[coverImage setImage: nil];
 }
 - (void)clearVideoImage {
 	[tvImage setImage:nil];
@@ -254,7 +254,7 @@
 	if (data.image != nil) {
 		[coverImage setImage:data.image];
 	} else {
-		[coverImage setImage:[UIImage imageNamed:@"MusicNowPlayingXBMC.png"]];		
+		[coverImage setImage:nil];
 	}
 	if ([playlistView superview]) {
 		[flipImageContainerView setImage: coverImage.image];
