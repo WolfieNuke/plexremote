@@ -71,7 +71,7 @@
 	[URLString appendString: path];
 	[URLString appendString: @"?" ];	
 	NSString *params = [self ParamsString];
-	//NSLog(@"%@%@", URLString, params);
+	NSLog(@"%@%@", URLString, params);
 	[URLString appendString:  params];
 
 	return URLString;
@@ -95,8 +95,14 @@
 					  sendSynchronousRequest: theRequest
 					  returningResponse: nil 
 					  error: &reqError];
-	NSString *returnStr = [NSString stringWithUTF8String:[rdata bytes]];
-	//NSString *returnStr = [NSString stringWithCString:[rdata bytes] length: [rdata length]];
+	NSString *returnStr = [[[NSString alloc] initWithData: rdata encoding: NSUTF8StringEncoding] autorelease];
+	// something strange going on here.. for large string the above doesn't work , so fall back to this.
+	// like to know what i'm doing wrong here.
+	if ([returnStr length] == 0 && [rdata length] > 0) {
+		NSLog(@"Fallback method...");
+		returnStr = [NSString stringWithCString:[rdata bytes] length: [rdata length]];
+	}
+	//NSLog(@"String length %i %i", [returnStr length], [rdata length]);	
 	return returnStr;
 }
 
