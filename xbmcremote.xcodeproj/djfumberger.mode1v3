@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>B5B2D5420EC067D500E38731</string>
+						<string>B5B2D5530EC06DB600E38731</string>
 						<key>history</key>
 						<array>
 							<string>B5B2D3B60EC04D3E00E38731</string>
@@ -337,13 +337,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>75</integer>
+									<integer>23</integer>
+									<integer>16</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 1100}, {303, 740}}</string>
+							<string>{{0, 34}, {303, 740}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -362,7 +363,7 @@
 							<real>303</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>2063 380 1375 799 1920 300 1440 900 </string>
+						<string>1974 379 1375 799 1920 300 1440 900 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -380,7 +381,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>NowPlayingViewController.m</string>
+								<string>XBMCSettings.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -388,11 +389,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>NowPlayingViewController.m</string>
+										<string>XBMCSettings.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B5B2D5410EC067D500E38731</string>
+										<string>B5B2D5520EC06DB600E38731</string>
 										<key>history</key>
 										<array>
 											<string>B50CE1A00E41EC0F00AE0AAA</string>
@@ -478,7 +479,6 @@
 											<string>B5B548BA0EC01DA400547343</string>
 											<string>B5B549110EC020BC00547343</string>
 											<string>B5B549B50EC02B8B00547343</string>
-											<string>B5B54A0A0EC02E0400547343</string>
 											<string>B5B54A3F0EC0314D00547343</string>
 											<string>B5B54A580EC0321E00547343</string>
 											<string>B5B54A590EC0321E00547343</string>
@@ -491,7 +491,6 @@
 											<string>B5B54AC90EC03A6500547343</string>
 											<string>B5B54ACA0EC03A6500547343</string>
 											<string>B5B54ACB0EC03A6500547343</string>
-											<string>B5B54ACD0EC03A6500547343</string>
 											<string>B5B54B0F0EC03C6100547343</string>
 											<string>B5B54B100EC03C6100547343</string>
 											<string>B5B54B120EC03C6100547343</string>
@@ -527,9 +526,11 @@
 											<string>B5B2D5190EC0672600E38731</string>
 											<string>B5B2D52A0EC0677000E38731</string>
 											<string>B5B2D52B0EC0677000E38731</string>
-											<string>B5B2D52C0EC0677000E38731</string>
 											<string>B5B2D5370EC067AE00E38731</string>
-											<string>B5B2D5380EC067AE00E38731</string>
+											<string>B5B2D54C0EC06DB600E38731</string>
+											<string>B5B2D54D0EC06DB600E38731</string>
+											<string>B5B2D54E0EC06DB600E38731</string>
+											<string>B5B2D52C0EC0677000E38731</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -769,6 +770,9 @@
 											<string>B5B2D52F0EC0677000E38731</string>
 											<string>B5B2D5300EC0677000E38731</string>
 											<string>B5B2D5390EC067AE00E38731</string>
+											<string>B5B2D54F0EC06DB600E38731</string>
+											<string>B5B2D5500EC06DB600E38731</string>
+											<string>B5B2D5510EC06DB600E38731</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -782,7 +786,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1050, 635}}</string>
 								<key>RubberWindowFrame</key>
-								<string>2063 380 1375 799 1920 300 1440 900 </string>
+								<string>1974 379 1375 799 1920 300 1440 900 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -802,7 +806,7 @@
 								<key>Frame</key>
 								<string>{{0, 640}, {1050, 118}}</string>
 								<key>RubberWindowFrame</key>
-								<string>2063 380 1375 799 1920 300 1440 900 </string>
+								<string>1974 379 1375 799 1920 300 1440 900 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -964,7 +968,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>B5B2D5400EC067BE00E38731</string>
 		<string>B5B2D3BB0EC04D3E00E38731</string>
 		<string>B5B2D3BC0EC04D3E00E38731</string>
 		<string>B503A65F0E407C4300CF5096</string>
@@ -976,7 +979,7 @@
 		<string>/Users/djfumberger/Documents/xbmc-remote/xbmcremote.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>2063 380 1375 799 1920 300 1440 900 </string>
+	<string>1974 379 1375 799 1920 300 1440 900 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>

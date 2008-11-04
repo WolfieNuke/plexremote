@@ -1130,6 +1130,20 @@
 			B5B2D53F0EC067BE00E38731 /* PBXTextBookmark */ = B5B2D53F0EC067BE00E38731 /* PBXTextBookmark */;
 			B5B2D5410EC067D500E38731 /* PBXTextBookmark */ = B5B2D5410EC067D500E38731 /* PBXTextBookmark */;
 			B5B2D5420EC067D500E38731 /* PBXTextBookmark */ = B5B2D5420EC067D500E38731 /* PBXTextBookmark */;
+			B5B2D5440EC069AC00E38731 /* PBXTextBookmark */ = B5B2D5440EC069AC00E38731 /* PBXTextBookmark */;
+			B5B2D5450EC069AC00E38731 /* PBXTextBookmark */ = B5B2D5450EC069AC00E38731 /* PBXTextBookmark */;
+			B5B2D5470EC06B8C00E38731 /* PBXTextBookmark */ = B5B2D5470EC06B8C00E38731 /* PBXTextBookmark */;
+			B5B2D5480EC06B8C00E38731 /* PBXTextBookmark */ = B5B2D5480EC06B8C00E38731 /* PBXTextBookmark */;
+			B5B2D54A0EC06B9E00E38731 /* PBXTextBookmark */ = B5B2D54A0EC06B9E00E38731 /* PBXTextBookmark */;
+			B5B2D54B0EC06B9E00E38731 /* PBXTextBookmark */ = B5B2D54B0EC06B9E00E38731 /* PBXTextBookmark */;
+			B5B2D54C0EC06DB600E38731 /* PBXTextBookmark */ = B5B2D54C0EC06DB600E38731 /* PBXTextBookmark */;
+			B5B2D54D0EC06DB600E38731 /* PBXTextBookmark */ = B5B2D54D0EC06DB600E38731 /* PBXTextBookmark */;
+			B5B2D54E0EC06DB600E38731 /* PBXTextBookmark */ = B5B2D54E0EC06DB600E38731 /* PBXTextBookmark */;
+			B5B2D54F0EC06DB600E38731 /* PBXTextBookmark */ = B5B2D54F0EC06DB600E38731 /* PBXTextBookmark */;
+			B5B2D5500EC06DB600E38731 /* PBXTextBookmark */ = B5B2D5500EC06DB600E38731 /* PBXTextBookmark */;
+			B5B2D5510EC06DB600E38731 /* PBXTextBookmark */ = B5B2D5510EC06DB600E38731 /* PBXTextBookmark */;
+			B5B2D5520EC06DB600E38731 /* PBXTextBookmark */ = B5B2D5520EC06DB600E38731 /* PBXTextBookmark */;
+			B5B2D5530EC06DB600E38731 /* PBXTextBookmark */ = B5B2D5530EC06DB600E38731 /* PBXTextBookmark */;
 			B5B3684B0EBC052F007BF39E = B5B3684B0EBC052F007BF39E /* PBXTextBookmark */;
 			B5B3684C0EBC052F007BF39E = B5B3684C0EBC052F007BF39E /* PBXTextBookmark */;
 			B5B3684F0EBC052F007BF39E = B5B3684F0EBC052F007BF39E /* PBXTextBookmark */;
@@ -2330,9 +2344,9 @@
 	};
 	B507CDA20EB72166008DD569 /* SettingsViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1175, 4158}}";
-			sepNavSelRange = "{536, 45}";
-			sepNavVisRange = "{266, 577}";
+			sepNavIntBoundsRect = "{{0, 0}, {1038, 4158}}";
+			sepNavSelRange = "{1045, 7}";
+			sepNavVisRange = "{536, 1574}";
 		};
 	};
 	B507CDA30EB72166008DD569 /* SettingsViewController.h */ = {
@@ -2344,9 +2358,9 @@
 	};
 	B507CDA50EB72174008DD569 /* XBMCSettings.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {989, 3750}}";
-			sepNavSelRange = "{2127, 0}";
-			sepNavVisRange = "{134, 1496}";
+			sepNavIntBoundsRect = "{{0, 0}, {989, 3960}}";
+			sepNavSelRange = "{2131, 0}";
+			sepNavVisRange = "{1137, 1926}";
 		};
 	};
 	B507CDA60EB72174008DD569 /* XBMCSettings.h */ = {
@@ -3115,7 +3129,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 20;
-		modificationTime = 247490501.134931;
+		modificationTime = 247491476.70786;
 		state = 2;
 	};
 	B518CA180E6ECDBD0087D00B /* PBXTextBookmark */ = {
@@ -3331,7 +3345,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 27;
-		modificationTime = 247490501.134893;
+		modificationTime = 247491476.70781;
 		state = 2;
 	};
 	B538C6340E97621900D73F95 /* PBXTextBookmark */ = {
@@ -3361,7 +3375,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 224;
-		modificationTime = 247490501.134767;
+		modificationTime = 247491476.707693;
 		state = 2;
 	};
 	B54233530E51C81800525C17 /* NowPlayingViewController.m:214 */ = {
@@ -3378,7 +3392,7 @@
 		ignoreCount = 0;
 		lineNumber = 214;
 		location = NavTest;
-		modificationTime = 247490501.134773;
+		modificationTime = 247491476.707705;
 		state = 2;
 	};
 	B54233670E52D4C900525C17 /* MusicPath.h */ = {
@@ -3428,7 +3442,7 @@
 		ignoreCount = 0;
 		lineNumber = 16;
 		location = NavTest;
-		modificationTime = 247490501.134754;
+		modificationTime = 247491476.707679;
 		state = 2;
 	};
 	B544B36A0E55D74100A8CAD0 /* TVShowsViewController.h */ = {
@@ -3489,7 +3503,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 161;
-		modificationTime = 247490501.13497;
+		modificationTime = 247491476.707916;
 		state = 2;
 	};
 	B55CDADE0E6A71BD00061EFD /* PBXTextBookmark */ = {
@@ -3593,7 +3607,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {989, 6296}}";
 			sepNavSelRange = "{4685, 0}";
-			sepNavVisRange = "{4063, 1705}";
+			sepNavVisRange = "{4393, 1778}";
 			sepNavWindowFrame = "{{743, 34}, {976, 694}}";
 		};
 	};
@@ -3652,7 +3666,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 168";
 		rLen = 12;
-		rLoc = 8335;
+		rLoc = 8339;
 		rType = 0;
 		vrLen = 1268;
 		vrLoc = 159;
@@ -3852,7 +3866,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 63";
 		rLen = 0;
-		rLoc = 2498;
+		rLoc = 2502;
 		rType = 0;
 		vrLen = 1497;
 		vrLoc = 1153;
@@ -4102,7 +4116,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 92";
 		rLen = 0;
-		rLoc = 5022;
+		rLoc = 5026;
 		rType = 0;
 		vrLen = 805;
 		vrLoc = 6345;
@@ -4336,7 +4350,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 92";
 		rLen = 0;
-		rLoc = 5022;
+		rLoc = 5026;
 		rType = 0;
 		vrLen = 805;
 		vrLoc = 6345;
@@ -4486,7 +4500,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 92";
 		rLen = 0;
-		rLoc = 5022;
+		rLoc = 5026;
 		rType = 0;
 		vrLen = 805;
 		vrLoc = 6345;
@@ -4506,7 +4520,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 92";
 		rLen = 0;
-		rLoc = 5022;
+		rLoc = 5026;
 		rType = 0;
 		vrLen = 1549;
 		vrLoc = 855;
@@ -4526,7 +4540,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 92";
 		rLen = 0;
-		rLoc = 5022;
+		rLoc = 5026;
 		rType = 0;
 		vrLen = 1549;
 		vrLoc = 855;
@@ -4846,7 +4860,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 69";
 		rLen = 0;
-		rLoc = 2793;
+		rLoc = 2797;
 		rType = 0;
 		vrLen = 1524;
 		vrLoc = 881;
@@ -4866,7 +4880,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 70";
 		rLen = 0;
-		rLoc = 2793;
+		rLoc = 2797;
 		rType = 0;
 		vrLen = 1656;
 		vrLoc = 980;
@@ -4946,7 +4960,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 70";
 		rLen = 0;
-		rLoc = 2793;
+		rLoc = 2797;
 		rType = 0;
 		vrLen = 1156;
 		vrLoc = 4870;
@@ -4976,7 +4990,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 70";
 		rLen = 0;
-		rLoc = 2793;
+		rLoc = 2797;
 		rType = 0;
 		vrLen = 1156;
 		vrLoc = 4870;
@@ -5690,7 +5704,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 90";
 		rLen = 0;
-		rLoc = 4853;
+		rLoc = 4857;
 		rType = 0;
 		vrLen = 1478;
 		vrLoc = 2192;
@@ -5750,7 +5764,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 207";
 		rLen = 31;
-		rLoc = 8332;
+		rLoc = 8336;
 		rType = 0;
 		vrLen = 746;
 		vrLoc = 6388;
@@ -5800,7 +5814,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 207";
 		rLen = 31;
-		rLoc = 8332;
+		rLoc = 8336;
 		rType = 0;
 		vrLen = 746;
 		vrLoc = 6388;
@@ -5820,7 +5834,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 207";
 		rLen = 31;
-		rLoc = 8332;
+		rLoc = 8336;
 		rType = 0;
 		vrLen = 1580;
 		vrLoc = 1126;
@@ -5877,7 +5891,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 70";
 		rLen = 0;
-		rLoc = 2571;
+		rLoc = 2575;
 		rType = 0;
 		vrLen = 1585;
 		vrLoc = 1126;
@@ -6187,7 +6201,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 92";
 		rLen = 0;
-		rLoc = 4811;
+		rLoc = 4815;
 		rType = 0;
 		vrLen = 1392;
 		vrLoc = 2447;
@@ -6207,7 +6221,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 94";
 		rLen = 0;
-		rLoc = 4586;
+		rLoc = 4590;
 		rType = 0;
 		vrLen = 1570;
 		vrLoc = 2365;
@@ -6227,7 +6241,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 73";
 		rLen = 68;
-		rLoc = 2725;
+		rLoc = 2729;
 		rType = 0;
 		vrLen = 1502;
 		vrLoc = 1451;
@@ -6247,7 +6261,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 96";
 		rLen = 0;
-		rLoc = 4586;
+		rLoc = 4590;
 		rType = 0;
 		vrLen = 1507;
 		vrLoc = 2037;
@@ -6297,7 +6311,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 97";
 		rLen = 0;
-		rLoc = 4661;
+		rLoc = 4665;
 		rType = 0;
 		vrLen = 1601;
 		vrLoc = 2187;
@@ -6577,7 +6591,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 95";
 		rLen = 47;
-		rLoc = 4444;
+		rLoc = 4448;
 		rType = 0;
 		vrLen = 1582;
 		vrLoc = 2251;
@@ -6607,7 +6621,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 95";
 		rLen = 47;
-		rLoc = 4444;
+		rLoc = 4448;
 		rType = 0;
 		vrLen = 1622;
 		vrLoc = 2213;
@@ -6627,7 +6641,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 95";
 		rLen = 47;
-		rLoc = 4444;
+		rLoc = 4448;
 		rType = 0;
 		vrLen = 1547;
 		vrLoc = 2122;
@@ -6657,7 +6671,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 82";
 		rLen = 0;
-		rLoc = 3329;
+		rLoc = 3333;
 		rType = 0;
 		vrLen = 645;
 		vrLoc = 0;
@@ -6667,7 +6681,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 82";
 		rLen = 0;
-		rLoc = 3329;
+		rLoc = 3333;
 		rType = 0;
 		vrLen = 645;
 		vrLoc = 0;
@@ -6687,7 +6701,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 80";
 		rLen = 0;
-		rLoc = 3179;
+		rLoc = 3183;
 		rType = 0;
 		vrLen = 1564;
 		vrLoc = 2375;
@@ -6737,7 +6751,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 80";
 		rLen = 15;
-		rLoc = 3203;
+		rLoc = 3207;
 		rType = 0;
 		vrLen = 1566;
 		vrLoc = 2375;
@@ -6747,7 +6761,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 80";
 		rLen = 15;
-		rLoc = 3203;
+		rLoc = 3207;
 		rType = 0;
 		vrLen = 1566;
 		vrLoc = 2375;
@@ -6797,7 +6811,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 81";
 		rLen = 0;
-		rLoc = 3268;
+		rLoc = 3272;
 		rType = 0;
 		vrLen = 1564;
 		vrLoc = 2375;
@@ -6817,7 +6831,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 81";
 		rLen = 0;
-		rLoc = 3268;
+		rLoc = 3272;
 		rType = 0;
 		vrLen = 1564;
 		vrLoc = 2375;
@@ -6837,7 +6851,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 81";
 		rLen = 0;
-		rLoc = 3268;
+		rLoc = 3272;
 		rType = 0;
 		vrLen = 1564;
 		vrLoc = 2375;
@@ -6847,7 +6861,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 81";
 		rLen = 0;
-		rLoc = 3268;
+		rLoc = 3272;
 		rType = 0;
 		vrLen = 1564;
 		vrLoc = 2375;
@@ -7771,7 +7785,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 81";
 		rLen = 0;
-		rLoc = 3300;
+		rLoc = 3304;
 		rType = 0;
 		vrLen = 1400;
 		vrLoc = 2324;
@@ -7791,7 +7805,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 81";
 		rLen = 0;
-		rLoc = 3300;
+		rLoc = 3304;
 		rType = 0;
 		vrLen = 1551;
 		vrLoc = 2324;
@@ -7811,7 +7825,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 81";
 		rLen = 0;
-		rLoc = 3287;
+		rLoc = 3291;
 		rType = 0;
 		vrLen = 1549;
 		vrLoc = 2324;
@@ -7831,7 +7845,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 81";
 		rLen = 0;
-		rLoc = 3287;
+		rLoc = 3291;
 		rType = 0;
 		vrLen = 1608;
 		vrLoc = 2324;
@@ -7851,7 +7865,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 81";
 		rLen = 0;
-		rLoc = 3287;
+		rLoc = 3291;
 		rType = 0;
 		vrLen = 1551;
 		vrLoc = 2324;
@@ -7871,7 +7885,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 80";
 		rLen = 0;
-		rLoc = 3179;
+		rLoc = 3183;
 		rType = 0;
 		vrLen = 1402;
 		vrLoc = 1905;
@@ -7891,7 +7905,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 81";
 		rLen = 0;
-		rLoc = 3300;
+		rLoc = 3304;
 		rType = 0;
 		vrLen = 1442;
 		vrLoc = 1905;
@@ -7911,7 +7925,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 81";
 		rLen = 0;
-		rLoc = 3309;
+		rLoc = 3313;
 		rType = 0;
 		vrLen = 1443;
 		vrLoc = 1905;
@@ -7931,7 +7945,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 81";
 		rLen = 0;
-		rLoc = 3309;
+		rLoc = 3313;
 		rType = 0;
 		vrLen = 1614;
 		vrLoc = 2158;
@@ -7951,7 +7965,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 81";
 		rLen = 0;
-		rLoc = 3268;
+		rLoc = 3272;
 		rType = 0;
 		vrLen = 1456;
 		vrLoc = 1905;
@@ -7971,7 +7985,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 81";
 		rLen = 0;
-		rLoc = 3300;
+		rLoc = 3304;
 		rType = 0;
 		vrLen = 1466;
 		vrLoc = 1905;
@@ -7991,7 +8005,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 78";
 		rLen = 0;
-		rLoc = 2724;
+		rLoc = 2728;
 		rType = 0;
 		vrLen = 1478;
 		vrLoc = 1905;
@@ -8011,7 +8025,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 78";
 		rLen = 0;
-		rLoc = 2724;
+		rLoc = 2728;
 		rType = 0;
 		vrLen = 1455;
 		vrLoc = 2158;
@@ -8031,7 +8045,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 74";
 		rLen = 0;
-		rLoc = 2571;
+		rLoc = 2575;
 		rType = 0;
 		vrLen = 1456;
 		vrLoc = 1905;
@@ -8115,7 +8129,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 109";
 		rLen = 0;
-		rLoc = 4809;
+		rLoc = 4813;
 		rType = 0;
 		vrLen = 1155;
 		vrLoc = 3225;
@@ -8165,7 +8179,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 73";
 		rLen = 0;
-		rLoc = 2571;
+		rLoc = 2575;
 		rType = 0;
 		vrLen = 1180;
 		vrLoc = 1052;
@@ -8375,7 +8389,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 109";
 		rLen = 0;
-		rLoc = 4809;
+		rLoc = 4813;
 		rType = 0;
 		vrLen = 1155;
 		vrLoc = 3225;
@@ -8525,7 +8539,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 109";
 		rLen = 0;
-		rLoc = 4809;
+		rLoc = 4813;
 		rType = 0;
 		vrLen = 1391;
 		vrLoc = 3612;
@@ -8655,7 +8669,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 109";
 		rLen = 0;
-		rLoc = 4809;
+		rLoc = 4813;
 		rType = 0;
 		vrLen = 1391;
 		vrLoc = 3612;
@@ -8845,7 +8859,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 109";
 		rLen = 0;
-		rLoc = 4809;
+		rLoc = 4813;
 		rType = 0;
 		vrLen = 1505;
 		vrLoc = 659;
@@ -9006,7 +9020,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 338;
-		modificationTime = 247490501.134902;
+		modificationTime = 247491476.707818;
 		state = 2;
 	};
 	B5A6552F0E55844F0061A24B /* GenresViewController.h */ = {
@@ -9036,7 +9050,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 12;
-		modificationTime = 247490501.134907;
+		modificationTime = 247491476.707824;
 		state = 2;
 	};
 	B5A6555E0E558B330061A24B /* PBXTextBookmark */ = {
@@ -9071,7 +9085,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 29;
-		modificationTime = 247490501.335247;
+		modificationTime = 247491476.923843;
 		state = 0;
 	};
 	B5A65E850E60081F00E08F79 /* XBMCHTTP.m */ = {
@@ -9094,7 +9108,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 12;
-		modificationTime = 247490501.134947;
+		modificationTime = 247491476.70788;
 		state = 2;
 	};
 	B5A65FE20E60255200E08F79 /* PBXTextBookmark */ = {
@@ -10187,7 +10201,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 188";
 		rLen = 0;
-		rLoc = 7003;
+		rLoc = 7007;
 		rType = 0;
 		vrLen = 1547;
 		vrLoc = 1718;
@@ -10207,7 +10221,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 63";
 		rLen = 0;
-		rLoc = 2127;
+		rLoc = 2131;
 		rType = 0;
 		vrLen = 1803;
 		vrLoc = 991;
@@ -10227,7 +10241,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 63";
 		rLen = 0;
-		rLoc = 2127;
+		rLoc = 2131;
 		rType = 0;
 		vrLen = 1799;
 		vrLoc = 2298;
@@ -10267,7 +10281,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 63";
 		rLen = 0;
-		rLoc = 2127;
+		rLoc = 2131;
 		rType = 0;
 		vrLen = 1799;
 		vrLoc = 2298;
@@ -11844,7 +11858,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 63";
 		rLen = 0;
-		rLoc = 2127;
+		rLoc = 2131;
 		rType = 0;
 		vrLen = 1716;
 		vrLoc = 2381;
@@ -11914,7 +11928,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 63";
 		rLen = 0;
-		rLoc = 2127;
+		rLoc = 2131;
 		rType = 0;
 		vrLen = 1716;
 		vrLoc = 2381;
@@ -12244,7 +12258,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 63";
 		rLen = 0;
-		rLoc = 2127;
+		rLoc = 2131;
 		rType = 0;
 		vrLen = 932;
 		vrLoc = 134;
@@ -12284,7 +12298,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 63";
 		rLen = 0;
-		rLoc = 2127;
+		rLoc = 2131;
 		rType = 0;
 		vrLen = 932;
 		vrLoc = 134;
@@ -12417,6 +12431,146 @@
 		rLoc = 2191;
 		rType = 0;
 		vrLen = 1658;
+		vrLoc = 711;
+	};
+	B5B2D5440EC069AC00E38731 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B56CD8E90E487905006CA459 /* NowPlayingViewController.m */;
+		name = "NowPlayingViewController.m: 171";
+		rLen = 0;
+		rLoc = 4685;
+		rType = 0;
+		vrLen = 1821;
+		vrLoc = 4063;
+	};
+	B5B2D5450EC069AC00E38731 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B5F913E60EAAE62200B66B15 /* RemoteInterface.h */;
+		name = "RemoteInterface.h: 74";
+		rLen = 14;
+		rLoc = 2191;
+		rType = 0;
+		vrLen = 1692;
+		vrLoc = 711;
+	};
+	B5B2D5470EC06B8C00E38731 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B56CD8E90E487905006CA459 /* NowPlayingViewController.m */;
+		name = "NowPlayingViewController.m: 171";
+		rLen = 0;
+		rLoc = 4685;
+		rType = 0;
+		vrLen = 1705;
+		vrLoc = 4063;
+	};
+	B5B2D5480EC06B8C00E38731 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B5F913E60EAAE62200B66B15 /* RemoteInterface.h */;
+		name = "RemoteInterface.h: 74";
+		rLen = 14;
+		rLoc = 2191;
+		rType = 0;
+		vrLen = 1658;
+		vrLoc = 711;
+	};
+	B5B2D54A0EC06B9E00E38731 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B56CD8E90E487905006CA459 /* NowPlayingViewController.m */;
+		name = "NowPlayingViewController.m: 171";
+		rLen = 0;
+		rLoc = 4685;
+		rType = 0;
+		vrLen = 1705;
+		vrLoc = 4063;
+	};
+	B5B2D54B0EC06B9E00E38731 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B5F913E60EAAE62200B66B15 /* RemoteInterface.h */;
+		name = "RemoteInterface.h: 74";
+		rLen = 14;
+		rLoc = 2191;
+		rType = 0;
+		vrLen = 1658;
+		vrLoc = 711;
+	};
+	B5B2D54C0EC06DB600E38731 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B56CD8E90E487905006CA459 /* NowPlayingViewController.m */;
+		name = "NowPlayingViewController.m: 171";
+		rLen = 0;
+		rLoc = 4685;
+		rType = 0;
+		vrLen = 1821;
+		vrLoc = 4063;
+	};
+	B5B2D54D0EC06DB600E38731 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B507CDA20EB72166008DD569 /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 43";
+		rLen = 7;
+		rLoc = 1045;
+		rType = 0;
+		vrLen = 1574;
+		vrLoc = 536;
+	};
+	B5B2D54E0EC06DB600E38731 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B507CDA60EB72174008DD569 /* XBMCSettings.h */;
+		name = "XBMCSettings.h: 43";
+		rLen = 0;
+		rLoc = 1276;
+		rType = 0;
+		vrLen = 1279;
+		vrLoc = 3;
+	};
+	B5B2D54F0EC06DB600E38731 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B56CD8E90E487905006CA459 /* NowPlayingViewController.m */;
+		name = "NowPlayingViewController.m: 171";
+		rLen = 0;
+		rLoc = 4685;
+		rType = 0;
+		vrLen = 1821;
+		vrLoc = 4063;
+	};
+	B5B2D5500EC06DB600E38731 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B507CDA20EB72166008DD569 /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 43";
+		rLen = 7;
+		rLoc = 1045;
+		rType = 0;
+		vrLen = 1574;
+		vrLoc = 536;
+	};
+	B5B2D5510EC06DB600E38731 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B507CDA60EB72174008DD569 /* XBMCSettings.h */;
+		name = "XBMCSettings.h: 43";
+		rLen = 0;
+		rLoc = 1276;
+		rType = 0;
+		vrLen = 1279;
+		vrLoc = 3;
+	};
+	B5B2D5520EC06DB600E38731 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
+		name = "XBMCSettings.m: 63";
+		rLen = 0;
+		rLoc = 2131;
+		rType = 0;
+		vrLen = 1926;
+		vrLoc = 1137;
+	};
+	B5B2D5530EC06DB600E38731 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B5F913E60EAAE62200B66B15 /* RemoteInterface.h */;
+		name = "RemoteInterface.h: 74";
+		rLen = 14;
+		rLoc = 2191;
+		rType = 0;
+		vrLen = 1692;
 		vrLoc = 711;
 	};
 	B5B3684B0EBC052F007BF39E /* PBXTextBookmark */ = {
@@ -12944,7 +13098,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 66";
 		rLen = 0;
-		rLoc = 2498;
+		rLoc = 2502;
 		rType = 0;
 		vrLen = 1332;
 		vrLoc = 1161;
@@ -12964,7 +13118,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 71";
 		rLen = 0;
-		rLoc = 2498;
+		rLoc = 2502;
 		rType = 0;
 		vrLen = 1353;
 		vrLoc = 2804;
@@ -13004,7 +13158,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 100";
 		rLen = 0;
-		rLoc = 3745;
+		rLoc = 3749;
 		rType = 0;
 		vrLen = 1453;
 		vrLoc = 2481;
@@ -13024,7 +13178,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 61";
 		rLen = 0;
-		rLoc = 2173;
+		rLoc = 2177;
 		rType = 0;
 		vrLen = 1057;
 		vrLoc = 1664;
@@ -13044,7 +13198,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 101";
 		rLen = 0;
-		rLoc = 3745;
+		rLoc = 3749;
 		rType = 0;
 		vrLen = 1396;
 		vrLoc = 1083;
@@ -13604,7 +13758,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 113";
 		rLen = 0;
-		rLoc = 4781;
+		rLoc = 4785;
 		rType = 0;
 		vrLen = 1914;
 		vrLoc = 2720;
@@ -13644,7 +13798,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 113";
 		rLen = 0;
-		rLoc = 4781;
+		rLoc = 4785;
 		rType = 0;
 		vrLen = 1914;
 		vrLoc = 2720;
@@ -13664,7 +13818,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 115";
 		rLen = 0;
-		rLoc = 4809;
+		rLoc = 4813;
 		rType = 0;
 		vrLen = 1902;
 		vrLoc = 2720;
@@ -13684,7 +13838,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 115";
 		rLen = 0;
-		rLoc = 4809;
+		rLoc = 4813;
 		rType = 0;
 		vrLen = 1902;
 		vrLoc = 2720;
@@ -13704,7 +13858,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 109";
 		rLen = 0;
-		rLoc = 4493;
+		rLoc = 4497;
 		rType = 0;
 		vrLen = 1845;
 		vrLoc = 2720;
@@ -13724,7 +13878,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 109";
 		rLen = 0;
-		rLoc = 4493;
+		rLoc = 4497;
 		rType = 0;
 		vrLen = 1845;
 		vrLoc = 2720;
@@ -13744,7 +13898,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 117";
 		rLen = 0;
-		rLoc = 4783;
+		rLoc = 4787;
 		rType = 0;
 		vrLen = 1849;
 		vrLoc = 2720;
@@ -13764,7 +13918,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 116";
 		rLen = 0;
-		rLoc = 4712;
+		rLoc = 4716;
 		rType = 0;
 		vrLen = 1847;
 		vrLoc = 2720;
@@ -13784,7 +13938,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 116";
 		rLen = 0;
-		rLoc = 4712;
+		rLoc = 4716;
 		rType = 0;
 		vrLen = 1747;
 		vrLoc = 2720;
@@ -13804,7 +13958,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 116";
 		rLen = 0;
-		rLoc = 4712;
+		rLoc = 4716;
 		rType = 0;
 		vrLen = 1747;
 		vrLoc = 2720;
@@ -13824,7 +13978,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 69";
 		rLen = 0;
-		rLoc = 2498;
+		rLoc = 2502;
 		rType = 0;
 		vrLen = 1511;
 		vrLoc = 1802;
@@ -13844,7 +13998,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 69";
 		rLen = 0;
-		rLoc = 2498;
+		rLoc = 2502;
 		rType = 0;
 		vrLen = 1511;
 		vrLoc = 1802;
@@ -13874,7 +14028,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 69";
 		rLen = 0;
-		rLoc = 2498;
+		rLoc = 2502;
 		rType = 0;
 		vrLen = 1816;
 		vrLoc = 2817;
@@ -13884,7 +14038,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 69";
 		rLen = 0;
-		rLoc = 2498;
+		rLoc = 2502;
 		rType = 0;
 		vrLen = 1816;
 		vrLoc = 2817;
@@ -13904,7 +14058,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 69";
 		rLen = 0;
-		rLoc = 2498;
+		rLoc = 2502;
 		rType = 0;
 		vrLen = 1765;
 		vrLoc = 2817;
@@ -13924,7 +14078,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 117";
 		rLen = 0;
-		rLoc = 4783;
+		rLoc = 4787;
 		rType = 0;
 		vrLen = 1814;
 		vrLoc = 2817;
@@ -13964,7 +14118,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 117";
 		rLen = 0;
-		rLoc = 4783;
+		rLoc = 4787;
 		rType = 0;
 		vrLen = 1814;
 		vrLoc = 2817;
@@ -14124,7 +14278,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 117";
 		rLen = 0;
-		rLoc = 4783;
+		rLoc = 4787;
 		rType = 0;
 		vrLen = 1894;
 		vrLoc = 2840;
@@ -14194,7 +14348,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 117";
 		rLen = 0;
-		rLoc = 4783;
+		rLoc = 4787;
 		rType = 0;
 		vrLen = 1894;
 		vrLoc = 2840;
@@ -14274,7 +14428,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 117";
 		rLen = 0;
-		rLoc = 4783;
+		rLoc = 4787;
 		rType = 0;
 		vrLen = 1894;
 		vrLoc = 2840;
@@ -14374,7 +14528,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 60";
 		rLen = 0;
-		rLoc = 2173;
+		rLoc = 2177;
 		rType = 0;
 		vrLen = 1669;
 		vrLoc = 1460;
@@ -14394,7 +14548,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 60";
 		rLen = 0;
-		rLoc = 2075;
+		rLoc = 2077;
 		rType = 0;
 		vrLen = 1671;
 		vrLoc = 1460;
@@ -14444,7 +14598,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 60";
 		rLen = 0;
-		rLoc = 2075;
+		rLoc = 2077;
 		rType = 0;
 		vrLen = 1832;
 		vrLoc = 3131;
@@ -14464,7 +14618,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 60";
 		rLen = 0;
-		rLoc = 2075;
+		rLoc = 2077;
 		rType = 0;
 		vrLen = 1779;
 		vrLoc = 3434;
@@ -14484,7 +14638,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 115";
 		rLen = 45;
-		rLoc = 4664;
+		rLoc = 4668;
 		rType = 0;
 		vrLen = 1779;
 		vrLoc = 3434;
@@ -14504,7 +14658,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 89";
 		rLen = 0;
-		rLoc = 3177;
+		rLoc = 3181;
 		rType = 0;
 		vrLen = 853;
 		vrLoc = 3;
@@ -14524,7 +14678,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 89";
 		rLen = 0;
-		rLoc = 3177;
+		rLoc = 3181;
 		rType = 0;
 		vrLen = 929;
 		vrLoc = 133;
@@ -14564,7 +14718,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 89";
 		rLen = 0;
-		rLoc = 3086;
+		rLoc = 3090;
 		rType = 0;
 		vrLen = 1698;
 		vrLoc = 2727;
@@ -14584,7 +14738,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 89";
 		rLen = 0;
-		rLoc = 3086;
+		rLoc = 3090;
 		rType = 0;
 		vrLen = 1821;
 		vrLoc = 2727;
@@ -14604,7 +14758,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 60";
 		rLen = 0;
-		rLoc = 2075;
+		rLoc = 2077;
 		rType = 0;
 		vrLen = 1743;
 		vrLoc = 801;
@@ -14624,7 +14778,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 68";
 		rLen = 0;
-		rLoc = 2498;
+		rLoc = 2502;
 		rType = 0;
 		vrLen = 1802;
 		vrLoc = 1017;
@@ -14644,7 +14798,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 65";
 		rLen = 0;
-		rLoc = 2498;
+		rLoc = 2502;
 		rType = 0;
 		vrLen = 1842;
 		vrLoc = 1060;
@@ -14664,7 +14818,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 71";
 		rLen = 0;
-		rLoc = 2498;
+		rLoc = 2502;
 		rType = 0;
 		vrLen = 1819;
 		vrLoc = 1060;
@@ -14684,7 +14838,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 66";
 		rLen = 0;
-		rLoc = 2357;
+		rLoc = 2361;
 		rType = 0;
 		vrLen = 1701;
 		vrLoc = 956;
@@ -14704,7 +14858,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 66";
 		rLen = 0;
-		rLoc = 2357;
+		rLoc = 2361;
 		rType = 0;
 		vrLen = 1805;
 		vrLoc = 683;
@@ -14794,7 +14948,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 66";
 		rLen = 0;
-		rLoc = 2357;
+		rLoc = 2361;
 		rType = 0;
 		vrLen = 1805;
 		vrLoc = 683;
@@ -15184,7 +15338,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 66";
 		rLen = 0;
-		rLoc = 2357;
+		rLoc = 2361;
 		rType = 0;
 		vrLen = 1805;
 		vrLoc = 683;
@@ -15204,7 +15358,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 61";
 		rLen = 0;
-		rLoc = 2169;
+		rLoc = 2173;
 		rType = 0;
 		vrLen = 1792;
 		vrLoc = 745;
@@ -15224,7 +15378,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 61";
 		rLen = 0;
-		rLoc = 2127;
+		rLoc = 2131;
 		rType = 0;
 		vrLen = 1796;
 		vrLoc = 745;
@@ -15244,7 +15398,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 61";
 		rLen = 0;
-		rLoc = 2127;
+		rLoc = 2131;
 		rType = 0;
 		vrLen = 1796;
 		vrLoc = 745;
@@ -15264,7 +15418,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 61";
 		rLen = 0;
-		rLoc = 2127;
+		rLoc = 2131;
 		rType = 0;
 		vrLen = 1702;
 		vrLoc = 3868;
@@ -15274,7 +15428,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 61";
 		rLen = 0;
-		rLoc = 2127;
+		rLoc = 2131;
 		rType = 0;
 		vrLen = 1702;
 		vrLoc = 3868;
@@ -15882,7 +16036,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 60";
 		rLen = 0;
-		rLoc = 2075;
+		rLoc = 2077;
 		rType = 0;
 		vrLen = 1740;
 		vrLoc = 1209;
@@ -15902,7 +16056,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 60";
 		rLen = 0;
-		rLoc = 2075;
+		rLoc = 2077;
 		rType = 0;
 		vrLen = 1779;
 		vrLoc = 3584;
@@ -15932,7 +16086,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 60";
 		rLen = 0;
-		rLoc = 2075;
+		rLoc = 2077;
 		rType = 0;
 		vrLen = 1779;
 		vrLoc = 3584;
@@ -16376,7 +16530,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 60";
 		rLen = 0;
-		rLoc = 2075;
+		rLoc = 2077;
 		rType = 0;
 		vrLen = 1546;
 		vrLoc = 4653;
@@ -17456,7 +17610,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 60";
 		rLen = 0;
-		rLoc = 2075;
+		rLoc = 2077;
 		rType = 0;
 		vrLen = 1546;
 		vrLoc = 4653;
@@ -17866,7 +18020,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 60";
 		rLen = 0;
-		rLoc = 2075;
+		rLoc = 2077;
 		rType = 0;
 		vrLen = 1468;
 		vrLoc = 4731;
@@ -18056,7 +18210,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 60";
 		rLen = 0;
-		rLoc = 2075;
+		rLoc = 2077;
 		rType = 0;
 		vrLen = 1468;
 		vrLoc = 4731;
@@ -18325,7 +18479,7 @@
 		ignoreCount = 0;
 		lineNumber = 109;
 		location = xbmcremote;
-		modificationTime = 247490501.13498;
+		modificationTime = 247491476.707932;
 		state = 2;
 	};
 	B5B548F30EC01F1C00547343 /* PBXTextBookmark */ = {
@@ -18653,7 +18807,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 103";
 		rLen = 0;
-		rLoc = 3745;
+		rLoc = 3749;
 		rType = 0;
 		vrLen = 1798;
 		vrLoc = 3613;
@@ -18703,7 +18857,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 113";
 		rLen = 50;
-		rLoc = 4044;
+		rLoc = 4048;
 		rType = 0;
 		vrLen = 1804;
 		vrLoc = 3283;
@@ -18723,7 +18877,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 118";
 		rLen = 48;
-		rLoc = 4251;
+		rLoc = 4255;
 		rType = 0;
 		vrLen = 1804;
 		vrLoc = 3283;
@@ -18743,7 +18897,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 103";
 		rLen = 0;
-		rLoc = 3745;
+		rLoc = 3749;
 		rType = 0;
 		vrLen = 1798;
 		vrLoc = 3613;
@@ -18935,7 +19089,7 @@
 		rLen = 0;
 		rLoc = 9413;
 		rType = 0;
-		vrLen = 1409;
+		vrLen = 1242;
 		vrLoc = 8462;
 	};
 	B5B5494E0EC0264200547343 /* PBXTextBookmark */ = {
@@ -18955,7 +19109,7 @@
 		rLen = 0;
 		rLoc = 9413;
 		rType = 0;
-		vrLen = 1409;
+		vrLen = 1242;
 		vrLoc = 8462;
 	};
 	B5B549520EC0265700547343 /* PBXTextBookmark */ = {
@@ -18975,7 +19129,7 @@
 		rLen = 0;
 		rLoc = 8124;
 		rType = 0;
-		vrLen = 1426;
+		vrLen = 1252;
 		vrLoc = 8452;
 	};
 	B5B549570EC0266700547343 /* PBXTextBookmark */ = {
@@ -18995,7 +19149,7 @@
 		rLen = 0;
 		rLoc = 8124;
 		rType = 0;
-		vrLen = 1426;
+		vrLen = 1252;
 		vrLoc = 8452;
 	};
 	B5B5495B0EC0267C00547343 /* PBXTextBookmark */ = {
@@ -19135,7 +19289,7 @@
 		rLen = 0;
 		rLoc = 8167;
 		rType = 0;
-		vrLen = 1611;
+		vrLen = 1598;
 		vrLoc = 8106;
 	};
 	B5B549760EC0270B00547343 /* PBXTextBookmark */ = {
@@ -19155,7 +19309,7 @@
 		rLen = 0;
 		rLoc = 8167;
 		rType = 0;
-		vrLen = 1401;
+		vrLen = 1222;
 		vrLoc = 8482;
 	};
 	B5B5497A0EC0276700547343 /* PBXTextBookmark */ = {
@@ -19175,7 +19329,7 @@
 		rLen = 0;
 		rLoc = 8167;
 		rType = 0;
-		vrLen = 1401;
+		vrLen = 1222;
 		vrLoc = 8482;
 	};
 	B5B5497C0EC0276700547343 /* PBXTextBookmark */ = {
@@ -19215,7 +19369,7 @@
 		rLen = 0;
 		rLoc = 8167;
 		rType = 0;
-		vrLen = 1401;
+		vrLen = 1222;
 		vrLoc = 8482;
 	};
 	B5B549830EC027BC00547343 /* PBXTextBookmark */ = {
@@ -19235,7 +19389,7 @@
 		rLen = 0;
 		rLoc = 9537;
 		rType = 0;
-		vrLen = 1690;
+		vrLen = 1569;
 		vrLoc = 8135;
 	};
 	B5B549850EC027BC00547343 /* PBXTextBookmark */ = {
@@ -19255,7 +19409,7 @@
 		rLen = 0;
 		rLoc = 9273;
 		rType = 0;
-		vrLen = 1693;
+		vrLen = 1569;
 		vrLoc = 8135;
 	};
 	B5B5498A0EC027D300547343 /* PBXTextBookmark */ = {
@@ -19533,7 +19687,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 120";
 		rLen = 0;
-		rLoc = 4493;
+		rLoc = 4497;
 		rType = 0;
 		vrLen = 1598;
 		vrLoc = 551;
@@ -20083,7 +20237,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 62";
 		rLen = 0;
-		rLoc = 2127;
+		rLoc = 2131;
 		rType = 0;
 		vrLen = 1846;
 		vrLoc = 993;
@@ -20103,7 +20257,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 62";
 		rLen = 0;
-		rLoc = 2127;
+		rLoc = 2131;
 		rType = 0;
 		vrLen = 1846;
 		vrLoc = 993;
@@ -20123,7 +20277,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 61";
 		rLen = 0;
-		rLoc = 2075;
+		rLoc = 2077;
 		rType = 0;
 		vrLen = 1850;
 		vrLoc = 993;
@@ -20143,7 +20297,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 61";
 		rLen = 0;
-		rLoc = 2075;
+		rLoc = 2077;
 		rType = 0;
 		vrLen = 1850;
 		vrLoc = 993;
@@ -20163,7 +20317,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 61";
 		rLen = 0;
-		rLoc = 2075;
+		rLoc = 2077;
 		rType = 0;
 		vrLen = 1850;
 		vrLoc = 993;
@@ -20253,7 +20407,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 61";
 		rLen = 0;
-		rLoc = 2075;
+		rLoc = 2077;
 		rType = 0;
 		vrLen = 1877;
 		vrLoc = 1137;
@@ -20303,7 +20457,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 61";
 		rLen = 0;
-		rLoc = 2075;
+		rLoc = 2077;
 		rType = 0;
 		vrLen = 1877;
 		vrLoc = 1137;
@@ -20563,7 +20717,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 61";
 		rLen = 0;
-		rLoc = 2075;
+		rLoc = 2077;
 		rType = 0;
 		vrLen = 1877;
 		vrLoc = 1137;
@@ -20643,7 +20797,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 61";
 		rLen = 0;
-		rLoc = 2075;
+		rLoc = 2077;
 		rType = 0;
 		vrLen = 1918;
 		vrLoc = 3014;
@@ -20663,7 +20817,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 61";
 		rLen = 0;
-		rLoc = 2075;
+		rLoc = 2077;
 		rType = 0;
 		vrLen = 1928;
 		vrLoc = 3014;
@@ -20673,7 +20827,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 61";
 		rLen = 0;
-		rLoc = 2075;
+		rLoc = 2077;
 		rType = 0;
 		vrLen = 1928;
 		vrLoc = 3014;
@@ -20847,7 +21001,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 188";
 		rLen = 0;
-		rLoc = 7003;
+		rLoc = 7007;
 		rType = 0;
 		vrLen = 1396;
 		vrLoc = 6378;
@@ -21067,7 +21221,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 61";
 		rLen = 0;
-		rLoc = 2075;
+		rLoc = 2077;
 		rType = 0;
 		vrLen = 1396;
 		vrLoc = 6278;
@@ -21097,7 +21251,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 61";
 		rLen = 0;
-		rLoc = 2075;
+		rLoc = 2077;
 		rType = 0;
 		vrLen = 1367;
 		vrLoc = 6307;
@@ -21127,7 +21281,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 188";
 		rLen = 0;
-		rLoc = 7003;
+		rLoc = 7007;
 		rType = 0;
 		vrLen = 1396;
 		vrLoc = 6378;
@@ -21647,7 +21801,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 188";
 		rLen = 0;
-		rLoc = 7003;
+		rLoc = 7007;
 		rType = 0;
 		vrLen = 1716;
 		vrLoc = 1546;
@@ -21667,7 +21821,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 188";
 		rLen = 0;
-		rLoc = 7003;
+		rLoc = 7007;
 		rType = 0;
 		vrLen = 1716;
 		vrLoc = 1546;
@@ -21687,7 +21841,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 188";
 		rLen = 0;
-		rLoc = 7003;
+		rLoc = 7007;
 		rType = 0;
 		vrLen = 1719;
 		vrLoc = 1546;
@@ -21717,7 +21871,7 @@
 		fRef = B507CDA50EB72174008DD569 /* XBMCSettings.m */;
 		name = "XBMCSettings.m: 188";
 		rLen = 0;
-		rLoc = 7003;
+		rLoc = 7007;
 		rType = 0;
 		vrLen = 1719;
 		vrLoc = 1546;
@@ -22104,7 +22258,7 @@
 		ignoreCount = 0;
 		lineNumber = 20;
 		location = NavTest;
-		modificationTime = 247490501.134925;
+		modificationTime = 247491476.707849;
 		state = 2;
 	};
 	B5BA29360E65753600FF4DEC /* ViewData.m:86 */ = {
@@ -22120,7 +22274,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 86;
-		modificationTime = 247490501.134964;
+		modificationTime = 247491476.70791;
 		state = 2;
 	};
 	B5BA29490E65783C00FF4DEC /* PBXTextBookmark */ = {
@@ -22204,7 +22358,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 12;
-		modificationTime = 247490501.134958;
+		modificationTime = 247491476.707904;
 		state = 2;
 	};
 	B5BA97C50E617B1E004DF104 /* PBXTextBookmark */ = {
@@ -22241,7 +22395,7 @@
 		ignoreCount = 0;
 		lineNumber = 47;
 		location = NavTest;
-		modificationTime = 247490501.134919;
+		modificationTime = 247491476.707837;
 		state = 2;
 	};
 	B5C8468D0E573594003DBBA0 /* MainViewController.h */ = {
@@ -22282,7 +22436,7 @@
 		ignoreCount = 0;
 		lineNumber = 254;
 		location = NavTest;
-		modificationTime = 247490501.134913;
+		modificationTime = 247491476.707831;
 		state = 2;
 	};
 	B5D083650E46A36200311322 /* LoadingViewController.h */ = {
@@ -22369,7 +22523,7 @@
 		ignoreCount = 0;
 		lineNumber = 61;
 		location = NavTest;
-		modificationTime = 247490501.134729;
+		modificationTime = 247491476.707658;
 		state = 2;
 	};
 	B5EB2B0D0E431144008CFBDE /* AlbumsViewController.h */ = {
@@ -22443,7 +22597,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 13;
-		modificationTime = 247490501.134761;
+		modificationTime = 247491476.707687;
 		state = 2;
 	};
 	B5F12C240E499DF90036F14B /* PBXTextBookmark */ = {
@@ -22547,7 +22701,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 22;
-		modificationTime = 247490501.134936;
+		modificationTime = 247491476.707868;
 		state = 2;
 	};
 	B5F27C4C0E5C721C00646A78 /* PBXTextBookmark */ = {
@@ -22582,7 +22736,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 15;
-		modificationTime = 247490501.134953;
+		modificationTime = 247491476.707892;
 		state = 2;
 	};
 	B5F9123F0EA9A8BA00B66B15 /* PBXTextBookmark */ = {
@@ -22625,7 +22779,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {773, 2016}}";
 			sepNavSelRange = "{2191, 14}";
-			sepNavVisRange = "{711, 1658}";
+			sepNavVisRange = "{711, 1692}";
 		};
 	};
 	B5F913E70EAAE62200B66B15 /* RemoteInterface.m */ = {

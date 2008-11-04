@@ -59,8 +59,8 @@ static XBMCSettings *sharedSettingsDelegate = nil;
 }
 - (void)loadSettings {
 	//[self resetAllSettings];
-	[defaults removeObjectForKey:@"XBMCBookmarkList"];
-	[defaults removeObjectForKey:@"XBMCTabList"];	
+	//[defaults removeObjectForKey:@"XBMCBookmarkList"];
+	//[defaults removeObjectForKey:@"XBMCTabList"];	
 	NSMutableArray *hostList = [defaults objectForKey:@"XBMCHostList"];
 	if (hostList == nil) {
 		[self setupDefaults];
