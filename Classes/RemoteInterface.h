@@ -15,6 +15,7 @@
 
 #define PLAYLIST_MUSIC 0
 #define PLAYLIST_VIDEO 1
+#define PLAYLIST_PICTURES 2
 
 #define SHUFFLE_STATE_OFF 0
 #define SHUFFLE_STATE_ON  1
@@ -50,6 +51,9 @@
 - (NowPlayingData*)GetCurrentlyPlaying;
 - (GUIStatus*)GetGUIStatus;
 - (void)SetPlaylistSong:(NSInteger)song;
+- (void)addToSlideshow:(NSString*)media mask:(NSString*)mask recursive:(NSString*)recursive;
+- (void)slideshowSelect:(NSString*)filename;
+- (void)playSlideshow;
 - (void)addToPlayList:(NSString*)media playList:(NSString*)playList mask:(NSString*)mask recursive:(NSString*)recursive;
 - (void)clearPlayList:(NSString*)playList;
 - (void)setCurrentPlayList:(NSString*)playList;
@@ -67,7 +71,7 @@
 - (void)UpdateMusicLibrary;
 - (void)UpdateVideoLibrary;
 - (void)EjectTray;
-- (void)ClearSlideshow;
+- (void)clearSlideshow;
 - (void)Zoom:(NSInteger)maginification;
 - (void)SeekPercentage:(NSInteger)percentage;
 - (void)SetPlaySpeed:(NSInteger)speed;
@@ -114,6 +118,7 @@
 - (NSArray*)GetDirectory:(NSString*)directory;
 - (NSArray*)GetMediaLocationForVideo:(NSString*)directory;
 - (NSArray*)GetMediaLocationForMusic:(NSString*)directory;
+- (NSArray*)GetMediaLocationForPictures:(NSString*)directory;
 - (NSArray*)GetMediaLocation:(NSString*)directory mask:(NSString*)mask;
 - (NSArray*)GetMediaDataForTVShowFile:(NSString*)file path:(NSString*)path;
 - (NSArray*)GetMediaDataForMovieFile:(NSString*)file path:(NSString*)path;

@@ -51,15 +51,16 @@ static XBMCSettings *sharedSettingsDelegate = nil;
 			   [[TabItemData alloc] initWithClassName:@"PodcastViewController"],			   			   
 			   [[TabItemData alloc] initWithClassName:@"VideoSharesViewController"],			   			   
 			   [[TabItemData alloc] initWithClassName:@"MusicSharesViewController"],	
-			   [[TabItemData alloc] initWithClassName:@"PlaylistViewController"],						
+			   [[TabItemData alloc] initWithClassName:@"PlaylistViewController"],
+			   [[TabItemData alloc] initWithClassName:@"PicturesViewController"],					
 			   nil
 			   ];
 	//[defaults setObject:tabList forKey:@"XBMCTabList"];	
 }
 - (void)loadSettings {
 	//[self resetAllSettings];
-	//[defaults removeObjectForKey:@"XBMCBookmarkList"];
-	//[defaults removeObjectForKey:@"XBMCTabList"];	
+	[defaults removeObjectForKey:@"XBMCBookmarkList"];
+	[defaults removeObjectForKey:@"XBMCTabList"];	
 	NSMutableArray *hostList = [defaults objectForKey:@"XBMCHostList"];
 	if (hostList == nil) {
 		[self setupDefaults];

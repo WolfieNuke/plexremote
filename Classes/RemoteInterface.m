@@ -177,6 +177,10 @@
 					} else {
 						nowPlaying.type = TYPE_VIDEO;
 					}
+				} else if ([value isEqualToString:@"Picture"]) {
+					nowPlaying.type = TYPE_PICTURE;
+					nowPlaying.playing = YES;
+					nowPlaying.paused = NO;
 				} else {
 					nowPlaying.type = TYPE_MUSIC;
 				}
@@ -325,6 +329,21 @@
 	//NSLog(@"Finished GetAlbumsForArtistId");	
 	return returndata; 
 }
+- (void)slideshowSelect:(NSString*)filename {
+	[ self SendCommand:@"SlideshowSelect" 
+			parameter: filename
+	 ];		
+}
+- (void)playSlideshow {
+	[ self SendCommand:@"PlaySlideshow" 
+			 parameter: @""
+	 ];		
+}
+- (void)addToSlideshow:(NSString*)media mask:(NSString*)mask recursive:(NSString*)recursive {
+	[ self SendCommand:@"AddToSlideshow" 
+			parameters: [NSArray arrayWithObjects:media, mask, recursive, nil]
+	 ];
+}
 
 - (void)addToPlayList:(NSString*)media playList:(NSString*)playList mask:(NSString*)mask recursive:(NSString*)recursive {
 	[ self SendCommand:@"AddToPlayList" 
@@ -394,7 +413,7 @@
 	[ self SendCommand: @"ExecBuiltIn"
 			 parameter: @"XBMC.updatelibrary(video)"];
 }
-- (void)ClearSlideshow {
+- (void)clearSlideshow {
 	[ self SendCommand:@"ClearSlideshow" 
 			 parameter: nil];	
 }
@@ -854,7 +873,9 @@
 - (NSArray*)GetMediaLocationForMusic:(NSString*)directory {
 	return [self GetMediaLocation:directory mask:@"music"];
 }
-
+- (NSArray*)GetMediaLocationForPictures:(NSString*)directory {
+	return [self GetMediaLocation:directory mask:@"pictures"];
+}
 - (NSArray*)GetMediaLocationForVideo:(NSString*)directory {
 	return [self GetMediaLocation:directory mask:@"video"];
 }

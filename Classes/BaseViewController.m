@@ -26,6 +26,7 @@
 #import "DirectoryViewController.h";
 #import "SeasonsViewController.h";
 #import "EpisodesViewController.h";
+#import "PicturesViewController.h";
 
 @implementation BaseViewController
 @synthesize musicPath;
@@ -60,6 +61,8 @@
 		return @"TBMTVShows.png";
 	} else if ([className isEqualToString:@"EpisodesViewController"]) {
 		return @"TBMTVShows.png";
+	} else if ([className isEqualToString:@"PicturesViewController"]) {
+		return @"TBMCompliations.png";
 	}
 	return @"TBMAlbum.png";
 }
@@ -84,6 +87,8 @@
 		return @"Video Sources";
 	} else if ([className isEqualToString:@"PlaylistViewController"]) {
 		return @"Playlists";
+	} else if ([className isEqualToString:@"PicturesViewController"]) {
+		return @"Pictures";
 	}
 	return @"Unknown";
 }
@@ -114,6 +119,8 @@
 		return [[[SeasonsViewController alloc] init] autorelease];
 	} else if ([className isEqualToString:@"EpisodesViewController"]) {
 		return [[[EpisodesViewController alloc] init] autorelease];
+	} else if ([className isEqualToString:@"PicturesViewController"]) {
+		return [[[PicturesViewController alloc] init] autorelease];
 	}
 	return nil;
 }

@@ -163,7 +163,15 @@
 		}
 
 		NSLog(@"Now Playing Type %d", nowPlayingData.type);
-		if (nowPlayingData.type == TYPE_MUSIC) {
+		if (nowPlayingData.type == TYPE_PICTURE) {
+			if (trackChanged == YES) {
+				titleLabel.text = nowPlayingData.filename;				
+				[self clearVideoImage];
+				currentFilename = [nowPlayingData.filename copy];			
+				trackChanged = NO;				
+				[NSThread detachNewThreadSelector:@selector(getCoverImage:) toTarget:self withObject:nowPlayingData];
+			}
+		} else if (nowPlayingData.type == TYPE_MUSIC) {
 			titleLabel.text = nowPlayingData.artistTitle;
 			titleLabelTwo.text = [nowPlayingData mediaTitle];
 			titleLabelThree.text = nowPlayingData.albumTitle;

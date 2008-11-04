@@ -27,11 +27,20 @@
 	if (self.directoryPath.mask == DIRECTORY_MASK_MUSIC) {
 		displayData = [[XBMCInterface GetMediaLocationForMusic:[self.directoryPath GetPath] ] retain];
 	} else if (self.directoryPath.mask == DIRECTORY_MASK_VIDEO) {
-		displayData = [[XBMCInterface GetMediaLocationForVideo:[self.directoryPath GetPath] ] retain];				
+		displayData = [[XBMCInterface GetMediaLocationForVideo:[self.directoryPath GetPath] ] retain];	
+	} else if (self.directoryPath.mask == DIRECTORY_MASK_PICTURE) {
+		displayData = [[XBMCInterface GetMediaLocationForPictures:[self.directoryPath GetPath] ] retain];			
 	} else {
 		displayData = [[XBMCInterface GetMediaLocation:[self.directoryPath GetPath] mask: nil] retain];		
 	}
 	NSLog(@"Number of directories %d", [displayData count]);	
+}
+- (void)addToPlaylist:(NSString*)media  playList:(NSString*)playList fileMask:(NSString*)fileMask {
+	if (self.directoryPath.mask == DIRECTORY_MASK_PICTURE) {
+		[XBMCInterface addToSlideshow:media mask:fileMask recursive:@"1"];
+	} else {
+		[XBMCInterface addToPlayList: media playList: playList mask:fileMask recursive:@"1"];
+	}
 }
 
 
@@ -45,27 +54,56 @@
 	} else if (self.directoryPath.mask == DIRECTORY_MASK_VIDEO) {
 		playList = [NSString stringWithFormat: @"%d", PLAYLIST_VIDEO];
 		maskStr = @"[video]";
+	} else if (self.directoryPath.mask == DIRECTORY_MASK_PICTURE) {
+		playList = [NSString stringWithFormat: @"%d", PLAYLIST_PICTURES];
+		maskStr = @"[pictures]";		
+		[XBMCInterface clearSlideshow];
 	}
 	
 	if (data == nil || data.file != nil || data.isRar) {
-		[XBMCInterface stopPlaying];
-		[XBMCInterface clearPlayList: playList ];
-		[XBMCInterface setCurrentPlayList: playList ];
+		if (self.directoryPath.mask == DIRECTORY_MASK_MUSIC ||
+			self.directoryPath.mask == DIRECTORY_MASK_VIDEO) {
+			[XBMCInterface stopPlaying];
+			[XBMCInterface clearPlayList: playList ];
+			[XBMCInterface setCurrentPlayList: playList ];
+		} else if (self.directoryPath.mask == DIRECTORY_MASK_PICTURE) {
+			[XBMCInterface clearSlideshow];			
+		}
 		
 		if (data == nil) {
 			NSArray *paths = [XBMCInterface SplitMultipart:[self.directoryPath GetPath]];
 			int c = [paths count];
 			for (int i = 0; i < c; i++) {
-				[XBMCInterface addToPlayList: [paths objectAtIndex:i] playList: playList mask:maskStr recursive:@"1"];
+				[self addToPlaylist: [paths objectAtIndex:i] playList: playList fileMask: maskStr];
+				//[XBMCInterface addToPlayList: [paths objectAtIndex:i] playList: playList mask:maskStr recursive:@"1"];
 			}
-			[XBMCInterface SetPlaylistSong:0];
+			
+			if (self.directoryPath.mask == DIRECTORY_MASK_PICTURE) {
+				[XBMCInterface playSlideshow];
+				//[XBMCInterface slideshowSelect: [paths objectAtIndex:0]];
+			} else {
+				[XBMCInterface SetPlaylistSong:0];
+			}
 		// Work around due to bug in XBMC dealing with RAR's. http://xbmc.org/trac/ticket/4880
 		} else if (data.isRar) {
-			[XBMCInterface addToPlayList: data.path playList: playList mask:maskStr recursive:@"1"];
-			[XBMCInterface SetPlaylistSong:0];
+	//		if (self.directoryPath == DIRECTORY_MASK_PICTURE) {
+	//			[XBMCInterface addToSlideshow: data.path mask:<#(NSString *)mask#> recursive:<#(NSString *)recursive#>
+			[self addToPlaylist: data.path playList: playList fileMask: maskStr];
+			//[XBMCInterface addToPlayList: data.path playList: playList mask:maskStr recursive:@"1"];
+			if (self.directoryPath.mask == DIRECTORY_MASK_PICTURE) {
+				//[XBMCInterface slideshowSelect: data.path];
+				[XBMCInterface playSlideshow];
+			} else {			
+				[XBMCInterface SetPlaylistSong:0];
+			}
 		} else if (data.file != nil) {
-			[XBMCInterface addToPlayList: data.file playList: playList mask:maskStr recursive:@"1"];			
-			[XBMCInterface playFile:data.file];
+			[self addToPlaylist: data.file playList: playList fileMask: maskStr];
+			if (self.directoryPath.mask == DIRECTORY_MASK_PICTURE) {
+				[XBMCInterface playSlideshow];
+				//[XBMCInterface slideshowSelect: data.file];
+			} else {
+				[XBMCInterface playFile:data.file];
+			}
 		}
 		
 		// Show now playing
@@ -89,7 +127,6 @@
 		[pathItem release];
 	}
 }
-
 - (UITableViewCell*)getDataCell:(UITableView *)_tableView data:(ViewData*)data{
 	
 	BaseCell *cell = (BaseCell*)[_tableView dequeueReusableCellWithIdentifier:cellIdentifier];

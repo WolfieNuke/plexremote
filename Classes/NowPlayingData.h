@@ -10,6 +10,7 @@
 #define TYPE_MUSIC 0
 #define TYPE_VIDEO 1
 #define TYPE_MOVIE 2
+#define TYPE_PICTURE 3
 @interface NowPlayingData : NSObject {
 	BOOL playing;
 	BOOL paused;
