@@ -7,7 +7,7 @@
 //
 
 #import "XBMCSettings.h"
-#import "XBMCHostData.h";
+#import "TabItemData.h";
 
 #define KEY_HOST_LIST   0
 #define KEY_HOST_ACTIVE 1
@@ -15,46 +15,122 @@
 #define KEY_SHOW_IMAGES 3
 #define KEY_SYNC        4
 
-
+// This is a singleton class, see below
+static XBMCSettings *sharedSettingsDelegate = nil;
 
 @implementation XBMCSettings
 
 @synthesize showImages;
 @synthesize sync;
 @synthesize remoteType;
-- (void) init {
+@synthesize tabList;
+@synthesize bookmarkList;
+@synthesize bookmarkIDSeq;
+
+-(void)init {
 	defaults = [NSUserDefaults standardUserDefaults];
-	NSMutableArray *hostList = [defaults objectForKey:@"XBMCHostList"];
-	if (hostList == nil) {
-		hostList = [NSMutableArray array];
-		[defaults setObject: hostList forKey:@"XBMCHostList"];
-		[defaults setBool:  YES forKey: @"XBMCShowImages"];
-		[defaults setBool:  NO  forKey: @"XBMCSync"];		
-		[defaults setInteger:0 forKey:@"XBMCRemoteType"];				
-	}  
-	showImages = [defaults boolForKey: @"XBMCShowImages"];
-	sync       = [defaults boolForKey: @"XBMCSync"];	
-	remoteType = [defaults integerForKey:@"XBMCRemoteType"];
+	[self loadSettings];
 	[super init];
 }
+- (void)setupDefaults {
+	NSArray *hostList = [NSArray array];
+	[defaults setObject: hostList forKey:@"XBMCHostList"];
+	[defaults setBool:  YES		  forKey:@"XBMCShowImages"];
+	[defaults setBool:  NO		  forKey:@"XBMCSync"];		
+	[defaults setInteger:0		  forKey:@"XBMCRemoteType"];		
+	[self setupTabListDefault];
+}
+- (void)setupTabListDefault {
+	self.tabList = [NSArray arrayWithObjects:
+			   [[TabItemData alloc] initWithClassName:@"ArtistViewController"],
+			   [[TabItemData alloc] initWithClassName:@"TVShowsViewController"],			   
+			   [[TabItemData alloc] initWithClassName:@"MoviesViewController"],			   			   
+			   [[TabItemData alloc] initWithClassName:@"AlbumsViewController"],			   			   
+			   [[TabItemData alloc] initWithClassName:@"GenresViewController"],			   			   
+			   [[TabItemData alloc] initWithClassName:@"SongsViewController"],			   			   
+			   [[TabItemData alloc] initWithClassName:@"PodcastViewController"],			   			   
+			   [[TabItemData alloc] initWithClassName:@"VideoSharesViewController"],			   			   
+			   [[TabItemData alloc] initWithClassName:@"MusicSharesViewController"],	
+			   [[TabItemData alloc] initWithClassName:@"PlaylistViewController"],						
+			   nil
+			   ];
+	//[defaults setObject:tabList forKey:@"XBMCTabList"];	
+}
+- (void)loadSettings {
+	//[self resetAllSettings];
+	//[defaults removeObjectForKey:@"XBMCBookmarkList"];
+	//[defaults removeObjectForKey:@"XBMCTabList"];	
+	NSMutableArray *hostList = [defaults objectForKey:@"XBMCHostList"];
+	if (hostList == nil) {
+		[self setupDefaults];
+	}  
+	
+	NSData *tablistData = [defaults objectForKey:@"XBMCTabList"];
+	if (tablistData) {
+		self.tabList = [NSKeyedUnarchiver unarchiveObjectWithData:tablistData];
+	} else {
+		[self setupTabListDefault];
+	}	
+	
+	NSData *bookmarkData = [defaults objectForKey:@"XBMCBookmarkList"];
+	if (bookmarkData) {
+		self.bookmarkList = [NSKeyedUnarchiver unarchiveObjectWithData:bookmarkData];
+	} else {
+		self.bookmarkList = [NSArray array];
+	}
+	
+	self.bookmarkIDSeq = [defaults integerForKey:@"XBMCBookmarkIDSeq"];
+	self.showImages = [defaults boolForKey: @"XBMCShowImages"];
+	self.sync       = [defaults boolForKey: @"XBMCSync"];	
+	self.remoteType = [defaults integerForKey:@"XBMCRemoteType"];	
+	
+	//NSLog(@"Tab list count %@", [[tabList objectAtIndex:1] objectForKey:@"id"]);
+}
 - (void)saveSettings {
+	NSLog(@"Boomark count %i Tab list Count %i", [self.bookmarkList count], [self.tabList count]);
+	NSData *bookmarkData = [NSKeyedArchiver archivedDataWithRootObject: self.bookmarkList];
+	[defaults setObject:bookmarkData forKey:@"XBMCBookmarkList"];
+
+	
+	NSData *tablistData = [NSKeyedArchiver archivedDataWithRootObject: self.tabList];
+	[defaults setObject:tablistData forKey:@"XBMCTabList"];
+	
+	[defaults setInteger:self.bookmarkIDSeq forKey:@"XBMCBookmarkIDSeq"];
 	[defaults setBool: showImages forKey: @"XBMCShowImages"];
 	[defaults setBool: sync forKey: @"XBMCSync"];	
 	[defaults setInteger: remoteType forKey: @"XBMCRemoteType"];		
 }
 - (void)resetAllSettings {
+	[defaults removeObjectForKey:@"XBMCTabList"];
 	[defaults removeObjectForKey:@"XBMCHostList"];
 	[defaults removeObjectForKey:@"XBMCHostActive"];
 	[defaults removeObjectForKey:@"XBMCIDSeq"];
+	[defaults removeObjectForKey:@"XBMCBookmarkIDSeq"];	
+	[defaults removeObjectForKey:@"XBMCBookmarkList"];
+}
+- (void)removeBookmark:(BookmarkData*)bookmarkData {
+	NSMutableArray *tempArray = [NSMutableArray arrayWithArray:self.bookmarkList];
+	[tempArray removeObject:bookmarkData];
+	self.bookmarkList = tempArray;
+}
+- (void)removeTabItem:(TabItemData*)tabItemData {
+	NSMutableArray *tempArray = [NSMutableArray arrayWithArray:self.tabList];
+	[tempArray removeObject:tabItemData];
+	self.tabList = tempArray;
+}
+- (void)addBookmark:(BookmarkData*)bookmarkData {
+	self.bookmarkIDSeq = self.bookmarkIDSeq + 1;
+	bookmarkData.identifier = self.bookmarkIDSeq;
+	self.bookmarkList = [self.bookmarkList arrayByAddingObject:bookmarkData];
+}
+- (void)addTabItem:(TabItemData*)tabItemData {
+	NSArray *newTabList = [self.tabList arrayByAddingObject:tabItemData];
+	self.tabList = newTabList;
 }
 - (void)addHost:(XBMCHostData*)hostData {
 	NSMutableArray *hostList = [NSMutableArray arrayWithArray: [defaults objectForKey:@"XBMCHostList"]];
 	NSInteger idseq          = [defaults integerForKey:@"XBMCIDSeq"];
-	if (!idseq) {
-		idseq = 1;
-	} else {
-		idseq++;
-	}
+	idseq++;
 	[hostData setIdentifier: idseq];
 	[hostList addObject: [hostData toArray]];	
 	[defaults setInteger: idseq forKey:@"XBMCHostActive"];
@@ -159,8 +235,49 @@
 	
 	return nil;	
 }
--(void)dealloc {
-	//NSLog(@"XBMCSettings - dealloc");
-	[super dealloc];
+
+
+
+#pragma mark ---- singleton object methods ----
+
++ (XBMCSettings*)sharedInstance {
+    @synchronized(self) {
+        if (sharedSettingsDelegate == nil) {
+            [[self alloc] init]; // assignment not done here
+        }
+    }
+    return sharedSettingsDelegate;
 }
+
++ (id)allocWithZone:(NSZone *)zone {
+    @synchronized(self) {
+        if (sharedSettingsDelegate == nil) {
+            sharedSettingsDelegate = [super allocWithZone:zone];
+            return sharedSettingsDelegate;  // assignment and return on first allocation
+        }
+    }
+    return nil; // on subsequent allocation attempts return nil
+}
+
+- (id)copyWithZone:(NSZone *)zone
+{
+    return self;
+}
+
+- (id)retain {
+    return self;
+}
+
+- (unsigned)retainCount {
+    return UINT_MAX;  // denotes an object that cannot be released
+}
+
+- (void)release {
+    //do nothing
+}
+
+- (id)autorelease {
+    return self;
+}
+
 @end

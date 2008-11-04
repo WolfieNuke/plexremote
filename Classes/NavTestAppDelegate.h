@@ -12,7 +12,7 @@
 #import "NowPlayingViewController.h"
 #import "BaseViewController.h"
 
-@interface NavTestAppDelegate : NSObject <UIApplicationDelegate, UITabBarDelegate> {
+@interface NavTestAppDelegate : NSObject <UIApplicationDelegate, UITabBarDelegate, UINavigationControllerDelegate, UITabBarControllerDelegate> {
 	
 	IBOutlet UIWindow *window;
 	
@@ -34,17 +34,9 @@
 	
 	IBOutlet UIBarButtonItem *settingsButton;
 	IBOutlet UIBarButtonItem *nowPlayingButton;	
-	
-	IBOutlet BaseViewController *artistViewController;	
-	IBOutlet BaseViewController *albumsViewController;	
-	IBOutlet BaseViewController *songsViewController;
-	IBOutlet BaseViewController *tvshowsViewController;
-	IBOutlet BaseViewController *moviesViewcontroller;
-	IBOutlet BaseViewController *genresViewController;
-	IBOutlet BaseViewController *videoSourcesViewController;	
-	IBOutlet BaseViewController *musicSourcesViewController;	
-	IBOutlet BaseViewController *playlistViewController;		
+		
 }
+- (void)setupTabs;
 - (void)showRemote;
 - (void)hideRemote;
 - (void)showNowPlaying;
@@ -55,6 +47,5 @@
 @property (nonatomic, retain) UIWindow *window;
 @property (nonatomic, retain) UINavigationController *navigationController;
 @property (nonatomic, assign) NowPlayingViewController *npViewController;
-//@property (nonatomic, retain) XBMCHTTP *XBMCInterface;
 @end
 

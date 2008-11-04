@@ -12,6 +12,4 @@
 @interface MoviesViewController : BaseViewController {
 
 }
-- (void)viewZoomOut;
-- (void)viewZoomIn;
 @end

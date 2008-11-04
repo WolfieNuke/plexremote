@@ -78,8 +78,10 @@
 	}
 		
 	if (hostData.identifier) {
+		NSLog(@"updateHost");
 		[xbmcSettings updateHost:hostData];
 	} else {
+		NSLog(@"addHost");		
 		[xbmcSettings addHost:hostData];
 	}
 	NSLog(@"Finished saving");

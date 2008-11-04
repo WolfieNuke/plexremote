@@ -121,4 +121,6 @@
 - (NSString*)SendCommand:(NSString*)command parameters:(NSArray*)parameters;
 - (NSString*)SendCommand:(NSString*)command parameter:(NSString*)parameter;
 
+
+- (NSString*)GetAlbumsQuery:(NSString*)whereClause;
 @end

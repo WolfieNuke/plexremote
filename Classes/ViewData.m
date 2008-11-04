@@ -90,7 +90,7 @@ static NSLock *viewlock;
 	NSString *thumb = [NSString stringWithFormat:@"%08x", crc];
 	char fc = [thumb characterAtIndex:0];
 	
-	XBMCSettings *xbmcsettings = [[XBMCSettings alloc] init];
+	XBMCSettings *xbmcsettings = [XBMCSettings sharedInstance];
 	XBMCHostData *data     = [xbmcsettings getActiveHost];
 	[xbmcsettings release];
 	NSString *xbmcpath;

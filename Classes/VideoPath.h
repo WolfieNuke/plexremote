@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "PathItem.h";
+#import "Path.h";
 
-@interface VideoPath : NSObject {
-	NSMutableArray *items;
+@interface VideoPath : Path {
+
 }
-@property (nonatomic, retain) NSMutableArray *items;
 + (VideoPath*)pathFromPath:(VideoPath*)path;
 - (void)addItem:(PathItem*)item;
 - (NSString*)WhereClauseForShow;

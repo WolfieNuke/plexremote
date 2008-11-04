@@ -25,8 +25,8 @@ static Cache *sharedCache;
 - (void)createDir:(NSString*)dir {
 	BOOL isDir;
 	//if ([fm fileExistsAtPath:dir isDirectory:&isDir] && isDir) {	
-		NSLog(@"Cache: Creating dir [%@]", dir);
-		[fm createDirectoryAtPath:dir attributes:nil];	
+	NSLog(@"Cache: Creating dir [%@]", dir);
+	[fm createDirectoryAtPath:dir attributes:nil];	
 	//} else {
 	//	NSLog(@"Cache: Directory [%@] already exists", dir);
 	//}
@@ -50,14 +50,14 @@ static Cache *sharedCache;
 - (void)storeFile:(NSString*)filename data:(NSData*)data type:(NSInteger)type {
 	NSString *thepath = ((type == CACHE_TYPE_VIDEO) ? (videoCachePath) : (musicCachePath));
 	NSString *fullpath = [NSString stringWithFormat:@"%@/%@", thepath, filename];
-	NSLog(@"Cache: Store file [%@]", fullpath);
+	//NSLog(@"Cache: Store file [%@]", fullpath);
 	[fm createFileAtPath:fullpath contents:data attributes:nil];
 }
 - (void)setupDirectories {
-	NSLog(@"Cache: Setting up directories"); 
+	//NSLog(@"Cache: Setting up directories"); 
 	NSArray *items = NSSearchPathForDirectoriesInDomains(  NSCachesDirectory, NSAllDomainsMask,TRUE);
 	NSString *rootDir = [items objectAtIndex:0];
-	NSLog(@"Cache: Root Cache Dir [%@]", rootDir);
+	//NSLog(@"Cache: Root Cache Dir [%@]", rootDir);
 	
 	[self createDir:rootDir];
 	videoCachePath = [[NSString stringWithFormat:@"%@/%@", rootDir, @"Video"] copy];

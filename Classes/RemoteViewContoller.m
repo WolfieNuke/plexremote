@@ -34,7 +34,7 @@
 
 - (void)viewDidLoad {
 	XBMCInterface = [InterfaceManager getSharedInterface];
-	xbmcSettings =  [[XBMCSettings alloc] init];
+	xbmcSettings =  [XBMCSettings sharedInstance];
 	pointer.center = self.view.center;
 	pointer.hidden = true;
 	

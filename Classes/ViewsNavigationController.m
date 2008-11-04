@@ -10,6 +10,7 @@
 
 
 @implementation ViewsNavigationController
+@synthesize tabItemData;
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
 //NSLog(@"Will show");
 }

@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "XBMCSettings.h";
 
-@interface SettingsViewController : UITableViewController {
+@interface SettingsViewController : UITableViewController <UINavigationControllerDelegate> {
 	NSMutableArray *tableData;
+	NSMutableArray *bookmarkList;	
 	NSArray *hostList;
 	XBMCSettings *xbmcSettings;
 	NSInteger addIndex;

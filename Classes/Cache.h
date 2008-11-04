@@ -16,6 +16,7 @@
 	NSString *videoCachePath;
 }
 + (Cache*)defaultCache;
+- (void)setupDirectories;
 - (void)storeFile:(NSString*)filename data:(NSData*)data type:(NSInteger)type;
 - (BOOL)hasFile:(NSString*)filename type:(NSInteger)type;
 - (NSData*)getFile:(NSString*)filename type:(NSInteger)type;

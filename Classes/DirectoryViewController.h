@@ -8,15 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h";
-#import "ViewData.h";
-
-#define DIRECTORY_MASK_MUSIC 0
-#define DIRECTORY_MASK_VIDEO 1
+#import "DirectoryPath.h";
 
 @interface DirectoryViewController : BaseViewController {
-	ViewData *fileSystemData; 
-	NSInteger mask;
+
 }
-@property (nonatomic, retain) ViewData *fileSystemData;
-@property (nonatomic) NSInteger mask;
+
 @end

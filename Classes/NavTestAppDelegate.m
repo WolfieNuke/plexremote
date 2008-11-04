@@ -10,6 +10,7 @@
 #import "BaseViewController.h";
 #import "NowPlayingViewController.h";
 #import "XBMCHTTP.h";
+#import "BoxeeHTTP.h";
 #import "NowPlayingData.h";
 #import "SettingsViewController.h";
 #import "XBMCSettings.h";
@@ -18,6 +19,15 @@
 #import "Cache.h";
 #import "Utility.h";
 #import "InterfaceManager.h";
+#import "TabItemData.h";
+#import "ViewsNavigationController.h";
+
+@interface NavTestAppDelegate (private)
+- (ViewsNavigationController*)createOrGetTabBarItem:(TabItemData*)itemData;
+- (ViewsNavigationController*)createTabBarItem:(TabItemData*)itemData;
+- (void)setupInterface;
+@end
+
 @implementation NavTestAppDelegate
 
 @synthesize window;
@@ -33,20 +43,22 @@
 
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
-	[self setupInterface];
 	
+	[self setupInterface];
 	tabBarController.moreNavigationController.delegate = self;
 	navigationController.navigationBarHidden = true;
+	[self setupTabs];
 	[window addSubview:[mainViewController view]];
 	[window addSubview:[mainNavigationController view]];
 	[window makeKeyAndVisible];
-	tabBar.delegate = self;
+	tabBarController.delegate = self;		
 
+	// Setup the cache for storing thumbnails
 	Cache *cache = [Cache defaultCache];
 	[cache setupDirectories];
-
 }
 
+// Sets the default interface for interacting with the server.
 - (void)setupInterface {
 	XBMCHTTP *defaultInterface = [[XBMCHTTP alloc] init];
 	InterfaceManager *im = [InterfaceManager sharedInstance];
@@ -54,9 +66,70 @@
 	[defaultInterface release];	
 }
 
+
+// Tab bar methods
+// Classes to show in the tab bar will come from the settings. This stores the class as well as any path information to reinstantiate it.
+- (void)setupTabs {
+	NSLog(@"Setting up tabs");
+	XBMCSettings *settings = [XBMCSettings sharedInstance];
+
+	int count = [settings.tabList count];	
+	NSMutableArray *controllers = [NSMutableArray array];
+	for (int i = 0; i < count; i++) {
+		TabItemData *tabItemData = [settings.tabList objectAtIndex:i];
+		ViewsNavigationController *navController = [self createOrGetTabBarItem:tabItemData];
+		[controllers addObject:navController];			
+	}
+	NSLog(@"Tab count %i", [controllers count]);
+	tabBarController.viewControllers = controllers;
+}
+- (ViewsNavigationController*)createOrGetTabBarItem:(TabItemData*)itemData {
+	int count = [tabBarController.viewControllers count];
+	while(count--) {
+		ViewsNavigationController *obj = [tabBarController.viewControllers objectAtIndex:count];
+		if (obj.tabItemData == itemData) {
+			NSLog(@"TabBar: Getting");
+			return obj;
+		}
+	}
+	NSLog(@"TabBar: Creating");	
+	return [self createTabBarItem: itemData];
+}
+- (void)addTabBarItem:(TabItemData*)itemData{
+	ViewsNavigationController *navController = [self createTabBarItem:itemData];	
+	tabBarController.viewControllers = [tabBarController.viewControllers arrayByAddingObject: navController];
+}
+
+- (ViewsNavigationController*)createTabBarItem:(TabItemData*)itemData {
+	NSLog(@"Class name %@", itemData.className);
+	BaseViewController *obj = [BaseViewController classForName:itemData.className];
+	NSString *title;
+	NSString *icon;
+	if (itemData.bookmarkData) {
+		title = itemData.bookmarkData.title;
+		icon  = itemData.bookmarkData.iconName;
+		obj.directoryPath = itemData.bookmarkData.directoryPath;
+		obj.musicPath = itemData.bookmarkData.musicPath;
+		obj.videoPath = itemData.bookmarkData.videoPath;	
+	} else {
+		icon  = [BaseViewController imageForClass: itemData.className];
+		title = [BaseViewController titleForClass: itemData.className];
+	}
+	ViewsNavigationController *navController = [[ViewsNavigationController alloc] initWithRootViewController: obj];
+	navController.delegate = self;
+	UITabBarItem *tabItem = [[UITabBarItem alloc] init];
+	obj.title = title;
+	tabItem.title = title;
+	tabItem.image = [UIImage imageNamed:icon];
+	navController.tabBarItem = tabItem;	
+	navController.tabItemData = itemData;
+	return navController;
+}
+
+
 - (IBAction)showNowPlayingAction:(id)sender {
-	[self showRemote];
-	//[self showNowPlaying];
+	//[self showRemote];
+	[self showNowPlaying];
 }
 - (void)showRemote {
 	
@@ -103,22 +176,23 @@
 	for (int i = 0; i < [items count]; i++) {
 		UINavigationController *titem = [items objectAtIndex:i];
 		if (titem == tabBarController.selectedViewController) {
-			NSLog(@"is active %d", i);
 			continue;
 		}
 		[titem popToRootViewControllerAnimated:NO];
-		
-		NSArray *nitems = titem.viewControllers;
-		for (int j = 0; j < [nitems count]; j++) {
-		//	BaseViewController *bv = [nitems objectAtIndex:j];
-		//	[bv minimiseData];
-		}
 	}
 	[tabBarController.moreNavigationController popToRootViewControllerAnimated:NO];	
 }
-
-- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
 	[self resetAllNavigationControllers];
+}
+- (void)tabBarController:(UITabBarController *)tabBarController didEndCustomizingViewControllers:(NSArray *)viewControllers changed:(BOOL)changed {
+	XBMCSettings *settings = [XBMCSettings sharedInstance];
+	NSMutableArray *tabList = [NSMutableArray array];
+	for (ViewsNavigationController *vc in viewControllers) {
+		[tabList addObject:vc.tabItemData];
+	}
+	settings.tabList = tabList;
+	[settings saveSettings];
 }
 
 - (void)navigationController:(UINavigationController *)navController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
@@ -134,6 +208,7 @@
 
 	//navController.rightBarButtonItem = settingsButton;
 }
+
 - (void)showNowPlaying {
 	if (npViewController == nil) {
 		npViewController = [[NowPlayingViewController alloc] initWithNibName:@"NowPlayingView" bundle:nil ];
@@ -142,18 +217,10 @@
 }
 - (void)reloadAllViews {
 	NSLog(@"Reloading views");
-	NSArray *items = [NSArray arrayWithObjects:artistViewController,
-											   albumsViewController,
-											   tvshowsViewController,
-											   genresViewController,
-											   songsViewController,
-												moviesViewcontroller, 
-												musicSourcesViewController,
-											    videoSourcesViewController,
-											    playlistViewController
-												,nil];
-	for (BaseViewController *vc in items) {
-		vc.reloadData = YES;
+	NSArray *items = [tabBarController viewControllers];
+	for (ViewsNavigationController *vc in items) {
+		BaseViewController *bc = [[vc viewControllers] objectAtIndex:0];
+		bc.reloadData = YES;
 	}
 }
 - (void)applicationWillTerminate:(UIApplication *)application {

@@ -35,7 +35,8 @@
 	NSString *str1 = [url stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 	NSString *str2 = [str1 stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 	NSString *str3 = [str2 stringByReplacingOccurrencesOfString:@"&" withString:@"%26"];
-	NSString *urlString = [str3 stringByReplacingOccurrencesOfString:@"?" withString:@"%3F"];	
+	NSString *str4 = [str3 stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"];	
+	NSString *urlString = [str4 stringByReplacingOccurrencesOfString:@"?" withString:@"%3F"];	
 	return urlString;
 }
 
@@ -94,7 +95,8 @@
 					  sendSynchronousRequest: theRequest
 					  returningResponse: nil 
 					  error: &reqError];
-	NSString *returnStr = [NSString stringWithCString:[rdata bytes] length: [rdata length]];
+	NSString *returnStr = [NSString stringWithUTF8String:[rdata bytes]];
+	//NSString *returnStr = [NSString stringWithCString:[rdata bytes] length: [rdata length]];
 	return returnStr;
 }
 

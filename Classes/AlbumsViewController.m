@@ -92,7 +92,7 @@
 	if (data == nil) {
 		targetController.title = @"All Songs";	
 	} else {	
-		targetController.title = self.title;	
+		targetController.title = data.title;	
 		targetController.albumName = data.title;
 		pathItem.value = data.identifier;
 	}

@@ -9,6 +9,8 @@
 #import "XBMCHTTP.h"
 
 @implementation XBMCHTTP
-
+- (void)GetAlbumsQuery:(NSString*)whereClause {
+	return [NSString stringWithFormat:@"select idAlbum, strAlbum, idArtist, strArtist, strThumb from albumview where %@ order by strAlbum asc", whereClause];
+}
 @end
 

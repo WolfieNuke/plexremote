@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "TabItemData.h";
 
 @interface ViewsNavigationController : UINavigationController {
 	IBOutlet UIBarButtonItem *settingsButton;
+	TabItemData *tabItemData;
 }
-
+@property (nonatomic, retain) TabItemData *tabItemData;
 @end

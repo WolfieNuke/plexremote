@@ -9,15 +9,7 @@
 #import "MoviePath.h"
 #import "PathItem.h";
 
-@implementation MoviePath
-@synthesize items;
-- (void)addItem:(PathItem*)pathItem {
-	if ([self.items count] == 0) {
-		self.items = [NSMutableArray arrayWithObjects:pathItem, nil];
-	} else {
-		[self.items addObject:pathItem];
-	}
-}	
+@implementation MoviePath	
 + (MoviePath*)pathFromPath:(MoviePath*)path {
 	MoviePath *newVideoPath = [MoviePath alloc];
 	newVideoPath.items = [NSMutableArray arrayWithArray:path.items];
@@ -45,7 +37,6 @@
 }
 
 -(void)dealloc {
-	[items release];
 	[super dealloc];
 }
 @end

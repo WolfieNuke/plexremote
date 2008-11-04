@@ -8,13 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "PathItem.h";
+#import "Path.h";
+@interface MusicPath : Path {
 
-@interface MusicPath : NSObject {
-	NSMutableArray *items;
 }
-@property (nonatomic, retain) NSMutableArray *items;
 + (MusicPath*)pathFromPath:(MusicPath*)path;
-- (void)addItem:(PathItem*)item;
 - (NSString*)WhereClauseForArtist;
 - (NSString*)WhereClauseForAlbum;
 - (NSString*)WhereClauseForSong;

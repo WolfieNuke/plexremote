@@ -13,11 +13,110 @@
 #import "BaseCell.h";
 #import "TouchTableView.h";
 
+#import "AlbumsViewController.h";
+#import "MoviesViewController.h";
+#import "ArtistViewController.h";
+#import "SongsViewController.h";
+#import "TVShowsViewController.h";
+#import "GenresViewController.h";
+#import "PodcastViewController.h";
+#import "MusicSharesViewController.h";
+#import "VideoSharesViewController.h";
+#import "PlaylistsViewController.h";
+#import "DirectoryViewController.h";
+#import "SeasonsViewController.h";
+#import "EpisodesViewController.h";
+
 @implementation BaseViewController
 @synthesize musicPath;
 @synthesize videoPath;
+@synthesize directoryPath;
 @synthesize reloadData;
 
++ (NSString*)imageForClass:(NSString*)className {
+	if ([className isEqualToString:@"AlbumsViewController"]) {
+		return @"TBMAlbum.png";
+	} else if ([className isEqualToString:@"ArtistViewController"]) {
+		return @"TBMArtists.png";		
+	} else if ([className isEqualToString:@"SongsViewController"]) {
+		return @"TBMSongs.png";
+	} else if ([className isEqualToString:@"MoviesViewController"]) {
+		return @"TBMMovies.png";
+	} else if ([className isEqualToString:@"TVShowsViewController"]) {
+		return @"TBMTVShows.png";
+	} else if ([className isEqualToString:@"GenresViewController"]) {
+		return @"TBMGenres.png";
+	} else if ([className isEqualToString:@"PodcastViewController"]) {
+		return @"TBMPodcasts.png";
+	} else if ([className isEqualToString:@"MusicSharesViewController"]) {
+		return @"TBMSongs.png";
+	} else if ([className isEqualToString:@"VideoSharesViewController"]) {
+		return @"TBMMovies.png";
+	} else if ([className isEqualToString:@"PlaylistViewController"]) {
+		return @"TBMPlaylists.png";
+	} else if ([className isEqualToString:@"DirectoryViewController"]) {
+		return @"TBMTVShows.png";
+	} else if ([className isEqualToString:@"SeasonsViewController"]) {
+		return @"TBMTVShows.png";
+	} else if ([className isEqualToString:@"EpisodesViewController"]) {
+		return @"TBMTVShows.png";
+	}
+	return @"TBMAlbum.png";
+}
++ (NSString*)titleForClass:(NSString*)className {
+	if ([className isEqualToString:@"AlbumsViewController"]) {
+		return @"Albums";
+	} else if ([className isEqualToString:@"ArtistViewController"]) {
+		return @"Artists";		
+	} else if ([className isEqualToString:@"SongsViewController"]) {
+		return @"Songs";
+	} else if ([className isEqualToString:@"MoviesViewController"]) {
+		return @"Movies";
+	} else if ([className isEqualToString:@"TVShowsViewController"]) {
+		return @"TV Shows";
+	} else if ([className isEqualToString:@"GenresViewController"]) {
+		return @"Genres";
+	} else if ([className isEqualToString:@"PodcastViewController"]) {
+		return @"Podcasts";
+	} else if ([className isEqualToString:@"MusicSharesViewController"]) {
+		return @"Music Sources";
+	} else if ([className isEqualToString:@"VideoSharesViewController"]) {
+		return @"Video Sources";
+	} else if ([className isEqualToString:@"PlaylistViewController"]) {
+		return @"Playlists";
+	}
+	return @"Unknown";
+}
++ (BaseViewController*)classForName:(NSString*)className {
+	if ([className isEqualToString:@"AlbumsViewController"]) {
+		return [[[AlbumsViewController alloc] init] autorelease];
+	} else if ([className isEqualToString:@"ArtistViewController"]) {
+		return [[[ArtistViewController alloc] init] autorelease];		
+	} else if ([className isEqualToString:@"SongsViewController"]) {
+		return [[[SongsViewController alloc] init] autorelease];
+	} else if ([className isEqualToString:@"MoviesViewController"]) {
+		return [[[MoviesViewController alloc] init] autorelease];
+	} else if ([className isEqualToString:@"TVShowsViewController"]) {
+		return [[[TVShowsViewController alloc] init] autorelease];
+	} else if ([className isEqualToString:@"GenresViewController"]) {
+		return [[[GenresViewController alloc] init] autorelease];
+	} else if ([className isEqualToString:@"PodcastViewController"]) {
+		return [[[PodcastViewController alloc] init] autorelease];
+	} else if ([className isEqualToString:@"MusicSharesViewController"]) {
+		return [[[MusicSharesViewController alloc] init] autorelease];
+	} else if ([className isEqualToString:@"VideoSharesViewController"]) {
+		return [[[VideoSharesViewController alloc] init] autorelease];
+	} else if ([className isEqualToString:@"PlaylistViewController"]) {
+		return [[[PlaylistsViewController alloc] init] autorelease];
+	} else if ([className isEqualToString:@"DirectoryViewController"]) {
+		return [[[DirectoryViewController alloc] init] autorelease];
+	} else if ([className isEqualToString:@"SeasonsViewController"]) {
+		return [[[SeasonsViewController alloc] init] autorelease];
+	} else if ([className isEqualToString:@"EpisodesViewController"]) {
+		return [[[EpisodesViewController alloc] init] autorelease];
+	}
+	return nil;
+}
 - (NSString*)normaliseString:(NSString*)text {
 	NSCharacterSet *whiteSpaceSet = [NSCharacterSet whitespaceCharacterSet];
 	NSString *pre = [text uppercaseString];
@@ -220,7 +319,7 @@
 		musicPath = [[MusicPath alloc] init];
 	}
 	XBMCInterface = [InterfaceManager getSharedInterface]; 
-	xbmcSettings =  [[XBMCSettings alloc] init];
+	xbmcSettings =  [XBMCSettings sharedInstance];
 	[self setupView];
 	if (![xbmcSettings showImages]) {
 		hasImage = NO;
@@ -598,7 +697,8 @@
 
 	[musicPath release];
 	[videoPath release];
-
+	[directoryPath release];
+	
 	[displayData release]; 
 	[displayIndexedData release];
 	[indexLetters release];

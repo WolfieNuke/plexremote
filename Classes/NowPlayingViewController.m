@@ -216,17 +216,17 @@
 
 - (void)getShowImage:(NowPlayingData*)data {
     NSAutoreleasePool   *autoreleasepool = [[NSAutoreleasePool alloc] init];	
-	
-	
 	NSString *where =  [NSString stringWithFormat:@"c00 = \"%@\"", data.showTitle];
 	NSArray *shows     = [XBMCInterface GetTVShowsByWhereClause: where];
-	TVShowData *tv;
+	TVShowData *tv = nil;
 	if ([shows count] > 0) {
 		tv   = [shows objectAtIndex:0];
 	}
 	if (tv) {
 		//[tv setThumbnailFromPath];
+
 		[tv fetchThumbnailMaxRes:320];
+	
 		if (tv.thumbnail_image != nil) {
 			CGImageRef imgRef = tv.thumbnail_image.CGImage;
 			CGFloat width = CGImageGetWidth(imgRef);

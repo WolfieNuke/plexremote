@@ -12,9 +12,6 @@
 #import "BaseCell.h";
 #import "FileSystemData.h";
 @implementation DirectoryViewController
-@synthesize fileSystemData;
-@synthesize mask;
-
 - (void)setupView {
 	[super setupView];
 	cellIdentifier = @"DirectoryCellView";
@@ -27,12 +24,12 @@
 	[super doneLoad];
 }
 - (void)loadData {
-	if (mask == DIRECTORY_MASK_MUSIC) {
-		displayData = [[XBMCInterface GetMediaLocationForMusic:self.fileSystemData.path ] retain];
-	} else if (mask == DIRECTORY_MASK_VIDEO) {
-		displayData = [[XBMCInterface GetMediaLocationForVideo:self.fileSystemData.path ] retain];				
+	if (self.directoryPath.mask == DIRECTORY_MASK_MUSIC) {
+		displayData = [[XBMCInterface GetMediaLocationForMusic:[self.directoryPath GetPath] ] retain];
+	} else if (self.directoryPath.mask == DIRECTORY_MASK_VIDEO) {
+		displayData = [[XBMCInterface GetMediaLocationForVideo:[self.directoryPath GetPath] ] retain];				
 	} else {
-		displayData = [[XBMCInterface GetMediaLocation:self.fileSystemData.path mask: nil] retain];		
+		displayData = [[XBMCInterface GetMediaLocation:[self.directoryPath GetPath] mask: nil] retain];		
 	}
 	NSLog(@"Number of directories %d", [displayData count]);	
 }
@@ -42,10 +39,10 @@
 	DirectoryViewController *targetController = [[DirectoryViewController alloc] init];
 	NSString* playList;
 	NSString *maskStr;	
-	if (mask == DIRECTORY_MASK_MUSIC) {
+	if (self.directoryPath.mask == DIRECTORY_MASK_MUSIC) {
 		playList = [NSString stringWithFormat: @"%d", PLAYLIST_MUSIC];
 		maskStr = @"[music]";
-	} else if (mask == DIRECTORY_MASK_VIDEO) {
+	} else if (self.directoryPath.mask == DIRECTORY_MASK_VIDEO) {
 		playList = [NSString stringWithFormat: @"%d", PLAYLIST_VIDEO];
 		maskStr = @"[video]";
 	}
@@ -56,7 +53,7 @@
 		[XBMCInterface setCurrentPlayList: playList ];
 		
 		if (data == nil) {
-			NSArray *paths = [XBMCInterface SplitMultipart:self.fileSystemData.path];
+			NSArray *paths = [XBMCInterface SplitMultipart:[self.directoryPath GetPath]];
 			int c = [paths count];
 			for (int i = 0; i < c; i++) {
 				[XBMCInterface addToPlayList: [paths objectAtIndex:i] playList: playList mask:maskStr recursive:@"1"];
@@ -76,17 +73,26 @@
 		[appDelegate showNowPlaying];
 
 	} else {
-		targetController.fileSystemData = data;
-		targetController.mask = mask;
+		DirectoryPath *path = [[DirectoryPath alloc] init];
+		path.mask = self.directoryPath.mask;
+		PathItem *pathItem  = [[PathItem alloc] init];
+		pathItem.value = data.path;
+		[path addItem:pathItem];	
+		
+		
+		targetController.directoryPath = path;
 		targetController.title = data.title;
 		[[self navigationController] pushViewController: targetController animated: YES];
 		[targetController release];
+		
+		[path release];
+		[pathItem release];
 	}
 }
 
-- (UITableViewCell*)getDataCell:(UITableView *)tableView data:(ViewData*)data{
+- (UITableViewCell*)getDataCell:(UITableView *)_tableView data:(ViewData*)data{
 	
-	BaseCell *cell = (BaseCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+	BaseCell *cell = (BaseCell*)[_tableView dequeueReusableCellWithIdentifier:cellIdentifier];
 	if (cell == nil) {
 		cell = [[[BaseCell alloc] initWithFrame:CGRectZero reuseIdentifier:cellIdentifier] autorelease];
 		cell.imageWidth = rowHeight - 1;
@@ -99,7 +105,6 @@
 
  
 - (void)dealloc {
-	[fileSystemData release];
 	[super dealloc];
 }
 @end

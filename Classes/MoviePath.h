@@ -8,11 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "PathItem.h";
+#import "Path.h";
+@interface MoviePath : Path {
 
-@interface MoviePath : NSObject {
-	NSMutableArray *items;
 }
-@property (nonatomic, retain) NSMutableArray *items;
 + (MoviePath*)pathFromPath:(MoviePath*)path;
 - (void)addItem:(PathItem*)item;
 - (NSString*)WhereClauseForMovie;

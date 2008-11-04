@@ -136,6 +136,7 @@
 		B50F2C6F0E52FA10009A6FE7 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50F2C6E0E52FA10009A6FE7 /* BaseViewController.m */; };
 		B510488B0E4B2D9400819604 /* MusicNowPlaying.png in Resources */ = {isa = PBXBuildFile; fileRef = B510488A0E4B2D9400819604 /* MusicNowPlaying.png */; };
 		B518CA3A0E6ED1D60087D00B /* Sleep.m in Sources */ = {isa = PBXBuildFile; fileRef = B518CA390E6ED1D60087D00B /* Sleep.m */; };
+		B51D98F70EBBB0BF0009131E /* BoxeeHTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = B51D98F60EBBB0BF0009131E /* BoxeeHTTP.m */; };
 		B54233690E52D4C900525C17 /* MusicPath.m in Sources */ = {isa = PBXBuildFile; fileRef = B54233680E52D4C900525C17 /* MusicPath.m */; };
 		B544B36C0E55D74100A8CAD0 /* TVShowsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B544B36B0E55D74100A8CAD0 /* TVShowsViewController.m */; };
 		B56C9D190E46C52B0051427E /* BaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B56C9D180E46C52B0051427E /* BaseCell.m */; };
@@ -143,6 +144,10 @@
 		B56CD8E40E4878BD006CA459 /* NowPlayingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B56CD8E30E4878BD006CA459 /* NowPlayingView.xib */; };
 		B56CD8EA0E487905006CA459 /* NowPlayingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B56CD8E90E487905006CA459 /* NowPlayingViewController.m */; };
 		B581B4990E62F3C7006ABDAA /* icon57.png in Resources */ = {isa = PBXBuildFile; fileRef = B581B4980E62F3C7006ABDAA /* icon57.png */; };
+		B58922200EBF009D0009D65B /* BookmarkData.m in Sources */ = {isa = PBXBuildFile; fileRef = B589221F0EBF009D0009D65B /* BookmarkData.m */; };
+		B58922C80EBF3ED60009D65B /* BookmarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B58922C70EBF3ED60009D65B /* BookmarkViewController.m */; };
+		B58924C50EBFF0CA0009D65B /* Path.m in Sources */ = {isa = PBXBuildFile; fileRef = B58924C40EBFF0CA0009D65B /* Path.m */; };
+		B58925580EBFF6950009D65B /* TabItemData.m in Sources */ = {isa = PBXBuildFile; fileRef = B58925570EBFF6950009D65B /* TabItemData.m */; };
 		B58C9EE90E56B9E600FCE185 /* EpisodesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B58C9EE80E56B9E600FCE185 /* EpisodesViewController.m */; };
 		B58F33250E619CC1009F0327 /* NPAStop.png in Resources */ = {isa = PBXBuildFile; fileRef = B58F33240E619CC1009F0327 /* NPAStop.png */; };
 		B59FE3080E5C0FE7005FE176 /* TouchTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B59FE3070E5C0FE7005FE176 /* TouchTableView.m */; };
@@ -153,6 +158,8 @@
 		B5AC79550E68F06D00C3DC68 /* RemoteMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC79540E68F06D00C3DC68 /* RemoteMoreViewController.m */; };
 		B5ACA3C40E58027200A6BF27 /* MoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5ACA3C30E58027200A6BF27 /* MoviesViewController.m */; };
 		B5AE7B4D0E58473C00C92E27 /* ViewsNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AE7B4C0E58473C00C92E27 /* ViewsNavigationController.m */; };
+		B5B547F90EC0133A00547343 /* DirectoryPath.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B547F80EC0133A00547343 /* DirectoryPath.m */; };
+		B5B54AB40EC035EF00547343 /* NSObjectExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B54AB30EC035EF00547343 /* NSObjectExtension.m */; };
 		B5BA2C620E65AE0900FF4DEC /* xbmcremote.app in Resources */ = {isa = PBXBuildFile; fileRef = B5BA2C610E65AE0900FF4DEC /* xbmcremote.app */; };
 		B5C8468F0E573594003DBBA0 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C8468E0E573594003DBBA0 /* MainViewController.m */; };
 		B5D083670E46A36200311322 /* LoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D083660E46A36200311322 /* LoadingViewController.m */; };
@@ -344,6 +351,8 @@
 		B510488A0E4B2D9400819604 /* MusicNowPlaying.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MusicNowPlaying.png; path = ../../Desktop/MusicNowPlaying.png; sourceTree = SOURCE_ROOT; };
 		B518CA380E6ED1D60087D00B /* Sleep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Sleep.h; path = Classes/Sleep.h; sourceTree = "<group>"; };
 		B518CA390E6ED1D60087D00B /* Sleep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Sleep.m; path = Classes/Sleep.m; sourceTree = "<group>"; };
+		B51D98F50EBBB0BF0009131E /* BoxeeHTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxeeHTTP.h; sourceTree = "<group>"; };
+		B51D98F60EBBB0BF0009131E /* BoxeeHTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxeeHTTP.m; sourceTree = "<group>"; };
 		B54233670E52D4C900525C17 /* MusicPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MusicPath.h; path = Classes/MusicPath.h; sourceTree = "<group>"; };
 		B54233680E52D4C900525C17 /* MusicPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MusicPath.m; path = Classes/MusicPath.m; sourceTree = "<group>"; };
 		B544B36A0E55D74100A8CAD0 /* TVShowsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVShowsViewController.h; sourceTree = "<group>"; };
@@ -356,6 +365,14 @@
 		B56CD8E80E487905006CA459 /* NowPlayingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NowPlayingViewController.h; sourceTree = "<group>"; };
 		B56CD8E90E487905006CA459 /* NowPlayingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NowPlayingViewController.m; sourceTree = "<group>"; };
 		B581B4980E62F3C7006ABDAA /* icon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon57.png; sourceTree = "<group>"; };
+		B589221E0EBF009D0009D65B /* BookmarkData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookmarkData.h; sourceTree = "<group>"; };
+		B589221F0EBF009D0009D65B /* BookmarkData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookmarkData.m; sourceTree = "<group>"; };
+		B58922C60EBF3ED60009D65B /* BookmarkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookmarkViewController.h; sourceTree = "<group>"; };
+		B58922C70EBF3ED60009D65B /* BookmarkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookmarkViewController.m; sourceTree = "<group>"; };
+		B58924C30EBFF0CA0009D65B /* Path.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Path.h; sourceTree = "<group>"; };
+		B58924C40EBFF0CA0009D65B /* Path.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Path.m; sourceTree = "<group>"; };
+		B58925560EBFF6950009D65B /* TabItemData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabItemData.h; sourceTree = "<group>"; };
+		B58925570EBFF6950009D65B /* TabItemData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabItemData.m; sourceTree = "<group>"; };
 		B58C9EE70E56B9E600FCE185 /* EpisodesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EpisodesViewController.h; sourceTree = "<group>"; };
 		B58C9EE80E56B9E600FCE185 /* EpisodesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EpisodesViewController.m; sourceTree = "<group>"; };
 		B58F33240E619CC1009F0327 /* NPAStop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NPAStop.png; path = Classes/NPAStop.png; sourceTree = "<group>"; };
@@ -374,6 +391,10 @@
 		B5ACA3C30E58027200A6BF27 /* MoviesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoviesViewController.m; sourceTree = "<group>"; };
 		B5AE7B4B0E58473C00C92E27 /* ViewsNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewsNavigationController.h; sourceTree = "<group>"; };
 		B5AE7B4C0E58473C00C92E27 /* ViewsNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewsNavigationController.m; sourceTree = "<group>"; };
+		B5B547F70EC0133A00547343 /* DirectoryPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectoryPath.h; sourceTree = "<group>"; };
+		B5B547F80EC0133A00547343 /* DirectoryPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectoryPath.m; sourceTree = "<group>"; };
+		B5B54AB20EC035EF00547343 /* NSObjectExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSObjectExtension.h; sourceTree = "<group>"; };
+		B5B54AB30EC035EF00547343 /* NSObjectExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSObjectExtension.m; sourceTree = "<group>"; };
 		B5BA2C610E65AE0900FF4DEC /* xbmcremote.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = xbmcremote.app; sourceTree = "<group>"; };
 		B5BA2C660E65AE6100FF4DEC /* xbmcremote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xbmcremote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5C8468D0E573594003DBBA0 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -536,8 +557,12 @@
 				B507CEBB0EB7251B008DD569 /* MoviePath.h */,
 				B507CEBC0EB7251B008DD569 /* VideoPath.m */,
 				B507CEBD0EB7251B008DD569 /* VideoPath.h */,
+				B58924C30EBFF0CA0009D65B /* Path.h */,
+				B58924C40EBFF0CA0009D65B /* Path.m */,
 				B507CEB70EB7250E008DD569 /* PathItem.m */,
 				B507CEB80EB7250E008DD569 /* PathItem.h */,
+				B5B547F70EC0133A00547343 /* DirectoryPath.h */,
+				B5B547F80EC0133A00547343 /* DirectoryPath.m */,
 			);
 			name = Path;
 			path = ..;
@@ -591,6 +616,8 @@
 				B507CDF20EB722EC008DD569 /* Utility.h */,
 				B518CA380E6ED1D60087D00B /* Sleep.h */,
 				B518CA390E6ED1D60087D00B /* Sleep.m */,
+				B5B54AB20EC035EF00547343 /* NSObjectExtension.h */,
+				B5B54AB30EC035EF00547343 /* NSObjectExtension.m */,
 			);
 			name = Utility;
 			path = ..;
@@ -736,6 +763,8 @@
 		B5F9138B0EAAC4E000B66B15 /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
+				B51D98F50EBBB0BF0009131E /* BoxeeHTTP.h */,
+				B51D98F60EBBB0BF0009131E /* BoxeeHTTP.m */,
 				B5F913E60EAAE62200B66B15 /* RemoteInterface.h */,
 				B5F913E70EAAE62200B66B15 /* RemoteInterface.m */,
 				B507CEB30EB724F7008DD569 /* XBMCHTTP.m */,
@@ -762,6 +791,8 @@
 		B5F915330EAAFBF300B66B15 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				B58922C60EBF3ED60009D65B /* BookmarkViewController.h */,
+				B58922C70EBF3ED60009D65B /* BookmarkViewController.m */,
 				B5A6C82E0E503EA5006C2BE4 /* SettingsEditViewController.m */,
 				B5A6C82D0E503EA5006C2BE4 /* SettingsEditViewController.h */,
 				B507CDA20EB72166008DD569 /* SettingsViewController.m */,
@@ -770,6 +801,10 @@
 				B507CDA60EB72174008DD569 /* XBMCSettings.h */,
 				B507CDA70EB72174008DD569 /* XBMCHostData.m */,
 				B507CDA80EB72174008DD569 /* XBMCHostData.h */,
+				B58925560EBFF6950009D65B /* TabItemData.h */,
+				B58925570EBFF6950009D65B /* TabItemData.m */,
+				B589221E0EBF009D0009D65B /* BookmarkData.h */,
+				B589221F0EBF009D0009D65B /* BookmarkData.m */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -1029,6 +1064,13 @@
 				B507CEDD0EB7257F008DD569 /* PodcastViewController.m in Sources */,
 				B507CEE00EB72589008DD569 /* SeasonsViewController.m in Sources */,
 				B507CEE70EB725FC008DD569 /* VideoData.m in Sources */,
+				B51D98F70EBBB0BF0009131E /* BoxeeHTTP.m in Sources */,
+				B58922200EBF009D0009D65B /* BookmarkData.m in Sources */,
+				B58922C80EBF3ED60009D65B /* BookmarkViewController.m in Sources */,
+				B58924C50EBFF0CA0009D65B /* Path.m in Sources */,
+				B58925580EBFF6950009D65B /* TabItemData.m in Sources */,
+				B5B547F90EC0133A00547343 /* DirectoryPath.m in Sources */,
+				B5B54AB40EC035EF00547343 /* NSObjectExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1099,7 +1141,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				PROVISIONING_PROFILE = "12341D54-8DFF-4836-91B2-44331FD525E2";
+				PROVISIONING_PROFILE = "52A7D346-6B40-4A5E-87B7-B0E054EEF83D";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "52A7D346-6B40-4A5E-87B7-B0E054EEF83D";
 				SDKROOT = iphoneos2.0;
 			};
 			name = Debug;

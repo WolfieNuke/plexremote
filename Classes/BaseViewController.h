@@ -11,8 +11,12 @@
 #import "LoadingViewController.h";
 #import "MusicPath.h";
 #import "VideoPath.h";
+#import "DirectoryPath.h";
+
 #import "BaseViewController.h";
 #import "ViewData.h";
+#import "TabItemData.h";
+
 //#import "TouchTableView.h";
 
 #define SECTION_VIEW_NONE         0
@@ -72,6 +76,7 @@
 	
 	MusicPath *musicPath;
 	VideoPath *videoPath;
+	DirectoryPath *directoryPath; 
 	
 	NSInteger actionSections;
 	NSInteger actionSectionHeight;
@@ -83,6 +88,8 @@
 	
 	NSInteger *testcount;
 	
+
+	
 	BOOL loadedData;
 	BOOL reloadData;
 	BOOL doPostLoad;
@@ -93,8 +100,11 @@
 //@property (nonatomic, retain) LoadingViewController *loadingViewController;
 @property (nonatomic, retain) MusicPath *musicPath;
 @property (nonatomic, retain) VideoPath *videoPath;
+@property (nonatomic, retain) DirectoryPath *directoryPath;
 @property (nonatomic, assign) BOOL reloadData;
-
++ (NSString*)titleForClass:(NSString*)className;
++ (NSString*)imageForClass:(NSString*)className;
++ (BaseViewController*)classForName:(NSString*)className;
 - (void)setupView; 
 - (void)showLoading;
 - (void)hideLoading;

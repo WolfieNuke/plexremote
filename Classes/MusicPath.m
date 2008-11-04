@@ -10,16 +10,6 @@
 #import "PathItem.h";
 
 @implementation MusicPath
-@synthesize items;
-
-- (void)addItem:(PathItem*)pathItem {
-	if ([self.items count] == 0) {
-		self.items = [NSMutableArray arrayWithObjects:pathItem, nil];
-	} else {
-		[self.items addObject:pathItem];
-	}
-}	
-
 
 + (MusicPath*)pathFromPath:(MusicPath*)path {
 	MusicPath *newMusicPath = [[MusicPath alloc] init];
@@ -116,8 +106,6 @@
     return path;
 }
 -(void)dealloc {
-	NSLog(@"MusicPath - dealloc");
-	[items release];
 	[super dealloc];
 }
 @end

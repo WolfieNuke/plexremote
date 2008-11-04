@@ -8,6 +8,7 @@
 
 #import "SharesViewController.h"
 #import "DirectoryViewController.h";
+#import "DirectoryPath.h";
 
 @implementation SharesViewController
 
@@ -22,11 +23,19 @@
 	if (data == nil) {
 		// Queue all
 	} else {
-		targetController.fileSystemData = data;
-		targetController.mask = directoryMask;
+		DirectoryPath *path = [[DirectoryPath alloc] init];
+		path.mask = directoryMask;
+		PathItem *pathItem = [[PathItem alloc] init];
+		pathItem.value = data.path;
+		[path addItem:pathItem];
+		
+		targetController.directoryPath = path;
 		targetController.title = data.title;
 		[[self navigationController] pushViewController: targetController animated: YES];
 		[targetController release];
+		
+		[path release];
+		[pathItem release];
 	}
 }
 

@@ -1,6 +1,5 @@
 //
 //  SettingsViewController.m
-//  NavTest
 //
 //  Created by David Fumberger on 10/08/08.
 //  Copyright 2008 collect3. All rights reserved.
@@ -11,13 +10,17 @@
 #import "XBMCHostData.h";
 #import "NavTestAppDelegate.h";
 #import "DisplayCell.h";
+#import "BookmarkData.h";
+#import "BookmarkViewController.h";
 
-#define HOSTS_SECTION       0
-#define PERFORMANCE_SECTION 1
-#define PLAYBACK_SECTION 2
+#define HOSTS_SECTION           0
+#define PERFORMANCE_SECTION     1
+#define BOOKMARKS_SECTION       2
 @implementation SettingsViewController
 
-
+- (void)viewWillAppear:(BOOL)animated {
+	self.navigationController.delegate = self;	
+}
 - (void)viewDidAppear:(BOOL)animated {
     [self setupDisplayList];
 	[[self tableView] reloadData];
@@ -37,20 +40,12 @@
 
 - (void)actionDone {	
 	NSString *currentHash = [self getActiveHash];
-	//NSLog(@"actionDone");
-	//NSLog(@"Active Hash %@", activeHash);
-	//NSLog(@"Current Hash %@", currentHash);	
 	if (activeHash == nil || currentHash == nil || ![currentHash isEqualToString:activeHash]) {
 		NavTestAppDelegate *appDelegate = (NavTestAppDelegate *)[[UIApplication sharedApplication] delegate];
 		[appDelegate reloadAllViews];	
 		activeHash = [currentHash retain];
 	}
 	[[self parentViewController] dismissModalViewControllerAnimated:YES];
-	//UINavigationController *nav = [modal navigationController];
-	//[nav popToRootViewControllerAnimated:YES];
-}
-- (void)actionEdit {
-	
 }
 - (UIBarButtonItem*)createDoneButton {
 	UIBarButtonItem *returnButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(actionDone)] autorelease];
@@ -82,8 +77,7 @@
 }
 
 - (void)viewDidLoad {
-	NSLog(@"Settings view did load");
-	xbmcSettings = [[ XBMCSettings alloc] init];
+	xbmcSettings = [XBMCSettings sharedInstance];
 	activeHash = [[self getActiveHash] retain];
 	doneButton = [[self createDoneButton] retain]; 
 	[self setupDisplayList];
@@ -102,15 +96,15 @@
 	[super setEditing:editing animated:animated];
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	return 2;
+	return 3;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	if (section == HOSTS_SECTION) {
-		return tableData.count;
+		return [tableData count]  + 1;
 	} else if (section == PERFORMANCE_SECTION) {
 		return 1;
-	} else if (section == PLAYBACK_SECTION) {
-		return 1;
+	} else if (section == BOOKMARKS_SECTION) {
+		return [bookmarkList count] + 1;
 	}
 	return 0;
 }
@@ -119,46 +113,64 @@
 		return @"XBMC Hosts";
 	} else if (section == PERFORMANCE_SECTION) {
 		return @"Performance";
-	} else if (section == PLAYBACK_SECTION) {
-		return @"Playback";
+	} else if (section == BOOKMARKS_SECTION) {
+		return @"Bookmarks";
 	}
 	return @"";
 }
 
 // decide what kind of accesory view (to the far right) we will use
 - (UITableViewCellAccessoryType)tableView:(UITableView *)tableView accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath {
-	if (indexPath.section != HOSTS_SECTION) {
-		return UITableViewCellAccessoryNone;
-	}
-	if (indexPath.row == addIndex) {
-		return UITableViewCellAccessoryDisclosureIndicator;
-	}
-	if (self.editing) {
-		return UITableViewCellAccessoryDisclosureIndicator;
-	}
-	if (tableData != nil) {
-		XBMCHostData *hd = [tableData objectAtIndex: indexPath.row];
-		if (hd.active) {
-			return UITableViewCellAccessoryCheckmark;				
+	switch (indexPath.section) {
+		case HOSTS_SECTION: {
+				if (self.editing || indexPath.row == [tableData count]) {
+					return UITableViewCellAccessoryDisclosureIndicator;
+				}
+				if (tableData != nil && indexPath.row < [tableData count]) {
+					XBMCHostData *hd = [tableData objectAtIndex: indexPath.row];
+					if (hd.active) {
+						return UITableViewCellAccessoryCheckmark;				
+					}
+				}
+				break;
 		}
+		case BOOKMARKS_SECTION: {
+				if (indexPath.row == [bookmarkList count]) {
+					return UITableViewCellAccessoryDisclosureIndicator;
+				}
+				break;
+		}
+
 	}
 	return UITableViewCellAccessoryNone;
 
 }
 - (void)setupDisplayList {
-	NSLog(@"Getting hosts");
-	tableData     = [[ xbmcSettings getHosts] retain];
-	NSLog(@"Got hosts");
-	XBMCHostData *hostData = [ XBMCHostData alloc];
-	addIndex = [tableData count];
-	hostData.title = @"Add Host";
-	[tableData addObject: hostData];
-	[hostData release];
+	tableData     = [[NSMutableArray arrayWithArray:[ xbmcSettings getHosts]] retain];
+	bookmarkList  = [[NSArray arrayWithArray: xbmcSettings.bookmarkList] retain];
 }
+
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-	[xbmcSettings removeHost: [tableData objectAtIndex: indexPath.row]];
-	[self setupDisplayList];
-	[[self tableView] reloadData];
+	if (indexPath.section == HOSTS_SECTION || indexPath.section == BOOKMARKS_SECTION) {
+		if (indexPath.section == HOSTS_SECTION) {
+			[xbmcSettings removeHost: [tableData objectAtIndex: indexPath.row]];
+		} else {
+			BookmarkData *bookmarkData = [bookmarkList objectAtIndex: indexPath.row];
+			int c = [xbmcSettings.tabList count];
+			while(c--) {
+				TabItemData *tabItemData = [xbmcSettings.tabList objectAtIndex:c];
+				if (tabItemData.bookmarkData.identifier == bookmarkData.identifier) {
+					[xbmcSettings removeTabItem:tabItemData];
+				}
+			}
+			[xbmcSettings removeBookmark: bookmarkData];
+			[xbmcSettings saveSettings];
+			NavTestAppDelegate *appDelegate = (NavTestAppDelegate *)[[UIApplication sharedApplication] delegate];
+			[appDelegate setupTabs];
+		}
+		[self setupDisplayList];
+		[[self tableView] reloadData];
+	}
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -171,10 +183,14 @@
 			if (cell == nil) {
 				cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:MyIdentifier] autorelease];
 			}
-			XBMCHostData *hostData = [tableData objectAtIndex:indexPath.row];
-			cell.text = hostData.title;
+
+			if (indexPath.row == [tableData count]) {
+				cell.text = @"Add Host";
+			} else {
+				XBMCHostData *hostData = [tableData objectAtIndex:indexPath.row];				
+				cell.text = hostData.title;
+			}
 			cell.hidesAccessoryWhenEditing = NO;
-			cell.editAction = @selector(editSelect);
 			return cell;	
 			break;
 		}
@@ -195,29 +211,35 @@
 			break;
 		}
 			
-		case PLAYBACK_SECTION:
+		case BOOKMARKS_SECTION:
 		{
-			UISwitch *switchCtl = [self create_UISwitch];
-			static NSString *cellId = @"DisplayCell";	
-			DisplayCell *cell = [[[DisplayCell alloc] initWithFrame:CGRectZero reuseIdentifier:cellId] autorelease];
-			cell.nameLabel.text = @"Sync to all hosts";
-			cell.view = switchCtl;
-			
-			[switchCtl setOn:[xbmcSettings sync]];
-			[switchCtl addTarget:self action:@selector(actionSyncSwitch:) forControlEvents:UIControlEventValueChanged];
-			[switchCtl release];
-			
-			return cell;
+			static NSString *MyIdentifier = @"SettingCell";	
+			UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+			if (cell == nil) {
+				cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:MyIdentifier] autorelease];
+			}
+
+			if (indexPath.row == [bookmarkList count]) {
+				cell.text = @"Add Bookmark";
+			} else {
+				BookmarkData *bookmarkData = [bookmarkList objectAtIndex:indexPath.row];
+				cell.text = bookmarkData.title;
+				cell.hidesAccessoryWhenEditing = NO;
+			}
+			return cell;	
 			break;
-		}			
+		}		
 	}
 
 }
+
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-	if (indexPath.row == addIndex) {
-		return NO;
+	if (indexPath.section == HOSTS_SECTION) {
+		return (indexPath.row == [tableData count]) ? (NO) : (YES);
+	} else if (indexPath.section == BOOKMARKS_SECTION) {
+		return (indexPath.row == [bookmarkList count]) ? (NO) : (YES);
 	} else {
-		return YES;
+		return NO;
 	}
 }
 
@@ -225,20 +247,39 @@
 // the table's selection has changed, switch to that item's UIViewController
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	XBMCHostData *hostData = [tableData objectAtIndex:indexPath.row];
-	
-	if (self.editing || indexPath.row == addIndex) {
-		SettingsEditViewController *targetController = [ [SettingsEditViewController alloc] initWithNibName:@"SettingsView" bundle:nil];
-		targetController.title =  hostData.title;
-		targetController.xbmcSettings = xbmcSettings;
-		targetController.hostData = hostData;
-		[[self navigationController] pushViewController:targetController animated:YES ];
-		[targetController release ];				
-	} else {
-		// Reset current hash as we always want to refresh when any items are clicked on
-		activeHash = nil;
-		[xbmcSettings  setActive:hostData];
-		[self actionDone];	
+
+	if (indexPath.section == HOSTS_SECTION) {	
+		if (self.editing || indexPath.row == [tableData count]) {
+
+			SettingsEditViewController *targetController = [ [SettingsEditViewController alloc] initWithNibName:@"SettingsView" bundle:nil];
+
+			targetController.xbmcSettings = xbmcSettings;
+			if (indexPath.row == [tableData count]) {
+				targetController.title = @"Add Host";
+				targetController.hostData = [[[XBMCHostData alloc] init] autorelease];
+			} else {
+				XBMCHostData *hostData = [tableData objectAtIndex:indexPath.row];	
+				targetController.title =  hostData.title;			
+				targetController.hostData = hostData;
+			}
+			[[self navigationController] pushViewController:targetController animated:YES ];
+			[targetController release ];				
+		} else {
+			if (indexPath.row < [tableData count]) {
+				XBMCHostData *hostData = [tableData objectAtIndex:indexPath.row];					
+				// Reset current hash as we always want to refresh when any items are clicked on
+				activeHash = nil;
+				[xbmcSettings  setActive:hostData];
+				[self actionDone];	
+			}
+		}
+	} else if (indexPath.section == BOOKMARKS_SECTION) {
+		if (indexPath.row == [bookmarkList count]) {
+			BookmarkViewController *targetController = [[BookmarkViewController alloc] init];
+			targetController.title = @"Add Bookmark";
+			[[self navigationController] pushViewController:targetController animated:YES ];
+			[targetController release ];				
+		}
 	}
 }
 

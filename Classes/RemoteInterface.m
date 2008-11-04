@@ -607,7 +607,7 @@
 - (NSArray*)GetAlbumsByWhereClause:(NSString*)whereClause {
 	
 	//NSArray *fields = [ NSArray arrayWithObjects: @"id", @"title", @"artistId", @"artistTitle", @"thumbnail",nil ];
-	NSString *query = [NSString stringWithFormat:@"select idAlbum, strAlbum, idArtist, strArtist, strThumb from albumview where %@ order by strAlbum asc", whereClause];
+	NSString *query = [self GetAlbumsQuery:whereClause];
 	NSArray *data = [ self  QueryMusicDatabaseArray:query];
 	
 	NSMutableArray *returndata = [NSMutableArray array ];
@@ -966,7 +966,7 @@
 	return returndata; 	
 }
 - (NSString*)SendCommand:(NSString*)command parameter:(NSString*)parameter{
-	XBMCSettings *xbmcsettings = [[XBMCSettings alloc] init];
+	XBMCSettings *xbmcsettings = [XBMCSettings sharedInstance];
 	XBMCHostData *data     = [xbmcsettings getActiveHost];
 	[xbmcsettings release];
 	if (data == nil) {

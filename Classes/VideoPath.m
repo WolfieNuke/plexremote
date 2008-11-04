@@ -10,10 +10,7 @@
 #import "PathItem.h";
 
 @implementation VideoPath
-@synthesize items;
-- (void)addItem:(PathItem*)item {
-	[items addObject:item];
-}	
+
 + (VideoPath*)pathFromPath:(VideoPath*)path {
 	VideoPath *newVideoPath = [VideoPath alloc];
 	newVideoPath.items = [NSMutableArray arrayWithArray:path.items];
@@ -87,8 +84,6 @@
 }
 
 -(void)dealloc {
-	NSLog(@"VideoPath - dealloc");	
-	[items release];
 	[super dealloc];
 }
 @end

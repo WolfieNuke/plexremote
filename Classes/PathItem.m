@@ -12,6 +12,18 @@
 @implementation PathItem
 @synthesize type;
 @synthesize value;
+- (void) encodeWithCoder: (NSCoder *)coder
+{
+	[coder encodeInteger: type		    forKey:@"type"];
+	[coder encodeObject:  value		    forKey:@"value"];	
+}
+- (id)initWithCoder:(NSCoder *)coder {
+	if (self = [super init]) {
+		self.type		   = [coder decodeIntegerForKey:@"type"];
+		self.value		   = [coder decodeObjectForKey:@"value"];		
+	}
+	return self;
+}
 -(void)dealloc {
 	[value release];
 	[super dealloc];
