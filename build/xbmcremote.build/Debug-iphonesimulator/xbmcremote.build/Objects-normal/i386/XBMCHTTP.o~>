@@ -1,0 +1,2 @@
+/Users/djfumberger/Documents/xbmc-remote/Classes/XBMCHTTP.m: In function '-[XBMCHTTP GetAlbumsQuery:]':
+/Users/djfumberger/Documents/xbmc-remote/Classes/XBMCHTTP.m:13: warning: 'return' with a value, in function returning void

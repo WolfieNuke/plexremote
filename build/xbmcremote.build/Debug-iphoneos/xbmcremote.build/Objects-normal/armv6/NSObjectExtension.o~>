@@ -1,0 +1,5 @@
+/Users/djfumberger/Documents/xbmc-remote/Classes/../NSObjectExtension.m: In function '-[NSObject(Extension) className]':
+/Users/djfumberger/Documents/xbmc-remote/Classes/../NSObjectExtension.m:18: warning: implicit declaration of function 'class_getName'
+/Users/djfumberger/Documents/xbmc-remote/Classes/../NSObjectExtension.m:18: warning: passing argument 1 of 'stringWithUTF8String:' makes pointer from integer without a cast
+/Users/djfumberger/Documents/xbmc-remote/Classes/../NSObjectExtension.m: In function '+[NSObject(Extension) className]':
+/Users/djfumberger/Documents/xbmc-remote/Classes/../NSObjectExtension.m:22: warning: passing argument 1 of 'stringWithUTF8String:' makes pointer from integer without a cast

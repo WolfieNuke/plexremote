@@ -1,0 +1,3 @@
+In file included from /Users/djfumberger/Documents/xbmc-remote/Classes/ViewsNavigationController.m:9:
+/Users/djfumberger/Documents/xbmc-remote/Classes/ViewsNavigationController.h:14: error: syntax error before 'TabItemData'
+/Users/djfumberger/Documents/xbmc-remote/Classes/ViewsNavigationController.m:13: error: no declaration of property 'tabItemData' found in the interface

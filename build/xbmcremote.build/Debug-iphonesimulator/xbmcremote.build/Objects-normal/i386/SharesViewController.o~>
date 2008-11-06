@@ -1,0 +1,11 @@
+In file included from /Users/djfumberger/Documents/xbmc-remote/Classes/SharesViewController.m:10:
+/Users/djfumberger/Documents/xbmc-remote/Classes/DirectoryViewController.h:11:27: error: DirectoryPath.h: No such file or directory
+In file included from /Users/djfumberger/Documents/xbmc-remote/Classes/SharesViewController.m:10:
+/Users/djfumberger/Documents/xbmc-remote/Classes/DirectoryViewController.h:14: error: syntax error before 'DirectoryPath'
+/Users/djfumberger/Documents/xbmc-remote/Classes/DirectoryViewController.h:17: error: syntax error before 'DirectoryPath'
+/Users/djfumberger/Documents/xbmc-remote/Classes/SharesViewController.m: In function '-[SharesViewController selectedDataCell:]':
+/Users/djfumberger/Documents/xbmc-remote/Classes/SharesViewController.m:26: error: 'DirectoryPath' undeclared (first use in this function)
+/Users/djfumberger/Documents/xbmc-remote/Classes/SharesViewController.m:26: error: (Each undeclared identifier is reported only once
+/Users/djfumberger/Documents/xbmc-remote/Classes/SharesViewController.m:26: error: for each function it appears in.)
+/Users/djfumberger/Documents/xbmc-remote/Classes/SharesViewController.m:26: error: 'path' undeclared (first use in this function)
+/Users/djfumberger/Documents/xbmc-remote/Classes/SharesViewController.m:32: error: request for member 'directoryPath' in something not a structure or union

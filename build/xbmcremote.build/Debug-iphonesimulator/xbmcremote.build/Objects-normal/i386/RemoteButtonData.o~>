@@ -1,0 +1,12 @@
+/Users/djfumberger/Documents/xbmc-remote/Classes/RemoteButtonData.m:13: error: no declaration of property 'frame' found in the interface
+/Users/djfumberger/Documents/xbmc-remote/Classes/RemoteButtonData.m: In function '-[RemoteButtonData encodeWithCoder:]':
+/Users/djfumberger/Documents/xbmc-remote/Classes/RemoteButtonData.m:32: error: 'frame' undeclared (first use in this function)
+/Users/djfumberger/Documents/xbmc-remote/Classes/RemoteButtonData.m:32: error: (Each undeclared identifier is reported only once
+/Users/djfumberger/Documents/xbmc-remote/Classes/RemoteButtonData.m:32: error: for each function it appears in.)
+/Users/djfumberger/Documents/xbmc-remote/Classes/RemoteButtonData.m: In function '-[RemoteButtonData initWithCoder:]':
+/Users/djfumberger/Documents/xbmc-remote/Classes/RemoteButtonData.m:47: error: request for member 'frame' in something not a structure or union
+/Users/djfumberger/Documents/xbmc-remote/Classes/RemoteButtonData.m: At top level:
+/Users/djfumberger/Documents/xbmc-remote/Classes/RemoteButtonData.m:53: warning: property 'scale' requires method '-scale' to be defined - use @synthesize, @dynamic or provide a method implementation
+/Users/djfumberger/Documents/xbmc-remote/Classes/RemoteButtonData.m:53: warning: property 'scale' requires the method 'setScale:' to be defined - use @synthesize, @dynamic or provide a method implementation
+/Users/djfumberger/Documents/xbmc-remote/Classes/RemoteButtonData.m:53: warning: property 'point' requires method '-point' to be defined - use @synthesize, @dynamic or provide a method implementation
+/Users/djfumberger/Documents/xbmc-remote/Classes/RemoteButtonData.m:53: warning: property 'point' requires the method 'setPoint:' to be defined - use @synthesize, @dynamic or provide a method implementation

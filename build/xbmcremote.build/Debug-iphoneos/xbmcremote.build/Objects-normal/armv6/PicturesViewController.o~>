@@ -1,0 +1,15 @@
+/Users/djfumberger/Documents/xbmc-remote/Classes/PicturesViewController.m: In function '-[PicturesViewController setupView]':
+/Users/djfumberger/Documents/xbmc-remote/Classes/PicturesViewController.m:15: warning: 'NSObject' may not respond to '-setupView'
+/Users/djfumberger/Documents/xbmc-remote/Classes/PicturesViewController.m:15: warning: (Messages without a matching method signature
+/Users/djfumberger/Documents/xbmc-remote/Classes/PicturesViewController.m:15: warning: will be assumed to return 'id' and accept
+/Users/djfumberger/Documents/xbmc-remote/Classes/PicturesViewController.m:15: warning: '...' as arguments.)
+/Users/djfumberger/Documents/xbmc-remote/Classes/PicturesViewController.m:16: error: 'cellIdentifier' undeclared (first use in this function)
+/Users/djfumberger/Documents/xbmc-remote/Classes/PicturesViewController.m:16: error: (Each undeclared identifier is reported only once
+/Users/djfumberger/Documents/xbmc-remote/Classes/PicturesViewController.m:16: error: for each function it appears in.)
+/Users/djfumberger/Documents/xbmc-remote/Classes/PicturesViewController.m:17: error: 'directoryMask' undeclared (first use in this function)
+/Users/djfumberger/Documents/xbmc-remote/Classes/PicturesViewController.m:17: error: 'DIRECTORY_MASK_PICTURE' undeclared (first use in this function)
+/Users/djfumberger/Documents/xbmc-remote/Classes/PicturesViewController.m:18: error: 'actionSections' undeclared (first use in this function)
+/Users/djfumberger/Documents/xbmc-remote/Classes/PicturesViewController.m:19: error: 'hasImage' undeclared (first use in this function)
+/Users/djfumberger/Documents/xbmc-remote/Classes/PicturesViewController.m: In function '-[PicturesViewController loadData]':
+/Users/djfumberger/Documents/xbmc-remote/Classes/PicturesViewController.m:23: error: 'displayData' undeclared (first use in this function)
+/Users/djfumberger/Documents/xbmc-remote/Classes/PicturesViewController.m:23: error: 'XBMCInterface' undeclared (first use in this function)
