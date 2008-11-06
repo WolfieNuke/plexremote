@@ -12,60 +12,53 @@
 @implementation TouchTableView
 //@synthesize controller;
 
+- (float)distanceBetweenTouches:(NSSet *)touches {
+	NSArray *allTouches = [touches allObjects];
+	CGPoint point1 = [[allTouches objectAtIndex:0] locationInView:[self superview]];
+	CGPoint point2 = [[allTouches objectAtIndex:1] locationInView:[self superview]];
+	return (sqrt((point1.x - point2.x) * (point1.x - point2.x) + (point1.y - point2.y) * (point1.y - point2.y)));
+}
+
+- (CGPoint)distanceBetweenTouchesXY:(NSSet *)touches {	
+	NSArray *allTouches = [touches allObjects];
+	CGPoint point1 = [[allTouches objectAtIndex:0] locationInView:[self superview]];
+	CGPoint point2 = [[allTouches objectAtIndex:1] locationInView:[self superview]];
+	return CGPointMake(	(sqrt((point1.x - point2.x) * (point1.x - point2.x))),
+					   (sqrt((point1.y - point2.y) * (point1.y - point2.y))) );
+}
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-	// We only support single touches, so anyObject retrieves just that touch from touches
-	UITouch *touch = [touches anyObject];
-	firstpoint = [touch locationInView:self];
-	horizontalChange = 0;
-	verticalChange = 0;
-	if ([[touches allObjects] count] == 1) {
+	NSSet *totalTouches = [touches setByAddingObjectsFromSet:[event touchesForView:self]];
+	if ([totalTouches count] > 1) {
+		startTouchDistance = [self distanceBetweenTouches:totalTouches];
+	} else {
 		[super touchesBegan:touches withEvent:event];
 	}
 	
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-	UITouch *touch = [touches anyObject];
-	if ([[[event allTouches] allObjects] count] == 2) {
-
-		NSLog(@"Multi Touch");
-	CGPoint location     = [touch locationInView:self];
-	horizontalChange += firstpoint.x - location.x;
-	verticalChange   += firstpoint.y - location.y;	
-	if (verticalChange > 100) {// || verticalChange > 100) {
-		NSLog(@"Zoom--");
-		horizontalChange = 0;
-		verticalChange = 0;
-		firstpoint = location;
-		if (self.delegate && [self.delegate respondsToSelector:@selector(viewZoomOut)]) {
-			[self.delegate viewZoomOut];
-		}
-	} else if (verticalChange < -100) { // || verticalChange < -50)  {
-		NSLog(@"Zoom++"); 		
-
-		horizontalChange = 0;
-		verticalChange = 0;
-		firstpoint = location;
-		if (self.delegate && [self.delegate respondsToSelector:@selector(viewZoomIn)])
-		{
-			[self.delegate viewZoomIn];
-		}		
-	}
-	CGPoint prevlocation = [touch previousLocationInView:self];
+	//if (!editing) { return; }
+	UITouch *touch       = [touches anyObject];
+	CGPoint location     = [touch locationInView:[self superview]];
 	
-	NSLog(@"Touch %f %f / %f %f", location.x, location.y, firstpoint.x , firstpoint.y);
-	NSLog(@"Change X %f Y %f", horizontalChange, verticalChange);
-	} else {
+	if ([[event touchesForView:self] count] == 1) { 
 		[super touchesMoved:touches withEvent:event];
+	} else {
+		pinching = YES;		
+		float newTouchDistance = [self distanceBetweenTouches:[event touchesForView:self]];
+		float scale = (newTouchDistance / startTouchDistance) ;
 	}
 }
 
+
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-	// We only support single touches, so anyObject retrieves just that touch from touches
-	UITouch *touch = [touches anyObject];
-	if ([[touches allObjects] count] == 1) {
-		[super touchesEnded:touches withEvent:event];
+    NSMutableSet *remainingTouches = [[[event touchesForView:self] mutableCopy] autorelease];
+    [remainingTouches minusSet:touches];
+	if ([remainingTouches count] < 2) {
+		if (pinching) { }
 	}
+	
 }
 
 - (void)dealloc {

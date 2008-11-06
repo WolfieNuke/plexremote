@@ -128,8 +128,8 @@
 
 
 - (IBAction)showNowPlayingAction:(id)sender {
-	//[self showRemote];
-	[self showNowPlaying];
+	[self showRemote];
+	//[self showNowPlaying];
 }
 - (void)showRemote {
 	

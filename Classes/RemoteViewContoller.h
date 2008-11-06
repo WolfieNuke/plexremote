@@ -12,7 +12,10 @@
 #import "GUIStatus.h";
 #import "RemoteInterface.h";
 #import "XBMCSettings.h";
+#import "RemoteButtonViewController.h";
 @interface RemoteViewContoller : UIViewController {
+	RemoteButtonViewController *remoteButtonController;
+	
 	RemoteInterface *XBMCInterface;
 	GUIStatus *guiStatus;
 	NSInteger guiMode;
@@ -33,6 +36,7 @@
 
 - (IBAction)fingerDown:(id)sender;
 - (IBAction)fingerUp:(id)sender;
+- (IBAction)actionEditMode:(id)sender;
 - (IBAction)actionSwitchView:(id)sender;
 - (IBAction)actionUp:(id)sender;
 - (IBAction)actionDown:(id)sender;

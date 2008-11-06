@@ -9,9 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h";
 @interface TouchTableView : UITableView {
-	CGPoint firstpoint;
-	float horizontalChange;
-	float verticalChange;
+	BOOL pinching;
+	float startTouchDistance;
 	//BaseTableViewDelegate delegate;
 //	UIViewController *controller;
 }

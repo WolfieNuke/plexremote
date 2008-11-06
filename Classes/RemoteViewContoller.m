@@ -12,6 +12,8 @@
 #import "SettingsViewController.h";
 #import "RemoteTouchView.h";
 #import "Sleep.h";
+#import "RemoteButtonData.h";
+
 #define GUI_MODE_NAV    0
 #define GUI_MODE_VIDEO  1
 #define GUI_MODE_AUDIO  2
@@ -35,29 +37,41 @@
 - (void)viewDidLoad {
 	XBMCInterface = [InterfaceManager getSharedInterface];
 	xbmcSettings =  [XBMCSettings sharedInstance];
+	
+	remoteButtonController = [RemoteButtonViewController alloc];
+	remoteButtonController.view = remoteButtonView;
+	remoteButtonController.delegate = self;
+	[remoteButtonController init];
+	
+	//remoteButtonView = remoteButtonController.view;
+	//remoteButtonController.view = remoteButtonView;
+	
 	pointer.center = self.view.center;
 	pointer.hidden = true;
 	
 	NSInteger selectedView = xbmcSettings.remoteType;
 	if (selectedView == BUTTON_VIEW) {
-		[remoteContainerView addSubview:remoteButtonView];
+		[remoteContainerView addSubview:remoteButtonController.view];
 	} else if (selectedView == GESTURE_VIEW) {
 		[remoteContainerView addSubview:remoteGestureView];
 	}
 	
 }
+- (IBAction)actionEditMode:(id)sender {
+	[remoteButtonController toggleEditMode];
+}
 - (IBAction)actionSwitchView:(id)sender {
 	[UIView beginAnimations: @"switchview" context: nil];
 	[UIView setAnimationDuration:1];
 
-	if ([remoteButtonView superview]) {
-		[remoteButtonView removeFromSuperview];
+	if ([remoteButtonController.view superview]) {
+		[remoteButtonController.view removeFromSuperview];
 		[remoteContainerView addSubview:remoteGestureView];
 		[UIView setAnimationTransition: UIViewAnimationTransitionFlipFromLeft forView: remoteContainerView cache:YES];
 		xbmcSettings.remoteType = GESTURE_VIEW;	
 	} else {
 		[remoteGestureView removeFromSuperview];
-		[remoteContainerView addSubview:remoteButtonView];
+		[remoteContainerView addSubview:remoteButtonController.view];
 		[UIView setAnimationTransition: UIViewAnimationTransitionFlipFromRight forView: remoteContainerView cache:YES];		
 		xbmcSettings.remoteType = BUTTON_VIEW;
 	}
@@ -222,7 +236,44 @@
 	[XBMCInterface SendKey:ACTION_PARENT_DIR];
 }
 
-
+- (void)actionButtonPress:(id)sender {
+	RemoteButtonData *buttonData = sender;
+	switch (buttonData.type) {
+		case REMOTE_BUTTON_UP:
+			[self controlMovedUp];
+			break;
+		case REMOTE_BUTTON_DOWN:
+			[self controlMovedDown];
+			break;
+		case REMOTE_BUTTON_LEFT:
+			[self controlMovedLeft];
+			break;
+		case REMOTE_BUTTON_RIGHT:
+			[self controlMovedRight];
+			break;
+		case REMOTE_BUTTON_OK:
+			[self controlEnter];
+			break;
+		case REMOTE_BUTTON_NEXT:
+			[XBMCInterface playNext];
+			break;
+		case REMOTE_BUTTON_PREV:
+			[XBMCInterface playPrev];
+			break;
+		case REMOTE_BUTTON_BACK:
+			[self controlBack];
+			break;
+		case REMOTE_BUTTON_UP_DIR:
+			[XBMCInterface SendKey:ACTION_PARENT_DIR];
+			break;
+		case REMOTE_BUTTON_PAUSE:
+			[XBMCInterface pause];
+			break;
+		case REMOTE_BUTTON_PLAY:
+			[XBMCInterface pause];
+			break;
+	}
+}
 - (IBAction)actionUp:(id)sender { 
 	[self controlMovedUp];
 }

@@ -8,6 +8,7 @@
 
 #import "XBMCSettings.h"
 #import "TabItemData.h";
+#import "RemoteButtonData.h";
 
 #define KEY_HOST_LIST   0
 #define KEY_HOST_ACTIVE 1
@@ -15,11 +16,18 @@
 #define KEY_SHOW_IMAGES 3
 #define KEY_SYNC        4
 
+
 // This is a singleton class, see below
 static XBMCSettings *sharedSettingsDelegate = nil;
 
-@implementation XBMCSettings
+@interface XBMCSettings (private) 
+- (void)setupTabListDefault;
+- (void)setupRemoteButtonListDefault;
+- (void)setupDefaults;
+@end
 
+@implementation XBMCSettings
+@synthesize remoteButtonList;
 @synthesize showImages;
 @synthesize sync;
 @synthesize remoteType;
@@ -27,7 +35,7 @@ static XBMCSettings *sharedSettingsDelegate = nil;
 @synthesize bookmarkList;
 @synthesize bookmarkIDSeq;
 
--(void)init {
+-(id)init {
 	defaults = [NSUserDefaults standardUserDefaults];
 	[self loadSettings];
 	[super init];
@@ -39,7 +47,24 @@ static XBMCSettings *sharedSettingsDelegate = nil;
 	[defaults setBool:  NO		  forKey:@"XBMCSync"];		
 	[defaults setInteger:0		  forKey:@"XBMCRemoteType"];		
 	[self setupTabListDefault];
+	[self setupRemoteButtonListDefault];
 }
+- (void)setupRemoteButtonListDefault {
+	self.remoteButtonList = [NSArray arrayWithObjects:
+							 [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_PLAY   ],
+						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_PAUSE  ],
+						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_UP  ],							 
+						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_DOWN  ],
+						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_LEFT  ],
+						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_RIGHT  ],
+						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_OK     ],							 
+						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_NEXT     ],							 
+						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_PREV     ],	
+						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_BACK  ],							 
+						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_UP_DIR  ],							 							 
+							 nil
+							];
+}	
 - (void)setupTabListDefault {
 	self.tabList = [NSArray arrayWithObjects:
 			   [[TabItemData alloc] initWithClassName:@"ArtistViewController"],
@@ -61,6 +86,7 @@ static XBMCSettings *sharedSettingsDelegate = nil;
 	//[self resetAllSettings];
 	//[defaults removeObjectForKey:@"XBMCBookmarkList"];
 	//[defaults removeObjectForKey:@"XBMCTabList"];	
+	[defaults removeObjectForKey:@"XBMCRemoteButtonList"];		
 	NSMutableArray *hostList = [defaults objectForKey:@"XBMCHostList"];
 	if (hostList == nil) {
 		[self setupDefaults];
@@ -80,21 +106,29 @@ static XBMCSettings *sharedSettingsDelegate = nil;
 		self.bookmarkList = [NSArray array];
 	}
 	
-	self.bookmarkIDSeq = [defaults integerForKey:@"XBMCBookmarkIDSeq"];
-	self.showImages = [defaults boolForKey: @"XBMCShowImages"];
-	self.sync       = [defaults boolForKey: @"XBMCSync"];	
-	self.remoteType = [defaults integerForKey:@"XBMCRemoteType"];	
+	NSData *remoteButtonData = [defaults objectForKey:@"XBMCRemoteButtonList"];
+	if (remoteButtonData) {
+		self.remoteButtonList = [NSKeyedUnarchiver unarchiveObjectWithData:remoteButtonData];
+	} else {
+		[self setupRemoteButtonListDefault];
+	}	
 	
-	//NSLog(@"Tab list count %@", [[tabList objectAtIndex:1] objectForKey:@"id"]);
+	self.bookmarkIDSeq = [defaults integerForKey:@"XBMCBookmarkIDSeq"];
+	self.showImages    = [defaults boolForKey:   @"XBMCShowImages"];
+	self.sync          = [defaults boolForKey:   @"XBMCSync"];	
+	self.remoteType    = [defaults integerForKey:@"XBMCRemoteType"];	
+
 }
 - (void)saveSettings {
 	NSLog(@"Boomark count %i Tab list Count %i", [self.bookmarkList count], [self.tabList count]);
 	NSData *bookmarkData = [NSKeyedArchiver archivedDataWithRootObject: self.bookmarkList];
 	[defaults setObject:bookmarkData forKey:@"XBMCBookmarkList"];
 
-	
 	NSData *tablistData = [NSKeyedArchiver archivedDataWithRootObject: self.tabList];
 	[defaults setObject:tablistData forKey:@"XBMCTabList"];
+
+	NSData *remoteButtonData = [NSKeyedArchiver archivedDataWithRootObject: self.remoteButtonList];
+	[defaults setObject:remoteButtonData forKey:@"XBMCRemoteButtonList"];
 	
 	[defaults setInteger:self.bookmarkIDSeq forKey:@"XBMCBookmarkIDSeq"];
 	[defaults setBool: showImages forKey: @"XBMCShowImages"];

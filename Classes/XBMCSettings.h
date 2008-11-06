@@ -19,6 +19,7 @@
 	BOOL sync;
 	NSArray *tabList;
 	NSArray *bookmarkList;
+	NSArray *remoteButtonList;
 }
 @property (nonatomic, assign) BOOL showImages;
 @property (nonatomic, assign) BOOL sync;
@@ -26,6 +27,7 @@
 @property (nonatomic, assign) NSInteger bookmarkIDSeq;
 @property (nonatomic, retain) NSArray   *tabList;
 @property (nonatomic, retain) NSArray   *bookmarkList;
+@property (nonatomic, retain) NSArray   *remoteButtonList;
 + (XBMCSettings*)sharedInstance;
 - (void)saveSettings;
 - (void)addHost:(XBMCHostData*)hostData;
