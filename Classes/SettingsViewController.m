@@ -19,11 +19,17 @@
 @implementation SettingsViewController
 
 - (void)viewWillAppear:(BOOL)animated {
+	[self unselectCurrent];
 	self.navigationController.delegate = self;	
 }
 - (void)viewDidAppear:(BOOL)animated {
     [self setupDisplayList];
 	[[self tableView] reloadData];
+}
+
+- (void) unselectCurrent {
+	NSIndexPath *indexPath = [[self tableView] indexPathForSelectedRow];
+	[[self tableView] deselectRowAtIndexPath: indexPath animated: NO];	
 }
 
 - (NSString*)getActiveHash {
