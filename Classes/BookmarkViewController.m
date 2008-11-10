@@ -38,14 +38,6 @@
 	return returnButton;
 }
 
-/*
- Implement loadView if you want to create a view hierarchy programmatically
-- (void)loadView {
-}
- */
-- (void)viewWillDisappear:(BOOL)animated{ 
-
-}
 - (void)viewDidLoad {
 	UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style: UITableViewStyleGrouped];
 	tableView.delegate = self;
@@ -60,9 +52,10 @@
 						[NSDictionary dictionaryWithObjectsAndKeys:@"ArtistViewController",		 @"class", nil],
 						[NSDictionary dictionaryWithObjectsAndKeys:@"AlbumsViewController",      @"class", nil],
 						[NSDictionary dictionaryWithObjectsAndKeys:@"TVShowsViewController",     @"class", nil],						 
-						[NSDictionary dictionaryWithObjectsAndKeys:@"MoviesViewController",      @"class", nil],						 						 
+						[NSDictionary dictionaryWithObjectsAndKeys:@"MoviesViewController",      @"class", nil],						 		
+						[NSDictionary dictionaryWithObjectsAndKeys:@"GenresViewController",      @"class", nil],						 					 
 						[NSDictionary dictionaryWithObjectsAndKeys:@"MusicSharesViewController", @"class", nil],						 
-						[NSDictionary dictionaryWithObjectsAndKeys:@"VideoSharesViewController", @"class", nil],						 						 
+						[NSDictionary dictionaryWithObjectsAndKeys:@"VideoSharesViewController", @"class", nil],	
 						nil
 					 ];
 	self.tableData = data;
