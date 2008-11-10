@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 
 
-@interface RemoteButtonView : UIView {
-
+@interface RemoteButtonView : UIScrollView {
+	IBOutlet UIPageControl *pageControl;
+	NSInteger pages;
 }
-
+@property (nonatomic, retain) IBOutlet UIPageControl *pageControl;
 @end

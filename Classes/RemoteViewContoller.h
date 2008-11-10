@@ -26,7 +26,10 @@
 	
 	IBOutlet UIView *remoteGestureView;
 	IBOutlet UIView *remoteButtonView;
+	IBOutlet UIView *remoteButtonPagingView;	
 	IBOutlet UIView *remoteContainerView;
+	
+	IBOutlet UIButton *addButton;
 	
 	BOOL refreshing;
 	BOOL isFingerDown;
@@ -36,22 +39,9 @@
 
 - (IBAction)fingerDown:(id)sender;
 - (IBAction)fingerUp:(id)sender;
+- (IBAction)actionAddButton:(id)sender;
 - (IBAction)actionEditMode:(id)sender;
 - (IBAction)actionSwitchView:(id)sender;
-- (IBAction)actionUp:(id)sender;
-- (IBAction)actionDown:(id)sender;
-- (IBAction)actionLeft:(id)sender;
-- (IBAction)actionRight:(id)sender;
-- (IBAction)actionEnter:(id)sender;
-- (IBAction)actionBack:(id)sender;
-- (IBAction)actionPlay:(id)sender;
-- (IBAction)actionPause:(id)sender;
-- (IBAction)actionStop:(id)sender;
-- (IBAction)actionBackTwo:(id)sender;
-- (IBAction)actionBack:(id)sender;
-- (IBAction)actionNext:(id)sender;
-- (IBAction)actionPrev:(id)sender;
-- (IBAction)actionStop:(id)sender;
 - (IBAction)actionGui:(id)sender;
 - (IBAction)actionMenu:(id)sender;
 - (IBAction)actionChangeVolume:(id)sender;

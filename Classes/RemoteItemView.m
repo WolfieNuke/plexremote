@@ -12,6 +12,12 @@
 #define DEGREES_TO_RADIANS(__ANGLE__) ((__ANGLE__) / 180.0 * M_PI)
 @interface RemoteItemView (private)
 - (void)resize:(CGRect)frame;
+- (void)frameResize:(CGRect)frame;
+- (void)refreshResize;
+- (void)setInactive;
+- (void)setActive;
+- (CGPoint)snapToGrid:(CGPoint)location;
+- (CGSize)snapToGridSize:(CGSize)size;
 @end
 
 @implementation RemoteItemView
@@ -19,8 +25,10 @@
 @synthesize button;
 @synthesize buttonData;
 @synthesize delegate;
+@synthesize removeButton;
+
 - (void)setButtonData:(RemoteButtonData*)_buttonData {
-	buttonData = _buttonData;
+	buttonData = [_buttonData retain];
 	[self frameResize: self.frame];
 	//self.transform = CGAffineTransformMakeScale(_buttonData.scale.x, _buttonData.scale.y);
 }
@@ -32,11 +40,25 @@
 	rv.delegate = self;
 	[rv release];
 	
+	
+	UIButton *rb = [[UIButton alloc] initWithFrame:CGRectMake(-10,-10,35,35)];
+	[self addSubview:rb];
+	[rb setBackgroundImage:[UIImage imageNamed:@"remove.png"] forState:UIControlStateNormal];
+	self.removeButton = rb;
+	[rb addTarget:self action:@selector(actionRemove) forControlEvents:UIControlEventTouchUpInside];
+	[rb release];
+	
 	[self frameResize: self.frame];
 }
+- (void)actionRemove {
+	[self setInactive];
+	[self removeFromSuperview];
+}
 - (void)setInactive {
-	[resizerView removeFromSuperview];
-	self.resizerView = nil;
+	[self.removeButton removeFromSuperview];
+	[self.resizerView  removeFromSuperview];
+	self.resizerView  = nil;
+	self.removeButton = nil;
 }
 - (void)setButton:(UIView*)_button {
 	pinching = NO;
@@ -75,14 +97,33 @@
 		self.center = location;
 		self.buttonData.frame = self.frame;		
 		[self refreshResize];
+		
+		CGPoint origin = [self snapToGrid:self.frame.origin];
+		self.frame = CGRectMake(origin.x, origin.y, self.frame.size.width, self.frame.size.height);
 	}
+}
+- (CGPoint)snapToGrid:(CGPoint)location {
+	int y = location.y;
+	int x = location.x;
+	while(remainder(y, 5) != 0) { y++; }
+	while(remainder(x, 5) != 0) { x++; }	
+	return CGPointMake(x,y);;
+}
+- (CGSize)snapToGridSize:(CGSize)size {
+	int width = size.width;
+	int height = size.height;
+	while(remainder(width, 10) != 0) { width++; }
+	while(remainder(height, 10) != 0) { height++; }	
+	return CGSizeMake(width,height);;
 }
 - (void)frameResizeByX:(NSInteger)X Y:(NSInteger)Y {
 	[self resize: CGRectMake(self.frame.origin.x, self.frame.origin.y,self.frame.size.width + X, self.frame.size.height + Y)];
 }
 - (void)frameResize:(CGRect)frame {
-	CGFloat width =   frame.size.width;
-	CGFloat height =  frame.size.height;
+	CGSize size = [self snapToGridSize: frame.size];
+	
+	CGFloat width =   size.width;
+	CGFloat height =  size.height;
 	CGFloat x      =  frame.origin.x;
 	CGFloat y      =  frame.origin.y;
 	self.button.frame = CGRectMake(0,0,width, height);
@@ -106,20 +147,22 @@
 - (void)startEditing {
 	editing = YES;
 	button.userInteractionEnabled = NO;
-	//button.transform = CGAffineTransformMakeRotation(DEGREES_TO_RADIANS(1));	
-	//[UIView beginAnimations:@"edit" context:nil];
-	//[UIView setAnimationDuration:0.2];
-	//[UIView setAnimationRepeatCount:10000];
-	//[UIView setAnimationRepeatAutoreverses:YES];
-	//button.transform = CGAffineTransformMakeRotation(DEGREES_TO_RADIANS(-1));
-	//[UIView commitAnimations];
+
+	[UIView beginAnimations:@"alpha" context:nil];
+	[UIView setAnimationDuration:0.25];
+	button.alpha = 0.75;
+	[UIView commitAnimations];
+
 	[self setActive];
 }
 - (void)endEditing {
-	NSLog(@"End editing");
 	button.userInteractionEnabled = YES;
-	[button.layer removeAllAnimations];
-	button.transform = CGAffineTransformMakeRotation(0);	
+
+	[UIView beginAnimations:@"fade" context:nil];
+	[UIView setAnimationDuration:0.25];
+	button.alpha = 1;
+	[UIView commitAnimations];
+	
 	editing = NO;
 	[self setInactive];
 }

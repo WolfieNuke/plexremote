@@ -162,7 +162,7 @@
 		</data>
 		<key>Remote.nib</key>
 		<data>
-		4DRy9JwPjze1VK44d1k1qptzM/8=
+		gKqSBDtLwtLPy/CqK4iCOq45twM=
 		</data>
 		<key>SettingsNavigationView.nib</key>
 		<data>
@@ -260,6 +260,10 @@
 		<data>
 		IpBVboChMw4VF5htfXkp1rqiTbY=
 		</data>
+		<key>remote-add.png</key>
+		<data>
+		6jZJmzSLrQLAtEsF0KAHl9xGKsM=
+		</data>
 		<key>remote-alt-down.png</key>
 		<data>
 		tTn3pT5sdV1fxau9Di3diTaYBqQ=
@@ -275,6 +279,14 @@
 		<key>remote-alt-up.png</key>
 		<data>
 		NLduzv+h0d6J4x/8dJktFjbJzgg=
+		</data>
+		<key>remote-b-aspect.png</key>
+		<data>
+		JlyXCUnOnsx2GJOnNHhg3+lWOT8=
+		</data>
+		<key>remote-b-ff.png</key>
+		<data>
+		yy9h2tYed6SX5CyQaMvhW4WecRU=
 		</data>
 		<key>remote-b-next.png</key>
 		<data>
@@ -292,9 +304,33 @@
 		<data>
 		CXj90S9yWqt3VD+YrEYHwVJohV8=
 		</data>
+		<key>remote-b-rotate.png</key>
+		<data>
+		M3cF8APDqmNCYRQrdMVilsRRQ9U=
+		</data>
+		<key>remote-b-rw.png</key>
+		<data>
+		Vj+jP0M8aH4Fy+8WYOmCXB5kXdA=
+		</data>
+		<key>remote-b-shutdown.png</key>
+		<data>
+		+k8ai57dW/RJtcn+P7mPDhEDJhs=
+		</data>
 		<key>remote-b-stop.png</key>
 		<data>
 		pccuUKW1xPR2XZP/NVnBTm4F0s0=
+		</data>
+		<key>remote-b-zoom-in.png</key>
+		<data>
+		jFvBmN6NMFJjS0f9rAChqnuddh4=
+		</data>
+		<key>remote-b-zoom-normal.png</key>
+		<data>
+		iAMCb07klogBcJ3sfpAhBYz+ANA=
+		</data>
+		<key>remote-b-zoom-out.png</key>
+		<data>
+		l1XnSIby6oBt/RXCZAVPiW1Ts3I=
 		</data>
 		<key>remote-bg.png</key>
 		<data>
@@ -340,6 +376,10 @@
 		<data>
 		z0xhOnhdeDO62zCLsHz7bvLlUmA=
 		</data>
+		<key>remote-settings.png</key>
+		<data>
+		PzXBem6kDDZg+JGpUQuaILonlAY=
+		</data>
 		<key>remote-up.png</key>
 		<data>
 		osHhuE0gNPOxWHo9MeGduVp1yiQ=
@@ -347,6 +387,10 @@
 		<key>remotebg.png</key>
 		<data>
 		GeCmp8LP26IPIc5/yG6Bv6Tug2o=
+		</data>
+		<key>remove.png</key>
+		<data>
+		UN5hSW5dH+ge1jX9SiaV62kYLPs=
 		</data>
 		<key>standard-remote.png</key>
 		<data>

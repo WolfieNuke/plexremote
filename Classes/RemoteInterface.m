@@ -29,6 +29,7 @@
 #import "ShareData.h";
 
 #import "XUIImage.h";
+#import "Key.h";
 
 @implementation RemoteInterface
 
@@ -533,10 +534,31 @@
 			 parameter: [NSString stringWithFormat:@"%d", action] ];	
 }
 - (void)SendKey:(NSInteger)key {
-	[ self SendCommand:@"Action" 
+	[ self SendCommand:@"SendKey" 
 			 parameter: [NSString stringWithFormat:@"%d", key] ];	
 }
 
+- (void)up {
+	[self SendKey:KEY_BUTTON_DPAD_UP];
+}
+- (void)down {
+	[self SendKey:KEY_BUTTON_DPAD_DOWN];
+}
+- (void)left  {
+	[self SendKey:KEY_BUTTON_DPAD_LEFT];
+}
+- (void)right {
+	[self SendKey:KEY_BUTTON_DPAD_RIGHT];
+}
+- (void)back {
+	[self SendKey:KEY_BUTTON_BACK];
+}
+- (void)enter {
+	[self SendKey:KEY_BUTTON_A];
+}
+- (void)osd {
+	[self SendKey:KEY_BUTTON_START];	
+}
 - (NSArray*)GetAlbumsForArtistName:(NSString*)artistName {
 	NSArray *fields = [ NSArray arrayWithObjects: @"id", @"title", @"artistid", @"artist", nil ];	
 	NSString *query = [ NSString stringWithFormat: @"select strAlbum from album where idArtist in (select idArtist from artist where strArtist = '%@');", artistName];

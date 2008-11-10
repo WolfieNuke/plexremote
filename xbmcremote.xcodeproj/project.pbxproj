@@ -152,6 +152,17 @@
 		B59950E30EC306FF001891EC /* remote-b-pause.png in Resources */ = {isa = PBXBuildFile; fileRef = B59950DF0EC306FF001891EC /* remote-b-pause.png */; };
 		B59950E40EC306FF001891EC /* remote-b-prev.png in Resources */ = {isa = PBXBuildFile; fileRef = B59950E00EC306FF001891EC /* remote-b-prev.png */; };
 		B59950E50EC306FF001891EC /* remote-b-stop.png in Resources */ = {isa = PBXBuildFile; fileRef = B59950E10EC306FF001891EC /* remote-b-stop.png */; };
+		B59D410F0EC6B0B800BB2501 /* remove.png in Resources */ = {isa = PBXBuildFile; fileRef = B59D410E0EC6B0B800BB2501 /* remove.png */; };
+		B59D41800EC6B8B300BB2501 /* remote-settings.png in Resources */ = {isa = PBXBuildFile; fileRef = B59D417F0EC6B8B300BB2501 /* remote-settings.png */; };
+		B59D41860EC6B93F00BB2501 /* remote-add.png in Resources */ = {isa = PBXBuildFile; fileRef = B59D41850EC6B93F00BB2501 /* remote-add.png */; };
+		B59D41B50EC6BFD200BB2501 /* remote-b-ff.png in Resources */ = {isa = PBXBuildFile; fileRef = B59D41AE0EC6BFD200BB2501 /* remote-b-ff.png */; };
+		B59D41B60EC6BFD200BB2501 /* remote-b-rotate.png in Resources */ = {isa = PBXBuildFile; fileRef = B59D41AF0EC6BFD200BB2501 /* remote-b-rotate.png */; };
+		B59D41B70EC6BFD200BB2501 /* remote-b-rw.png in Resources */ = {isa = PBXBuildFile; fileRef = B59D41B00EC6BFD200BB2501 /* remote-b-rw.png */; };
+		B59D41B80EC6BFD200BB2501 /* remote-b-shutdown.png in Resources */ = {isa = PBXBuildFile; fileRef = B59D41B10EC6BFD200BB2501 /* remote-b-shutdown.png */; };
+		B59D41B90EC6BFD200BB2501 /* remote-b-zoom-in.png in Resources */ = {isa = PBXBuildFile; fileRef = B59D41B20EC6BFD200BB2501 /* remote-b-zoom-in.png */; };
+		B59D41BA0EC6BFD200BB2501 /* remote-b-zoom-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = B59D41B30EC6BFD200BB2501 /* remote-b-zoom-normal.png */; };
+		B59D41BB0EC6BFD200BB2501 /* remote-b-zoom-out.png in Resources */ = {isa = PBXBuildFile; fileRef = B59D41B40EC6BFD200BB2501 /* remote-b-zoom-out.png */; };
+		B59D41C10EC6C00400BB2501 /* remote-b-aspect.png in Resources */ = {isa = PBXBuildFile; fileRef = B59D41C00EC6C00400BB2501 /* remote-b-aspect.png */; };
 		B59FE3080E5C0FE7005FE176 /* TouchTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B59FE3070E5C0FE7005FE176 /* TouchTableView.m */; };
 		B59FE6240E5C4CFB005FE176 /* DirectoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B59FE6230E5C4CFB005FE176 /* DirectoryViewController.m */; };
 		B5A655310E55844F0061A24B /* GenresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A655300E55844F0061A24B /* GenresViewController.m */; };
@@ -170,6 +181,7 @@
 		B5BA2C620E65AE0900FF4DEC /* xbmcremote.app in Resources */ = {isa = PBXBuildFile; fileRef = B5BA2C610E65AE0900FF4DEC /* xbmcremote.app */; };
 		B5C2CCA50EC2CC1100B88187 /* ResizerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C2CCA40EC2CC1100B88187 /* ResizerView.m */; };
 		B5C8468F0E573594003DBBA0 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C8468E0E573594003DBBA0 /* MainViewController.m */; };
+		B5CDEE2D0EC5649D0094D993 /* RemoteAddButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5CDEE2C0EC5649D0094D993 /* RemoteAddButtonViewController.m */; };
 		B5D083670E46A36200311322 /* LoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D083660E46A36200311322 /* LoadingViewController.m */; };
 		B5D287100E45B509008ADC56 /* SongsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D2870F0E45B509008ADC56 /* SongsViewController.m */; };
 		B5EB2B0F0E431144008CFBDE /* AlbumsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EB2B0E0E431144008CFBDE /* AlbumsViewController.m */; };
@@ -336,7 +348,7 @@
 		B507CECC0EB7254C008DD569 /* DisplayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DisplayCell.m; path = Classes/DisplayCell.m; sourceTree = "<group>"; };
 		B507CECD0EB7254C008DD569 /* DisplayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DisplayCell.h; path = Classes/DisplayCell.h; sourceTree = "<group>"; };
 		B507CECF0EB72551008DD569 /* CellTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellTextView.m; path = Classes/CellTextView.m; sourceTree = "<group>"; };
-		B507CED00EB72551008DD569 /* CellTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellTextView.h; path = Classes/CellTextView.h; sourceTree = "<group>"; };
+		B507CED00EB72551008DD569 /* CellTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellTextView.h; sourceTree = "<group>"; };
 		B507CED20EB72563008DD569 /* MediaInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaInfoViewController.m; sourceTree = "<group>"; };
 		B507CED30EB72563008DD569 /* MediaInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaInfoViewController.h; sourceTree = "<group>"; };
 		B507CED50EB7256B008DD569 /* PlaylistsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistsViewController.m; sourceTree = "<group>"; };
@@ -387,6 +399,17 @@
 		B59950DF0EC306FF001891EC /* remote-b-pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "remote-b-pause.png"; path = "Resources/Images/Remote Buttons/remote-b-pause.png"; sourceTree = "<group>"; };
 		B59950E00EC306FF001891EC /* remote-b-prev.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "remote-b-prev.png"; path = "Resources/Images/Remote Buttons/remote-b-prev.png"; sourceTree = "<group>"; };
 		B59950E10EC306FF001891EC /* remote-b-stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "remote-b-stop.png"; path = "Resources/Images/Remote Buttons/remote-b-stop.png"; sourceTree = "<group>"; };
+		B59D410E0EC6B0B800BB2501 /* remove.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = remove.png; path = Resources/Images/remove.png; sourceTree = "<group>"; };
+		B59D417F0EC6B8B300BB2501 /* remote-settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "remote-settings.png"; path = "Resources/Images/remote-settings.png"; sourceTree = "<group>"; };
+		B59D41850EC6B93F00BB2501 /* remote-add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "remote-add.png"; path = "Resources/Images/remote-add.png"; sourceTree = "<group>"; };
+		B59D41AE0EC6BFD200BB2501 /* remote-b-ff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "remote-b-ff.png"; path = "Resources/Images/Remote Buttons/remote-b-ff.png"; sourceTree = "<group>"; };
+		B59D41AF0EC6BFD200BB2501 /* remote-b-rotate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "remote-b-rotate.png"; path = "Resources/Images/Remote Buttons/remote-b-rotate.png"; sourceTree = "<group>"; };
+		B59D41B00EC6BFD200BB2501 /* remote-b-rw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "remote-b-rw.png"; path = "Resources/Images/Remote Buttons/remote-b-rw.png"; sourceTree = "<group>"; };
+		B59D41B10EC6BFD200BB2501 /* remote-b-shutdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "remote-b-shutdown.png"; path = "Resources/Images/Remote Buttons/remote-b-shutdown.png"; sourceTree = "<group>"; };
+		B59D41B20EC6BFD200BB2501 /* remote-b-zoom-in.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "remote-b-zoom-in.png"; path = "Resources/Images/Remote Buttons/remote-b-zoom-in.png"; sourceTree = "<group>"; };
+		B59D41B30EC6BFD200BB2501 /* remote-b-zoom-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "remote-b-zoom-normal.png"; path = "Resources/Images/Remote Buttons/remote-b-zoom-normal.png"; sourceTree = "<group>"; };
+		B59D41B40EC6BFD200BB2501 /* remote-b-zoom-out.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "remote-b-zoom-out.png"; path = "Resources/Images/Remote Buttons/remote-b-zoom-out.png"; sourceTree = "<group>"; };
+		B59D41C00EC6C00400BB2501 /* remote-b-aspect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "remote-b-aspect.png"; path = "Resources/Images/Remote Buttons/remote-b-aspect.png"; sourceTree = "<group>"; };
 		B59FE3060E5C0FE7005FE176 /* TouchTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TouchTableView.h; path = Classes/TouchTableView.h; sourceTree = "<group>"; };
 		B59FE3070E5C0FE7005FE176 /* TouchTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TouchTableView.m; path = Classes/TouchTableView.m; sourceTree = "<group>"; };
 		B59FE6220E5C4CFB005FE176 /* DirectoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectoryViewController.h; sourceTree = "<group>"; };
@@ -422,6 +445,8 @@
 		B5C2CCA40EC2CC1100B88187 /* ResizerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResizerView.m; sourceTree = "<group>"; };
 		B5C8468D0E573594003DBBA0 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		B5C8468E0E573594003DBBA0 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		B5CDEE2B0EC5649D0094D993 /* RemoteAddButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteAddButtonViewController.h; sourceTree = "<group>"; };
+		B5CDEE2C0EC5649D0094D993 /* RemoteAddButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteAddButtonViewController.m; sourceTree = "<group>"; };
 		B5D083650E46A36200311322 /* LoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingViewController.h; sourceTree = "<group>"; };
 		B5D083660E46A36200311322 /* LoadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingViewController.m; sourceTree = "<group>"; };
 		B5D2870E0E45B509008ADC56 /* SongsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongsViewController.h; sourceTree = "<group>"; };
@@ -596,6 +621,14 @@
 		B59950970EC2FE6E001891EC /* Remote Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				B59D41C00EC6C00400BB2501 /* remote-b-aspect.png */,
+				B59D41AE0EC6BFD200BB2501 /* remote-b-ff.png */,
+				B59D41AF0EC6BFD200BB2501 /* remote-b-rotate.png */,
+				B59D41B00EC6BFD200BB2501 /* remote-b-rw.png */,
+				B59D41B10EC6BFD200BB2501 /* remote-b-shutdown.png */,
+				B59D41B20EC6BFD200BB2501 /* remote-b-zoom-in.png */,
+				B59D41B30EC6BFD200BB2501 /* remote-b-zoom-normal.png */,
+				B59D41B40EC6BFD200BB2501 /* remote-b-zoom-out.png */,
 				B59950DE0EC306FF001891EC /* remote-b-next.png */,
 				B59950DF0EC306FF001891EC /* remote-b-pause.png */,
 				B59950E00EC306FF001891EC /* remote-b-prev.png */,
@@ -625,7 +658,6 @@
 				B507CECC0EB7254C008DD569 /* DisplayCell.m */,
 				B507CECD0EB7254C008DD569 /* DisplayCell.h */,
 				B507CECF0EB72551008DD569 /* CellTextView.m */,
-				B507CED00EB72551008DD569 /* CellTextView.h */,
 			);
 			name = "Table Cells";
 			path = ..;
@@ -697,6 +729,9 @@
 		B5F9122E0EA9A80600B66B15 /* Remote */ = {
 			isa = PBXGroup;
 			children = (
+				B59D41850EC6B93F00BB2501 /* remote-add.png */,
+				B59D417F0EC6B8B300BB2501 /* remote-settings.png */,
+				B59D410E0EC6B0B800BB2501 /* remove.png */,
 				B59950970EC2FE6E001891EC /* Remote Buttons */,
 				B5994EBD0EC2EFC7001891EC /* remote-resize.png */,
 				B507CDF40EB722FD008DD569 /* remote-options.png */,
@@ -812,9 +847,12 @@
 		B5F9151F0EAAFB6D00B66B15 /* Flip Remote */ = {
 			isa = PBXGroup;
 			children = (
+				B5CDEE2B0EC5649D0094D993 /* RemoteAddButtonViewController.h */,
+				B5CDEE2C0EC5649D0094D993 /* RemoteAddButtonViewController.m */,
 				B5C2CCA30EC2CC1100B88187 /* ResizerView.h */,
 				B5C2CCA40EC2CC1100B88187 /* ResizerView.m */,
 				B5B2D5D50EC189EA00E38731 /* RemoteButtonViewController.h */,
+				B507CED00EB72551008DD569 /* CellTextView.h */,
 				B5B2D5D60EC189EA00E38731 /* RemoteButtonViewController.m */,
 				B5B2D6850EC190AC00E38731 /* RemoteItemView.h */,
 				B5B2D6860EC190AC00E38731 /* RemoteItemView.m */,
@@ -1032,6 +1070,17 @@
 				B59950E30EC306FF001891EC /* remote-b-pause.png in Resources */,
 				B59950E40EC306FF001891EC /* remote-b-prev.png in Resources */,
 				B59950E50EC306FF001891EC /* remote-b-stop.png in Resources */,
+				B59D410F0EC6B0B800BB2501 /* remove.png in Resources */,
+				B59D41800EC6B8B300BB2501 /* remote-settings.png in Resources */,
+				B59D41860EC6B93F00BB2501 /* remote-add.png in Resources */,
+				B59D41B50EC6BFD200BB2501 /* remote-b-ff.png in Resources */,
+				B59D41B60EC6BFD200BB2501 /* remote-b-rotate.png in Resources */,
+				B59D41B70EC6BFD200BB2501 /* remote-b-rw.png in Resources */,
+				B59D41B80EC6BFD200BB2501 /* remote-b-shutdown.png in Resources */,
+				B59D41B90EC6BFD200BB2501 /* remote-b-zoom-in.png in Resources */,
+				B59D41BA0EC6BFD200BB2501 /* remote-b-zoom-normal.png in Resources */,
+				B59D41BB0EC6BFD200BB2501 /* remote-b-zoom-out.png in Resources */,
+				B59D41C10EC6C00400BB2501 /* remote-b-aspect.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1125,6 +1174,7 @@
 				B5B2D9FC0EC1B91D00E38731 /* RemoteButtonView.m in Sources */,
 				B5C2CCA50EC2CC1100B88187 /* ResizerView.m in Sources */,
 				B5994F150EC2F740001891EC /* RoundedButton.m in Sources */,
+				B5CDEE2D0EC5649D0094D993 /* RemoteAddButtonViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

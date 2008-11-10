@@ -135,7 +135,7 @@
 		multiTouch = NO;
 	}
 	touchMovedCount = 0;
-	NSLog(@"Touch Began %i Num Touches %i ", [touches count], numTouches);
+	//NSLog(@"Touch Began %i Num Touches %i ", [touches count], numTouches);
 	[self showPointer: touchDownPoint];
 }
 - (void)showPointer:(CGPoint)location {
@@ -173,7 +173,7 @@
 	// Use this counter to only register the move until there have been 2 moves, just to make the multi touch a bit more solid.
 	touchMovedCount++;
 	
-	NSLog(@"Touches Moved %i Num Touches %i Multi %i", [touches count] , numTouches, multiTouch);	
+	//NSLog(@"Touches Moved %i Num Touches %i Multi %i", [touches count] , numTouches, multiTouch);	
 	
 	
 	NSInteger direction = [self directionBetweenLocation: lastPoint locationtwo: location multiTouch: multiTouch];
@@ -213,7 +213,7 @@
 			scrolling       = YES;
 			scrollDirection = direction; 
 			scrollTimer = [NSTimer scheduledTimerWithTimeInterval:0.02 target: self selector: @selector(triggerScroll) userInfo:nil repeats:YES];		
-			NSLog(@"Speed %f", scrollSpeed);
+			//NSLog(@"Speed %f", scrollSpeed);
 		}
 	}
 	

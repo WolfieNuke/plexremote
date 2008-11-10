@@ -11,7 +11,8 @@
 #import "ResizerView.h";
 
 @interface RemoteItemView : UIView <ResizerViewDelegate> {
-	UIView *resizerView;
+	ResizerView *resizerView;
+	UIButton    *removeButton;
 	
 	UIView *button;
 	UITouch *firstTouch;
@@ -25,8 +26,10 @@
 	BOOL editing;
 }
 @property (nonatomic, retain) UIView *button;
-@property (nonatomic, retain) UIView *resizerView;
+@property (nonatomic, retain) UIButton *removeButton;
+@property (nonatomic, retain) ResizerView *resizerView;
 @property (nonatomic, retain) RemoteButtonData *buttonData;
 @property (nonatomic, retain) id delegate;
 - (void)startEditing;
+- (void)endEditing;
 @end

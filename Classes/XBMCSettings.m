@@ -51,17 +51,35 @@ static XBMCSettings *sharedSettingsDelegate = nil;
 }
 - (void)setupRemoteButtonListDefault {
 	self.remoteButtonList = [NSArray arrayWithObjects:
-							 [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_PLAY   ],
-						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_PAUSE  ],
-						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_UP  ],							 
-						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_DOWN  ],
+							 [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_BACK   ],
 						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_LEFT  ],
-						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_RIGHT  ],
+						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_RIGHT  ],							 
+						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_GUI  ],
+						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_QUEUE_ITEM  ],
+						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_SHOW_OSD  ],
+						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_UP     ],							 
 						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_OK     ],							 
-						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_NEXT     ],							 
-						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_PREV     ],	
-						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_BACK  ],							 
-						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_UP_DIR  ],							 							 
+						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_DOWN     ],	
+						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_UP_DIR  ],							 
+						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_PAUSE  ],							 							 
+						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_PREV  ],							 							 							 
+						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_NEXT  ],							 							 							 							 
+						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_STOP  ],
+						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_SHUTDOWN  ],
+						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_ASPECT_RATIO  ],
+						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_ZOOM_NORMAL  ],
+						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_ZOOM_OUT  ],
+						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_ZOOM_IN  ],
+						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_ROTATE_PICTURE  ],	
+						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_PLAY_DVD  ],
+						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_EJECT  ],							 
+						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_SHOW_SUBTITLES  ],
+						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_SHOW_PLAYLIST  ],
+						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_RR  ],							 
+						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_STEP_BACK  ],
+						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_PLAY_SPEED_ONE  ],	
+						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_STEP_FORWARD  ],	
+						     [[RemoteButtonData alloc] initWithType: REMOTE_BUTTON_FF  ],								 
 							 nil
 							];
 }	
@@ -86,7 +104,7 @@ static XBMCSettings *sharedSettingsDelegate = nil;
 	//[self resetAllSettings];
 	//[defaults removeObjectForKey:@"XBMCBookmarkList"];
 	//[defaults removeObjectForKey:@"XBMCTabList"];	
-	[defaults removeObjectForKey:@"XBMCRemoteButtonList"];		
+	//[defaults removeObjectForKey:@"XBMCRemoteButtonList"];		
 	NSMutableArray *hostList = [defaults objectForKey:@"XBMCHostList"];
 	if (hostList == nil) {
 		[self setupDefaults];

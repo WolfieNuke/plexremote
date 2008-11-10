@@ -91,7 +91,12 @@
 - (void)stopPlaying;
 - (void)Action:(NSInteger)action;
 - (void)SendKey:(NSInteger)key;
-
+- (void)up;
+- (void)down;
+- (void)left;
+- (void)right;
+- (void)back;
+- (void)enter;
 - (NSString*)GetPodcastGenreId;
 - (NSArray*)GetAlbums;
 - (NSArray*)GetAlbumsByWhereClause:(NSString*)whereClause; 

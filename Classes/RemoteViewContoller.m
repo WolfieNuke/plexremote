@@ -7,6 +7,7 @@
 //
 
 #import "RemoteViewContoller.h"
+#import "RemoteAddButtonViewController.h";
 #import "InterfaceManager.h";
 #import "Key.h";
 #import "SettingsViewController.h";
@@ -39,7 +40,7 @@
 	xbmcSettings =  [XBMCSettings sharedInstance];
 	
 	remoteButtonController = [RemoteButtonViewController alloc];
-	remoteButtonController.view = remoteButtonView;
+	remoteButtonController.view = remoteButtonPagingView;
 	remoteButtonController.delegate = self;
 	[remoteButtonController init];
 	
@@ -51,27 +52,69 @@
 	
 	NSInteger selectedView = xbmcSettings.remoteType;
 	if (selectedView == BUTTON_VIEW) {
-		[remoteContainerView addSubview:remoteButtonController.view];
+		[remoteContainerView addSubview:remoteButtonView];
 	} else if (selectedView == GESTURE_VIEW) {
 		[remoteContainerView addSubview:remoteGestureView];
 	}
 	
 }
+- (IBAction)actionAddButton:(id)sender {
+	RemoteAddButtonViewController *controller = [[RemoteAddButtonViewController alloc] initWithStyle:UITableViewStyleGrouped];
+	[self presentModalViewController:controller animated:YES];
+	controller.delegate = self;
+	[controller release];
+}
 - (IBAction)actionEditMode:(id)sender {
 	[remoteButtonController toggleEditMode];
+	if (remoteButtonController.editMode) {
+		[self showAddButton];
+	} else {
+		[self hideAddButton];
+	}
 }
+- (void)actionAddedButton:(NSInteger)type {
+	RemoteButtonData *buttonData = [[RemoteButtonData alloc] init];
+	buttonData.type = type;
+	CGRect frame = [remoteButtonController defaultFrameForButtonType: type];
+	CGFloat xOffset = [remoteButtonController.view contentOffset].x;
+	buttonData.frame = CGRectMake(xOffset + (remoteButtonController.view.frame.size.width / 2 - frame.size.width / 2),
+								  remoteButtonController.view.frame.size.height / 2 - frame.size.height / 2 ,
+								  frame.size.width,
+								  frame.size.height);
+ 	[remoteButtonController addButton: buttonData];
+	[buttonData release];
+}
+- (void)showAddButton {
+	addButton.userInteractionEnabled = YES;
+	addButton.hidden = NO;
+	addButton.alpha = 0;
+	[UIView beginAnimations: @"fade" context: nil];
+	[UIView setAnimationDuration:0.5];
+	addButton.alpha = 1;
+	[UIView commitAnimations];
+}
+
+- (void)hideAddButton {
+	addButton.userInteractionEnabled = NO;	
+	addButton.alpha = 1;
+	[UIView beginAnimations: @"fade" context: nil];
+	[UIView setAnimationDuration:0.5];
+	addButton.alpha = 0;
+	[UIView commitAnimations];	
+}
+
 - (IBAction)actionSwitchView:(id)sender {
 	[UIView beginAnimations: @"switchview" context: nil];
 	[UIView setAnimationDuration:1];
 
-	if ([remoteButtonController.view superview]) {
-		[remoteButtonController.view removeFromSuperview];
+	if ([remoteButtonView superview]) {
+		[remoteButtonView removeFromSuperview];
 		[remoteContainerView addSubview:remoteGestureView];
 		[UIView setAnimationTransition: UIViewAnimationTransitionFlipFromLeft forView: remoteContainerView cache:YES];
 		xbmcSettings.remoteType = GESTURE_VIEW;	
 	} else {
 		[remoteGestureView removeFromSuperview];
-		[remoteContainerView addSubview:remoteButtonController.view];
+		[remoteContainerView addSubview:remoteButtonView];
 		[UIView setAnimationTransition: UIViewAnimationTransitionFlipFromRight forView: remoteContainerView cache:YES];		
 		xbmcSettings.remoteType = BUTTON_VIEW;
 	}
@@ -80,13 +123,11 @@
 
 }
 - (void)viewDidAppear:(BOOL)animated {
-	NSLog(@"Remote View Did Appear");
 	NSDate *date = [NSDate date];
 	timer = [[NSTimer alloc] initWithFireDate:date interval:1 target:self selector:@selector(refreshAll) userInfo:nil repeats:YES];
 	[[NSRunLoop currentRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
 }
 - (void)viewDidDisappear:(BOOL)animated {
-	NSLog(@"Removew View Did Disappear");	
 	[self dismissModalViewControllerAnimated:YES];
 	[timer invalidate];
 	[timer release];
@@ -148,70 +189,70 @@
 }
 
 - (void)controlMovedUp {
-	if (guiMode == GUI_MODE_NAV) {
-		[XBMCInterface SendKey:ACTION_MOVE_UP];
-	} else if (guiMode == GUI_MODE_VIDEO) {
-		[XBMCInterface SendKey:ACTION_STEP_FORWARD];		
-	} else if (guiMode == GUI_MODE_AUDIO) {
-		[XBMCInterface SendKey:ACTION_VIS_PRESET_NEXT];
-	}
+	//if (guiMode == GUI_MODE_NAV) {
+		[XBMCInterface up];
+	//} else if (guiMode == GUI_MODE_VIDEO) {
+	//	[XBMCInterface Action:ACTION_STEP_FORWARD];		
+	//} else if (guiMode == GUI_MODE_AUDIO) {
+	//	[XBMCInterface Action:ACTION_VIS_PRESET_NEXT];
+	//}
 }
 - (void)controlMovedDown {
-	if (guiMode == GUI_MODE_NAV) {
-		[XBMCInterface SendKey:ACTION_MOVE_DOWN];
-	} else if (guiMode == GUI_MODE_VIDEO) {
-		[XBMCInterface SendKey:ACTION_STEP_BACK];		
-	} else if (guiMode == GUI_MODE_AUDIO) {
-		[XBMCInterface SendKey:ACTION_VIS_PRESET_PREV];	
-	}
+	//if (guiMode == GUI_MODE_NAV) {
+		[XBMCInterface down];
+	//} else if (guiMode == GUI_MODE_VIDEO) {
+	//	[XBMCInterface Action:ACTION_STEP_BACK];		
+	//} else if (guiMode == GUI_MODE_AUDIO) {
+	//	[XBMCInterface Action:ACTION_VIS_PRESET_PREV];	
+	//}
 }
 - (void)controlMovedLeft {
-	if (guiMode == GUI_MODE_NAV) {
-		[XBMCInterface SendKey:ACTION_MOVE_LEFT];
-	} else if (guiMode == GUI_MODE_VIDEO || guiMode == GUI_MODE_AUDIO) {
-		[XBMCInterface SendKey:ACTION_PLAYER_REWIND];		
-	}	
+	//if (guiMode == GUI_MODE_NAV) {
+		[XBMCInterface left];
+	//} else if (guiMode == GUI_MODE_VIDEO || guiMode == GUI_MODE_AUDIO) {
+	//	[XBMCInterface Action:ACTION_PLAYER_REWIND];		
+	//}	
 }
 - (void)controlMovedRight {
-	if (guiMode == GUI_MODE_NAV) {
-		[XBMCInterface SendKey:ACTION_MOVE_RIGHT];
-	} else if (guiMode == GUI_MODE_VIDEO || guiMode == GUI_MODE_AUDIO) {
-		[XBMCInterface SendKey:ACTION_PLAYER_FORWARD];		
-	}		
+	//if (guiMode == GUI_MODE_NAV) {
+		[XBMCInterface right];
+	//} else if (guiMode == GUI_MODE_VIDEO || guiMode == GUI_MODE_AUDIO) {
+	//	[XBMCInterface Action:ACTION_PLAYER_FORWARD];		
+	//}		
 }
 - (void)controlEnter {
-	if (guiMode == GUI_MODE_NAV) {
-		[XBMCInterface SendKey:ACTION_SELECT_ITEM];
-	} else if (guiMode == GUI_MODE_VIDEO || guiMode == GUI_MODE_AUDIO) {
-		[XBMCInterface SendKey:ACTION_PAUSE];
-	}	
+	//if (guiMode == GUI_MODE_NAV) {
+		[XBMCInterface enter];
+	//} else if (guiMode == GUI_MODE_VIDEO || guiMode == GUI_MODE_AUDIO) {
+	//	[XBMCInterface Action:ACTION_PAUSE];
+	//}	
 }
 - (void)controlBack {
-	if (guiMode == GUI_MODE_NAV) {
-		[XBMCInterface SendKey:ACTION_PREVIOUS_MENU];		
-	} else if (guiMode == GUI_MODE_VIDEO || guiMode == GUI_MODE_AUDIO) {
-		[XBMCInterface SendKey:ACTION_STOP];
-	}
+	//if (guiMode == GUI_MODE_NAV) {
+		[XBMCInterface back];		
+	//} else if (guiMode == GUI_MODE_VIDEO || guiMode == GUI_MODE_AUDIO) {
+	//	[XBMCInterface Action:ACTION_STOP];
+	//}
 }
 
 
 - (void)controlSecondaryUp {
 	if (guiMode == GUI_MODE_NAV) {
-		[XBMCInterface SendKey:ACTION_PAGE_UP];
+		[XBMCInterface Action:ACTION_PAGE_UP];
 	} else if (guiMode == GUI_MODE_VIDEO || guiMode == GUI_MODE_AUDIO) {
-		[XBMCInterface SendKey:ACTION_BIG_STEP_FORWARD];		
+		[XBMCInterface Action:ACTION_BIG_STEP_FORWARD];		
 	}
 }
 - (void)controlSecondaryDown {
 	if (guiMode == GUI_MODE_NAV) {
-		[XBMCInterface SendKey:ACTION_PAGE_DOWN];
+		[XBMCInterface Action:ACTION_PAGE_DOWN];
 	} else if (guiMode == GUI_MODE_VIDEO || guiMode == GUI_MODE_AUDIO) {
-		[XBMCInterface SendKey:ACTION_BIG_STEP_BACK];		
+		[XBMCInterface Action:ACTION_BIG_STEP_BACK];		
 	}
 }
 - (void)controlSecondaryLeft {
 	if (guiMode == GUI_MODE_NAV) {
-		[XBMCInterface SendKey:ACTION_PREVIOUS_MENU];		
+		[XBMCInterface Action:ACTION_PREVIOUS_MENU];		
 	} else if (guiMode == GUI_MODE_VIDEO || guiMode == GUI_MODE_AUDIO) {
 		[XBMCInterface playPrev];		
 	}	
@@ -225,7 +266,7 @@
 	}		
 }
 - (void)controlSecondaryEnter {
-	[XBMCInterface SendKey:ACTION_SHOW_GUI];
+	[XBMCInterface Action:ACTION_SHOW_GUI];
 }
 
 - (void)controlThirdEnter {
@@ -233,11 +274,12 @@
 }
 
 - (void)controlSecondaryBack {
-	[XBMCInterface SendKey:ACTION_PARENT_DIR];
+	[XBMCInterface Action:ACTION_PARENT_DIR];
 }
 
 - (void)actionButtonPress:(id)sender {
 	RemoteButtonData *buttonData = sender;
+		
 	switch (buttonData.type) {
 		case REMOTE_BUTTON_UP:
 			[self controlMovedUp];
@@ -264,7 +306,7 @@
 			[self controlBack];
 			break;
 		case REMOTE_BUTTON_UP_DIR:
-			[XBMCInterface SendKey:ACTION_PARENT_DIR];
+			[XBMCInterface Action:ACTION_PARENT_DIR];
 			break;
 		case REMOTE_BUTTON_PAUSE:
 			[XBMCInterface pause];
@@ -272,52 +314,102 @@
 		case REMOTE_BUTTON_PLAY:
 			[XBMCInterface pause];
 			break;
+		case REMOTE_BUTTON_STOP:
+			[XBMCInterface Action:ACTION_STOP];
+			break;
+		case REMOTE_BUTTON_GUI:
+			[XBMCInterface Action:ACTION_SHOW_GUI];
+			break;
+		case REMOTE_BUTTON_SHOW_INFO:
+			[XBMCInterface Action:ACTION_SHOW_INFO];
+			break;
+		case REMOTE_BUTTON_ASPECT_RATIO:
+			[XBMCInterface Action:ACTION_ASPECT_RATIO];
+			break;
+		case REMOTE_BUTTON_STEP_FORWARD:
+			[XBMCInterface Action:ACTION_STEP_FORWARD];
+			break;
+		case REMOTE_BUTTON_STEP_BACK:
+			[XBMCInterface Action:ACTION_STEP_BACK];
+			break;
+		case REMOTE_BUTTON_SHOW_OSD:
+			[XBMCInterface osd];
+			break;
+		case REMOTE_BUTTON_SHOW_SUBTITLES:
+			[XBMCInterface Action:ACTION_SHOW_SUBTITLES];
+			break;
+		case REMOTE_BUTTON_NEXT_SUBTITLE:
+			[XBMCInterface Action:ACTION_NEXT_SUBTITLE];
+			break;
+		case REMOTE_BUTTON_SHOW_CODEC:
+			[XBMCInterface Action:ACTION_SHOW_CODEC];
+			break;
+		case REMOTE_BUTTON_NEXT_PICTURE:
+			[XBMCInterface Action:ACTION_NEXT_PICTURE];
+			break;
+		case REMOTE_BUTTON_PREV_PICTURE:
+			[XBMCInterface Action:ACTION_PREV_PICTURE];
+			break;
+		case REMOTE_BUTTON_ZOOM_OUT:
+			[XBMCInterface Action:ACTION_ZOOM_OUT];
+			break;
+		case REMOTE_BUTTON_ZOOM_IN:
+			[XBMCInterface Action:ACTION_ZOOM_IN];
+			break;
+		case REMOTE_BUTTON_ZOOM_NORMAL:
+			[XBMCInterface Action:ACTION_ZOOM_LEVEL_NORMAL];
+			break;
+		case REMOTE_BUTTON_QUEUE_ITEM:
+			[XBMCInterface Action:ACTION_QUEUE_ITEM];
+			break;
+		case REMOTE_BUTTON_SHOW_PLAYLIST:
+			[XBMCInterface Action:ACTION_SHOW_PLAYLIST];
+			break;
+		case REMOTE_BUTTON_ROTATE_PICTURE:
+			[XBMCInterface Action:ACTION_ROTATE_PICTURE];
+			break;
+		case REMOTE_BUTTON_BIG_STEP_BACK:
+			[XBMCInterface Action:ACTION_BIG_STEP_BACK];
+			break;
+		case REMOTE_BUTTON_BIG_STEP_FORWARD:
+			[XBMCInterface Action:ACTION_BIG_STEP_FORWARD];
+			break;
+		case REMOTE_BUTTON_SHUTDOWN:
+			[XBMCInterface Shutdown];
+			break;
+		case REMOTE_BUTTON_RESTART:
+			[XBMCInterface Restart];
+			break;
+		case REMOTE_BUTTON_CONTEXT_MENU:
+			[XBMCInterface Action:ACTION_CONTEXT_MENU];
+			break;
+		case REMOTE_BUTTON_NEXT_VIS:
+			[XBMCInterface Action:ACTION_VIS_PRESET_NEXT];
+			break;
+		case REMOTE_BUTTON_PREV_VIS:
+			[XBMCInterface Action:ACTION_VIS_PRESET_PREV];
+			break;
+		case REMOTE_BUTTON_MUTE:
+			[XBMCInterface Action:ACTION_MUTE];
+			break;
+		case REMOTE_BUTTON_VOLUME_UP:
+			[XBMCInterface Action:ACTION_VOLUME_UP];
+			break;
+		case REMOTE_BUTTON_VOLUME_DOWN:
+			[XBMCInterface Action:ACTION_VOLUME_DOWN];
+			break;			
+		case REMOTE_BUTTON_SCREENSHOT:
+			[XBMCInterface Action:ACTION_TAKE_SCREENSHOT];
+			break;
+		case REMOTE_BUTTON_CHANGE_RESOLUTION:
+			[XBMCInterface Action:ACTION_CHANGE_RESOLUTION];
+			break;
 	}
-}
-- (IBAction)actionUp:(id)sender { 
-	[self controlMovedUp];
-}
-- (IBAction)actionDown:(id)sender {
-	[self controlMovedDown];
-}
-- (IBAction)actionLeft:(id)sender {
-	[self controlMovedLeft];
-}
-- (IBAction)actionRight:(id)sender {
-	[self controlMovedRight];
-}
-- (IBAction)actionEnter:(id)sender {
-	[self controlEnter];
-}
-- (IBAction)actionBack:(id)sender {
-	[self controlBack];
-}
-- (IBAction)actionBackSecond:(id)sender {
-	[self controlSecondaryBack];
-}
-- (IBAction)actionPlay:(id)sender {
-	//[XBMCInterface Action:ACTION_PLAYLI];	
-}
-- (IBAction)actionPause:(id)sender {
-	[XBMCInterface pause];
-	//[XBMCInterface SendKey:ACTION_PAUSE];
-}
-- (IBAction)actionNext:(id)sender {
-	[XBMCInterface playNext];
-}
-- (IBAction)actionPrev:(id)sender {
-	[XBMCInterface playPrev];
-}
-- (IBAction)actionStop:(id)sender {
-	[XBMCInterface SendKey:ACTION_STOP];
-}
-- (IBAction)actionGui:(id)sender {
-	[XBMCInterface SendKey:ACTION_SHOW_GUI];	
 }
 - (IBAction)actionMenu:(id)sender {
 	[self presentModalViewController:moreViewController animated:YES];
 	//[NSThread detachNewThreadSelector:@selector(showMenu) toTarget:self withObject:nil];
-	//[XBMCInterface SendKey:ACTION_CONTEXT_MENU];	
+	//[XBMCInterface Action:ACTION_CONTEXT_MENU];	
 }
 - (IBAction)closeMenu:(id)sender {
 	[self dismissModalViewControllerAnimated:YES];
@@ -353,7 +445,7 @@
 }
 - (void)controlEnded:(CGPoint)location  {
 	if (controlSpeed == 0) {
-		[XBMCInterface SendKey:ACTION_SELECT_ITEM];
+		[XBMCInterface Action:ACTION_SELECT_ITEM];
 	}
 	controlActive = NO;
 	controlSpeedChange = YES;

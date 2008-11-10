@@ -24,25 +24,9 @@
 
 - (void)drawRect:(CGRect)rect {
 	[[UIImage imageNamed:@"remote-resize.png"] drawInRect:rect];
-	// Drawing code
-}
-- (CGPoint)distanceBetweenTouchesXY:(NSSet *)touches {	
-	NSArray *allTouches = [touches allObjects];
-	CGPoint point1 = [[allTouches objectAtIndex:0] locationInView:[self superview]];
-	CGPoint point2 = [[allTouches objectAtIndex:1] locationInView:[self superview]];
-	return CGPointMake(	(sqrt((point1.x - point2.x) * (point1.x - point2.x))),
-					   (sqrt((point1.y - point2.y) * (point1.y - point2.y))) );
-}
-
-- (CGPoint)distanceBetweenTouches:(UITouch*)touchOne touchTwo:(UITouch*)touchTwo {	
-	CGPoint point1 = [touchOne locationInView:[self superview]];
-	CGPoint point2 = [touchTwo locationInView:[self superview]];
-	return CGPointMake(	(sqrt((point1.x - point2.x) * (point1.x - point2.x))),
-					   (sqrt((point1.y - point2.y) * (point1.y - point2.y))) );
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-	NSLog(@"Resize: touch began");
 	NSSet *totalTouches = [touches setByAddingObjectsFromSet:[event touchesForView:self]];
 	if ([totalTouches count] == 1) {
 		[self.delegate resizeBegan];
@@ -52,9 +36,6 @@
 }
 - (UIView*)getSuperView {
 	return [self superview];
-	UIView *superView = self;
-	while(superView = [superView superview]) { }
-	return superView;
 }
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
 	if ([[event touchesForView:self] count] == 1) { 
@@ -63,7 +44,6 @@
 		
 		CGPoint newTouchDistance = CGPointMake(currentPoint.x - startPoint.x , 
 											   currentPoint.y - startPoint.y);
-		//NSLog(@"newTouchDistance.x %f", newTouchDistance.x);
 		[self.delegate resizeMovedX:  newTouchDistance.x Y: newTouchDistance.y];
 	}
 }
